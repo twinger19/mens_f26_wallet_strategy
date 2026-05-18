@@ -4,286 +4,386 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wallet Strategy 2026 — RAA Accessories</title>
+  <meta name="description" content="RAA Accessories wallet category strategy for 2026 — five carry types, eight brands, packaging and display direction.">
+  <meta name="theme-color" content="#1A1A1A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/hero-main.jpg" fetchpriority="high">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --cream:#F8F5EF;--white:#FFFFFF;--black:#1A1A1A;--dark:#2C2C2C;
       --mid:#6B6B6B;--light:#ADADAD;--rule:#E2DDD6;
-      --gold:#C9A84C;--gold-light:#F0E6C8;
+      --gold:#C9A84C;--gold-deep:#A8852E;--gold-light:#F0E6C8;
       --green:#2D4A3E;--green-light:#E8F0ED;
       --blue:#2C3E6B;--blue-light:#E8ECF5;
       --red:#C0392B;--red-light:#FAEAE8;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.04),0 1px 3px rgba(0,0,0,.06);
+      --shadow-md:0 4px 12px rgba(0,0,0,.06),0 2px 4px rgba(0,0,0,.04);
+      --shadow-lg:0 16px 40px rgba(0,0,0,.10),0 4px 12px rgba(0,0,0,.05);
+      --ease:cubic-bezier(.22,.61,.36,1);
     }
-    html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;background:var(--white);color:var(--black);line-height:1.6;font-size:16px}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    body{font-family:'Inter',sans-serif;background:var(--white);color:var(--black);line-height:1.6;font-size:16px;overflow-x:hidden}
+    img{max-width:100%;display:block}
+    button{font:inherit;border:none;background:none;cursor:pointer;color:inherit}
+    :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
 
-    /* NAV */
-    .site-nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
-    .nav-logo{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
-    .nav-tabs{display:flex}
-    .nav-tab{padding:0 28px;height:64px;display:flex;align-items:center;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--mid);cursor:pointer;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;user-select:none}
+    /* ─────────────── NAV ─────────────── */
+    .site-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
+    .nav-logo{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+    .nav-logo::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%}
+    .nav-tabs{display:flex;gap:0}
+    .nav-tab{padding:0 28px;height:64px;display:flex;align-items:center;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--mid);border-bottom:2px solid transparent;transition:color .2s,border-color .2s;user-select:none}
     .nav-tab:hover{color:var(--black)}
-    .nav-tab.active{color:var(--black);border-bottom-color:var(--black)}
-    .nav-date{font-size:12px;color:var(--light)}
+    .nav-tab[aria-selected="true"]{color:var(--black);border-bottom-color:var(--black)}
+    .nav-date{font-size:12px;color:var(--light);font-variant-numeric:tabular-nums}
     .tab-panel{display:none}
-    .tab-panel.active{display:block}
+    .tab-panel.active{display:block;animation:fadeUp .55s var(--ease) both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-    /* HERO */
-    .hero{position:relative;height:92vh;min-height:600px;max-height:900px;overflow:hidden;display:flex;align-items:flex-end}
-    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,.18) 55%,transparent 100%)}
-    .hero-content{position:relative;z-index:2;padding:0 80px 72px;max-width:900px}
-    .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-    .hero-headline{font-family:'DM Serif Display',serif;font-size:clamp(40px,5vw,72px);line-height:1.08;color:var(--white);margin-bottom:24px}
-    .hero-sub{font-size:18px;font-weight:300;color:rgba(255,255,255,.82);max-width:560px;line-height:1.65}
+    /* ─────────────── REVEAL ─────────────── */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+    .reveal.is-in{opacity:1;transform:none}
+    .reveal.delay-1{transition-delay:.08s}
+    .reveal.delay-2{transition-delay:.16s}
+    .reveal.delay-3{transition-delay:.24s}
+    .reveal.delay-4{transition-delay:.32s}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important;transition:none!important}}
 
-    /* STAT STRIP */
-    .stat-strip{background:var(--black);display:grid;grid-template-columns:repeat(4,1fr)}
-    .stat-cell{padding:40px 36px;border-right:1px solid rgba(255,255,255,.1);text-align:center}
+    /* ─────────────── HERO ─────────────── */
+    .hero{position:relative;height:94vh;min-height:640px;max-height:920px;overflow:hidden;display:flex;align-items:flex-end}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;transform:scale(1.04);animation:heroZoom 8s var(--ease) forwards}
+    @keyframes heroZoom{to{transform:scale(1)}}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.32) 0%,rgba(0,0,0,.12) 40%,rgba(0,0,0,.78) 100%)}
+    .hero-content{position:relative;z-index:2;padding:0 80px 88px;max-width:960px;animation:fadeUp 1s .25s var(--ease) both}
+    .hero-rule{width:56px;height:2px;background:var(--gold);margin-bottom:24px}
+    .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+    .hero-headline{font-family:'DM Serif Display',serif;font-size:clamp(42px,5.2vw,76px);line-height:1.05;color:var(--white);margin-bottom:28px;letter-spacing:-.01em}
+    .hero-headline em{font-style:italic;color:var(--gold-light)}
+    .hero-sub{font-size:18px;font-weight:300;color:rgba(255,255,255,.86);max-width:620px;line-height:1.65}
+    .hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.7);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;animation:scrollNudge 2.4s ease-in-out infinite}
+    .hero-scroll-line{width:1px;height:32px;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent)}
+    @keyframes scrollNudge{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+    /* ─────────────── STAT STRIP ─────────────── */
+    .stat-strip{background:var(--black);display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+    .stat-strip::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold) 70%,transparent)}
+    .stat-cell{padding:48px 36px;border-right:1px solid rgba(255,255,255,.08);text-align:center;transition:background .3s var(--ease)}
+    .stat-cell:hover{background:rgba(255,255,255,.02)}
     .stat-cell:last-child{border-right:none}
-    .stat-number{font-family:'DM Serif Display',serif;font-size:52px;color:var(--white);line-height:1;margin-bottom:8px}
+    .stat-number{font-family:'DM Serif Display',serif;font-size:60px;color:var(--white);line-height:1;margin-bottom:12px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
     .stat-number .accent{color:var(--gold)}
-    .stat-label{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--light);line-height:1.5}
+    .stat-label{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--light);line-height:1.55}
 
-    /* SECTIONS */
-    .section{padding:96px 80px}
-    .section-sm{padding:64px 80px}
+    /* ─────────────── SECTIONS ─────────────── */
+    .section{padding:112px 80px}
+    .section-sm{padding:72px 80px}
     .section-cream{background:var(--cream)}
     .section-black{background:var(--black)}
-    .section-eyebrow{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(32px,3.5vw,52px);line-height:1.12;color:var(--black);max-width:720px;margin-bottom:24px}
+    .section-eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:inline-flex;align-items:center;gap:10px}
+    .section-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+    .section-title{font-family:'DM Serif Display',serif;font-size:clamp(34px,3.6vw,54px);line-height:1.1;color:var(--black);max-width:760px;margin-bottom:24px;letter-spacing:-.01em}
     .section-title.white{color:var(--white)}
-    .section-subtitle{font-size:18px;font-weight:300;color:var(--mid);max-width:640px;line-height:1.7;margin-bottom:56px}
-    .section-subtitle.white{color:rgba(255,255,255,.7)}
+    .section-subtitle{font-size:18px;font-weight:300;color:var(--mid);max-width:660px;line-height:1.7;margin-bottom:56px}
+    .section-subtitle.white{color:rgba(255,255,255,.72)}
     .divider{width:48px;height:2px;background:var(--gold);margin:24px 0 40px}
 
-    /* SPLIT */
+    /* ─────────────── SPLIT ─────────────── */
     .split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
     .split-text{padding:96px 72px;display:flex;flex-direction:column;justify-content:center}
-    .split-img{overflow:hidden}
-    .split-img img{width:100%;height:100%;min-height:500px;object-fit:cover}
+    .split-img{overflow:hidden;position:relative}
+    .split-img img{width:100%;height:100%;min-height:500px;object-fit:cover;transition:transform 1.2s var(--ease)}
+    .split-img:hover img{transform:scale(1.03)}
 
-    /* INSIGHT BOX */
-    .insight-box{background:var(--gold-light);border-left:4px solid var(--gold);padding:28px 36px;margin:32px 0;border-radius:0 4px 4px 0}
-    .insight-box p{font-family:'DM Serif Display',serif;font-size:20px;line-height:1.5;color:var(--black)}
+    /* ─────────────── INSIGHT BOX ─────────────── */
+    .insight-box{background:var(--gold-light);border-left:4px solid var(--gold);padding:30px 36px;margin:32px 0;border-radius:0 4px 4px 0;position:relative}
+    .insight-box::before{content:'"';position:absolute;top:-12px;left:20px;font-family:'DM Serif Display',serif;font-size:64px;color:var(--gold);line-height:1;opacity:.4}
+    .insight-box p{font-family:'DM Serif Display',serif;font-size:21px;line-height:1.5;color:var(--black);position:relative;z-index:1}
 
-    /* DATA GRID */
-    .data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule)}
-    .data-card{background:var(--white);padding:48px 40px}
-    .data-number{font-family:'DM Serif Display',serif;font-size:64px;line-height:1;color:var(--black);margin-bottom:12px}
-    .data-number .accent{color:var(--gold)}
-    .data-desc{font-size:15px;color:var(--dark);line-height:1.6;margin-bottom:10px}
-    .data-source{font-size:11px;color:var(--light);letter-spacing:.06em}
+    /* ─────────────── CARRY SPECTRUM ─────────────── */
+    .spectrum{margin:0 0 56px;padding:36px 40px;background:linear-gradient(135deg,#fff 0%,#fafaf7 100%);border:1px solid var(--rule);border-radius:4px;box-shadow:var(--shadow-sm)}
+    .spectrum-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mid)}
+    .spectrum-head .more{color:var(--black)}
+    .spectrum-head .less{color:var(--black)}
+    .spectrum-bar{position:relative;height:4px;background:linear-gradient(90deg,var(--black) 0%,var(--gold) 60%,var(--gold-light) 100%);border-radius:2px;margin-bottom:18px}
+    .spectrum-dots{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+    .spectrum-pt{position:relative;text-align:center}
+    .spectrum-pt::before{content:'';position:absolute;top:-22px;left:50%;transform:translateX(-50%);width:14px;height:14px;background:var(--white);border:3px solid var(--black);border-radius:50%;box-shadow:var(--shadow-sm)}
+    .spectrum-pt:nth-child(2)::before{border-color:#3a3a3a}
+    .spectrum-pt:nth-child(3)::before{border-color:var(--gold-deep)}
+    .spectrum-pt:nth-child(4)::before{border-color:var(--gold)}
+    .spectrum-pt:nth-child(5)::before{border-color:var(--gold);background:var(--gold-light)}
+    .spectrum-num{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--gold);margin-bottom:4px}
+    .spectrum-name{font-family:'DM Serif Display',serif;font-size:15px;color:var(--black);line-height:1.2}
 
-    /* WALLET TYPE CARDS */
-    .wallet-types{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--rule)}
-    .wt-card{background:var(--white);overflow:hidden;display:flex;flex-direction:column}
-    .wt-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
-    .wt-placeholder{width:100%;aspect-ratio:3/4;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--light)}
-    .wt-placeholder span{font-size:11px;font-style:italic;text-align:center;padding:0 12px}
+    /* ─────────────── WALLET TYPE CARDS ─────────────── */
+    .wallet-types{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-md)}
+    .wt-card{background:var(--white);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease);position:relative}
+    .wt-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);z-index:2}
+    .wt-img-wrap{position:relative;overflow:hidden;aspect-ratio:3/4}
+    .wt-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+    .wt-card:hover .wt-img{transform:scale(1.05)}
+    .wt-img-tag{position:absolute;top:14px;left:14px;background:rgba(26,26,26,.92);color:var(--gold);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:6px 10px;border-radius:2px;backdrop-filter:blur(6px)}
     .wt-body{padding:24px;flex:1;display:flex;flex-direction:column}
-    .wt-number{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-    .wt-name{font-family:'DM Serif Display',serif;font-size:20px;color:var(--black);margin-bottom:8px;line-height:1.2}
-    .wt-target{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);margin-bottom:12px}
-    .wt-desc{font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:14px;flex:1}
+    .wt-name{font-family:'DM Serif Display',serif;font-size:22px;color:var(--black);margin-bottom:8px;line-height:1.15;letter-spacing:-.01em}
+    .wt-target{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
+    .wt-desc{font-size:13px;color:var(--mid);line-height:1.65;margin-bottom:16px;flex:1}
     .wt-specs{list-style:none;border-top:1px solid var(--rule);padding-top:14px}
-    .wt-specs li{font-size:12px;color:var(--dark);padding:5px 0;display:flex;align-items:flex-start;gap:8px;border-bottom:1px solid var(--rule);line-height:1.4}
-    .wt-specs li:last-child{border-bottom:none}
-    .wt-specs li::before{content:'';display:block;width:4px;height:4px;background:var(--gold);border-radius:50%;margin-top:6px;flex-shrink:0}
-    .wt-customer{padding:12px 16px;background:var(--cream);margin-top:12px;border-radius:2px}
-    .wt-customer-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:4px}
-    .wt-customer-name{font-size:13px;font-weight:600;color:var(--black);margin-bottom:3px;line-height:1.3}
-    .wt-customer-note{font-size:12px;color:var(--mid);line-height:1.5}
+    .wt-specs li{font-size:12px;color:var(--dark);padding:5px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.45}
+    .wt-specs li::before{content:'';display:block;width:4px;height:4px;background:var(--gold);border-radius:50%;margin-top:7px;flex-shrink:0}
+    .wt-customer{padding:14px 16px;background:var(--cream);margin-top:14px;border-radius:3px;border-left:2px solid var(--gold);transition:background .3s var(--ease)}
+    .wt-card:hover .wt-customer{background:var(--gold-light)}
+    .wt-customer-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:5px}
+    .wt-customer-name{font-size:13px;font-weight:700;color:var(--black);margin-bottom:4px;line-height:1.3}
+    .wt-customer-note{font-size:12px;color:var(--mid);line-height:1.55}
 
-    /* PKG SIDE WITH IMAGE */
-    .pkg-side{background:var(--white);overflow:hidden}
-    .pkg-side.problem{border-top:4px solid var(--red)}
-    .pkg-side.solution{border-top:4px solid var(--green)}
-    .pkg-side-img{width:100%;height:420px;object-fit:cover;display:block}
-    .pkg-side-img-placeholder{width:100%;height:420px;background:var(--cream);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:var(--light)}
-    .pkg-side-content{padding:40px 48px}
-
-    /* IMAGE BREAK */
-    .image-break{width:100%;height:480px;overflow:hidden;position:relative}
+    /* ─────────────── IMAGE BREAK ─────────────── */
+    .image-break{width:100%;height:520px;overflow:hidden;position:relative}
     .image-break img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
-    .image-break-overlay{position:absolute;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center}
-    .image-break-quote{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,42px);color:var(--white);text-align:center;max-width:760px;padding:0 40px;line-height:1.25}
+    .image-break-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,.55));display:flex;align-items:center;justify-content:center}
+    .image-break-quote{font-family:'DM Serif Display',serif;font-size:clamp(24px,3.2vw,44px);color:var(--white);text-align:center;max-width:820px;padding:0 40px;line-height:1.25;letter-spacing:-.005em}
+    .image-break-quote::before,.image-break-quote::after{content:'"';color:var(--gold);font-style:italic}
 
-    /* DISPLAY COMPARISON */
-    .display-compare{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule);margin-top:48px}
-    .compare-side{background:var(--white);overflow:hidden}
-    .compare-side-img{width:100%;height:320px;object-fit:cover;display:block}
-    .compare-side-img.placeholder{width:100%;height:320px;background:var(--cream);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--light)}
-    .compare-side-body{padding:32px}
-    .compare-label-bad{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
-    .compare-label-good{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
-    .compare-title{font-family:'DM Serif Display',serif;font-size:22px;color:var(--black);margin-bottom:12px}
+    /* ─────────────── DATA GRID ─────────────── */
+    .data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)}
+    .data-card{background:var(--white);padding:48px 40px;transition:background .3s var(--ease)}
+    .data-card:hover{background:#fcfaf6}
+    .data-number{font-family:'DM Serif Display',serif;font-size:64px;line-height:1;color:var(--black);margin-bottom:14px;letter-spacing:-.02em}
+    .data-number .accent{color:var(--gold)}
+    .data-desc{font-size:15px;color:var(--dark);line-height:1.65;margin-bottom:10px}
+    .data-source{font-size:11px;color:var(--light);letter-spacing:.08em}
+
+    /* ─────────────── COMPARE ITEMS ─────────────── */
     .compare-items{list-style:none;margin-top:12px}
-    .compare-items li{font-size:14px;color:var(--dark);padding:9px 0;border-bottom:1px solid var(--rule);display:flex;gap:10px;line-height:1.5}
+    .compare-items li{font-size:14px;color:var(--dark);padding:11px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;line-height:1.55;align-items:flex-start}
     .compare-items li:last-child{border-bottom:none}
-    .compare-items li .icon{flex-shrink:0;font-size:15px}
+    .compare-items li .icon{flex-shrink:0;font-size:14px;font-weight:700;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;margin-top:1px}
+    .compare-items li .icon.bad{background:var(--red-light);color:var(--red)}
+    .compare-items li .icon.good{background:var(--green-light);color:var(--green)}
 
-    /* REFERENCE DISPLAY GRID */
-    .ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);margin-top:48px}
-    .ref-card{background:var(--white);overflow:hidden}
-    .ref-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
-    .ref-body{padding:20px 24px}
-    .ref-lesson{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-    .ref-desc{font-size:13px;color:var(--dark);line-height:1.6}
+    /* ─────────────── TRANSITION DIVIDER (current → opportunity) ─────────────── */
+    .transition-divider{background:var(--black);padding:32px 80px;display:flex;align-items:center;justify-content:center;gap:24px;position:relative}
+    .transition-divider::before,.transition-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent)}
+    .transition-divider-text{display:flex;align-items:center;gap:18px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;font-family:'Inter',sans-serif}
+    .transition-arrow{font-family:'DM Serif Display',serif;font-size:24px;color:var(--gold)}
 
-    /* STAT ROW */
-    .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);margin:48px 0}
-    .stat-row-card{background:var(--gold-light);padding:36px 32px;text-align:center}
-    .stat-row-num{font-family:'DM Serif Display',serif;font-size:48px;color:var(--black);line-height:1;margin-bottom:8px}
-    .stat-row-label{font-size:13px;color:var(--dark);line-height:1.5}
-    .stat-row-src{font-size:10px;color:var(--mid);margin-top:6px;letter-spacing:.04em}
+    /* ─────────────── REFERENCE GRID ─────────────── */
+    .ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);margin-top:48px;border-radius:4px;overflow:hidden}
+    .ref-card{background:var(--white);overflow:hidden;transition:transform .3s var(--ease)}
+    .ref-card:hover{transform:translateY(-3px)}
+    .ref-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+    .ref-card:hover .ref-img{transform:scale(1.04)}
+    .ref-body{padding:24px 28px}
+    .ref-lesson{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+    .ref-desc{font-size:13px;color:var(--dark);line-height:1.65}
 
-    /* PACKAGING COMPARE */
-    .packaging-compare{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule);margin-top:48px}
+    /* ─────────────── STAT ROW ─────────────── */
+    .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);margin:48px 0;border-radius:4px;overflow:hidden}
+    .stat-row-card{background:var(--gold-light);padding:40px 32px;text-align:center;transition:background .3s var(--ease)}
+    .stat-row-card:hover{background:#f6ecce}
+    .stat-row-num{font-family:'DM Serif Display',serif;font-size:54px;color:var(--black);line-height:1;margin-bottom:10px;letter-spacing:-.02em}
+    .stat-row-label{font-size:13px;color:var(--dark);line-height:1.55}
+    .stat-row-src{font-size:10px;color:var(--mid);margin-top:8px;letter-spacing:.06em}
 
-    /* MOVES GRID */
-    .moves-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule)}
-    .move-card{background:var(--white);padding:40px}
-    .move-number{font-family:'DM Serif Display',serif;font-size:42px;color:var(--cream);line-height:1;margin-bottom:8px}
-    .move-title{font-size:15px;font-weight:700;color:var(--black);margin-bottom:12px;line-height:1.4}
-    .move-desc{font-size:14px;color:var(--mid);line-height:1.7}
-    .move-impact{margin-top:16px;padding:10px 14px;background:var(--gold-light);font-size:12px;font-weight:600;color:var(--dark);border-radius:2px}
-    .move-impact span{color:var(--gold);margin-right:6px}
+    /* ─────────────── BRAND GRID ─────────────── */
+    .brand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);margin-top:48px;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)}
+    .brand-card{background:var(--white);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+    .brand-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);z-index:1}
+    .brand-card-img-wrap{position:relative;overflow:hidden;aspect-ratio:16/10}
+    .brand-card-img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+    .brand-card:hover .brand-card-img{transform:scale(1.05)}
+    .brand-lane{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.95);color:var(--gold-deep);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;border-radius:2px;backdrop-filter:blur(6px);box-shadow:var(--shadow-sm)}
+    .brand-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+    .brand-card-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:var(--black);margin-bottom:8px;letter-spacing:-.005em}
+    .brand-card-pos{font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:14px;flex:1}
+    .brand-card-pos strong{color:var(--black);font-weight:600}
+    .brand-card-q{font-size:12px;font-style:italic;color:var(--gold-deep);line-height:1.55;border-top:1px solid var(--rule);padding-top:14px}
 
-    /* BRAND GRID */
-    .brand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);margin-top:48px}
-    .brand-card{background:var(--white);overflow:hidden}
-    .brand-card-img{width:100%;aspect-ratio:16/9;object-fit:cover}
-    .brand-card-body{padding:24px}
-    .brand-card-name{font-size:14px;font-weight:700;color:var(--black);margin-bottom:4px}
-    .brand-card-pos{font-size:12px;color:var(--mid);line-height:1.5;margin-bottom:10px}
-    .brand-card-q{font-size:11px;font-style:italic;color:var(--gold);line-height:1.5;border-top:1px solid var(--rule);padding-top:10px}
+    /* ─────────────── LOGO ROW ─────────────── */
+    .logo-row{display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;padding:64px 80px;background:var(--cream);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+    .logo-row img{height:30px;width:auto;opacity:.5;filter:grayscale(100%);transition:opacity .25s,filter .25s}
+    .logo-row img:hover{opacity:1;filter:grayscale(0)}
 
-    /* LOGO ROW */
-    .logo-row{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap;padding:56px 80px;background:var(--cream);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-    .logo-row img{height:28px;width:auto;opacity:.55;filter:grayscale(100%);transition:opacity .2s}
-    .logo-row img:hover{opacity:1}
+    /* ─────────────── MEETING HERO ─────────────── */
+    .meeting-hero{background:linear-gradient(135deg,#1A1A1A 0%,#2C2C2C 100%);padding:96px 80px 72px;position:relative;overflow:hidden}
+    .meeting-hero::before{content:'';position:absolute;top:0;right:0;width:480px;height:480px;background:radial-gradient(circle,rgba(201,168,76,.12),transparent 70%);pointer-events:none}
+    .meeting-eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;position:relative;display:inline-flex;align-items:center;gap:10px}
+    .meeting-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+    .meeting-title{font-family:'DM Serif Display',serif;font-size:clamp(38px,4.4vw,64px);color:var(--white);margin-bottom:22px;line-height:1.08;letter-spacing:-.01em;position:relative}
+    .meeting-sub{font-size:18px;font-weight:300;color:rgba(255,255,255,.7);max-width:640px;line-height:1.65;position:relative}
 
-    /* MISSING NOTICE */
-    .missing-notice{background:var(--gold-light);border-top:3px solid var(--gold);padding:48px 80px}
-    .missing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
-    .missing-card{background:white;padding:20px 24px;border-radius:2px}
-    .missing-card strong{display:block;font-size:13px;color:var(--black);margin-bottom:6px}
-    .missing-card p{font-size:12px;color:var(--mid);line-height:1.5}
+    /* ─────────────── TIME RAIL ─────────────── */
+    .time-rail{background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:28px 80px}
+    .time-rail-track{position:relative;height:6px;background:var(--rule);border-radius:3px;margin:10px 0 28px}
+    .time-rail-fill{position:absolute;top:0;left:0;height:100%;background:linear-gradient(90deg,var(--gold) 0%,var(--green) 65%,var(--black) 100%);border-radius:3px}
+    .time-rail-marks{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+    .time-rail-mark{position:relative;text-align:left}
+    .time-rail-mark::before{content:'';position:absolute;top:-30px;left:0;width:10px;height:10px;background:var(--white);border:2px solid var(--gold);border-radius:50%}
+    .time-rail-mark:nth-child(4)::before,.time-rail-mark:nth-child(5)::before{border-color:var(--green)}
+    .time-rail-mark:nth-child(5)::before{border-color:var(--black)}
+    .time-rail-min{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--gold);margin-bottom:4px;text-transform:uppercase}
+    .time-rail-label{font-size:12px;color:var(--dark);font-weight:600;line-height:1.35}
 
-    /* MEETING */
-    .meeting-hero{background:var(--black);padding:80px 80px 64px}
-    .meeting-eyebrow{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-    .meeting-title{font-family:'DM Serif Display',serif;font-size:clamp(36px,4vw,60px);color:var(--white);margin-bottom:20px;line-height:1.1}
-    .meeting-sub{font-size:18px;font-weight:300;color:rgba(255,255,255,.65);max-width:600px;line-height:1.65}
-
-    /* GOALS BOX */
-    .goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);margin-top:48px}
-    .goal-card{background:var(--white);padding:40px}
-    .goal-num{font-family:'DM Serif Display',serif;font-size:48px;color:var(--gold);line-height:1;margin-bottom:12px}
-    .goal-title{font-size:16px;font-weight:700;color:var(--black);margin-bottom:10px;line-height:1.3}
+    /* ─────────────── GOALS ─────────────── */
+    .goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);margin-top:48px;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)}
+    .goal-card{background:var(--white);padding:44px 40px;transition:background .3s var(--ease);position:relative}
+    .goal-card:hover{background:#fcfaf6}
+    .goal-num{font-family:'DM Serif Display',serif;font-size:54px;color:var(--gold);line-height:1;margin-bottom:14px;letter-spacing:-.02em}
+    .goal-title{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:var(--black);margin-bottom:14px;line-height:1.25;letter-spacing:-.005em}
     .goal-desc{font-size:14px;color:var(--mid);line-height:1.7}
 
-    /* AGENDA */
-    .agenda{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--rule);margin-bottom:64px}
-    .agenda-block{background:var(--white);padding:32px 28px}
-    .agenda-time{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-    .agenda-title{font-size:15px;font-weight:700;color:var(--black);margin-bottom:8px;line-height:1.35}
+    /* ─────────────── AGENDA ─────────────── */
+    .agenda{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--rule);margin-bottom:64px;border-radius:4px;overflow:hidden}
+    .agenda-block{background:var(--white);padding:32px 28px;border-top:3px solid transparent;transition:border-color .3s var(--ease),transform .3s var(--ease)}
+    .agenda-block:nth-child(1){border-top-color:var(--gold)}
+    .agenda-block:nth-child(2){border-top-color:var(--gold)}
+    .agenda-block:nth-child(3){border-top-color:var(--blue)}
+    .agenda-block:nth-child(4){border-top-color:var(--green)}
+    .agenda-block:nth-child(5){border-top-color:var(--black)}
+    .agenda-block:hover{transform:translateY(-2px)}
+    .agenda-time{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-variant-numeric:tabular-nums}
+    .agenda-title{font-family:'DM Serif Display',serif;font-size:17px;color:var(--black);margin-bottom:10px;line-height:1.3;font-weight:400}
     .agenda-desc{font-size:13px;color:var(--mid);line-height:1.6}
 
-    /* TIMELINE */
+    /* ─────────────── TIMELINE ─────────────── */
     .timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:64px;position:relative}
-    .timeline-grid::before{content:'';position:absolute;top:48px;left:12.5%;right:12.5%;height:2px;background:var(--rule);z-index:0}
-    .timeline-card{text-align:center;position:relative;z-index:1}
-    .timeline-dot{width:24px;height:24px;border-radius:50%;margin:36px auto 20px;border:3px solid var(--white)}
-    .timeline-dot.gold{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
-    .timeline-dot.green{background:var(--green);box-shadow:0 0 0 2px var(--green)}
-    .timeline-dot.black{background:var(--black);box-shadow:0 0 0 2px var(--black)}
-    .timeline-period{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
-    .timeline-period.gold{color:var(--gold)}
+    .timeline-grid::before{content:'';position:absolute;top:48px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold) 33%,var(--green) 66%,var(--black) 100%);z-index:0}
+    .timeline-card{text-align:center;position:relative;z-index:1;padding:0 12px}
+    .timeline-dot{width:28px;height:28px;border-radius:50%;margin:34px auto 22px;border:4px solid var(--white);box-shadow:0 0 0 2px currentColor}
+    .timeline-dot.gold{background:var(--gold);color:var(--gold)}
+    .timeline-dot.green{background:var(--green);color:var(--green)}
+    .timeline-dot.black{background:var(--black);color:var(--black)}
+    .timeline-period{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
+    .timeline-period.gold{color:var(--gold-deep)}
     .timeline-period.green{color:var(--green)}
     .timeline-period.black{color:var(--black)}
-    .timeline-name{font-size:15px;font-weight:700;color:var(--black);margin-bottom:8px;line-height:1.3}
-    .timeline-desc{font-size:13px;color:var(--mid);line-height:1.6}
+    .timeline-name{font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.25;font-weight:400}
+    .timeline-desc{font-size:13px;color:var(--mid);line-height:1.65}
 
-    /* DISCUSSION CARDS */
-    .d-card{border-radius:2px;overflow:hidden;border:1px solid var(--rule);margin-bottom:24px}
-    .d-card-header{padding:20px 32px;display:flex;align-items:center;justify-content:space-between}
+    /* ─────────────── DISCUSSION CARDS ─────────────── */
+    .d-card{border-radius:4px;overflow:hidden;border:1px solid var(--rule);margin-bottom:24px;box-shadow:var(--shadow-sm)}
+    .d-card-header{padding:22px 32px;display:flex;align-items:center;justify-content:space-between}
     .d-card-header.green{background:var(--green)}
-    .d-card-header.gold{background:var(--gold)}
+    .d-card-header.gold{background:var(--gold-deep)}
     .d-card-header.blue{background:var(--blue)}
     .d-card-header.dark{background:var(--dark)}
     .d-card-header.black{background:var(--black)}
-    .d-card-num{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65)}
-    .d-card-session-title{font-family:'DM Serif Display',serif;font-size:22px;color:var(--white)}
-    .d-card-time-badge{background:rgba(255,255,255,.15);color:var(--white);font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;letter-spacing:.06em}
+    .d-card-num{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:6px}
+    .d-card-session-title{font-family:'DM Serif Display',serif;font-size:22px;color:var(--white);font-weight:400;line-height:1.25}
+    .d-card-time-badge{background:rgba(255,255,255,.16);color:var(--white);font-size:12px;font-weight:600;padding:7px 16px;border-radius:20px;letter-spacing:.06em}
     .d-card-body{background:var(--white);padding:36px 32px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
     .d-card-body.full{grid-template-columns:1fr}
-    .d-section-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);margin-bottom:14px}
+    .d-section-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:14px}
     .d-objectives{list-style:none}
-    .d-objectives li{font-size:14px;color:var(--dark);padding:8px 0;border-bottom:1px solid var(--rule);display:flex;gap:10px;line-height:1.5}
+    .d-objectives li{font-size:14px;color:var(--dark);padding:9px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;line-height:1.55}
     .d-objectives li:last-child{border-bottom:none}
-    .d-objectives li::before{content:'→';color:var(--gold);font-size:13px;margin-top:1px;flex-shrink:0}
+    .d-objectives li::before{content:'→';color:var(--gold);font-size:14px;margin-top:1px;flex-shrink:0;font-weight:700}
     .d-questions{list-style:none}
-    .d-questions li{font-size:14px;color:var(--dark);padding:8px 0;border-bottom:1px solid var(--rule);line-height:1.5;font-style:italic}
+    .d-questions li{font-size:14px;color:var(--dark);padding:9px 0;border-bottom:1px solid var(--rule);line-height:1.55;font-style:italic;display:flex;gap:10px}
+    .d-questions li::before{content:'';display:block;width:3px;background:var(--gold);flex-shrink:0;margin:4px 0}
     .d-questions li:last-child{border-bottom:none}
 
-    /* BRAND Q TABLE */
-    .brand-q-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--rule);margin-bottom:48px}
+    /* ─────────────── BRAND Q TABLE ─────────────── */
+    .brand-q-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--rule);margin-bottom:48px;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)}
     .brand-q-card{background:var(--white);padding:32px 36px}
-    .brand-q-name{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+    .brand-q-name{font-family:'DM Serif Display',serif;font-size:18px;color:var(--gold-deep);margin-bottom:14px;font-weight:400;letter-spacing:-.005em}
     .brand-q-list{list-style:none}
-    .brand-q-list li{font-size:14px;color:var(--dark);padding:7px 0;border-bottom:1px solid var(--rule);display:flex;gap:10px;line-height:1.5;font-style:italic}
+    .brand-q-list li{font-size:14px;color:var(--dark);padding:8px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;line-height:1.55;font-style:italic}
     .brand-q-list li:last-child{border-bottom:none}
-    .brand-q-list li::before{content:'?';color:var(--gold);font-weight:700;font-style:normal;flex-shrink:0}
+    .brand-q-list li::before{content:'?';color:var(--gold);font-weight:700;font-style:normal;flex-shrink:0;width:18px;height:18px;background:var(--gold-light);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px}
 
-    /* DECISION TABLE */
-    .decision-table-wrap{overflow-x:auto;margin-bottom:64px}
-    .decision-table{width:100%;border-collapse:collapse;font-size:14px}
-    .decision-table thead th{background:var(--black);color:var(--white);padding:14px 20px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-    .decision-table thead th:first-child{width:36%}
+    /* ─────────────── DECISION TABLE ─────────────── */
+    .decision-table-wrap{overflow-x:auto;margin-bottom:64px;border-radius:4px;box-shadow:var(--shadow-sm)}
+    .decision-table{width:100%;border-collapse:collapse;font-size:14px;background:var(--white)}
+    .decision-table thead th{background:var(--black);color:var(--white);padding:16px 20px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .decision-table thead th:first-child{width:32%}
+    .decision-table tbody tr{transition:background .2s var(--ease)}
     .decision-table tbody tr:nth-child(even){background:var(--cream)}
-    .decision-table tbody td{padding:14px 20px;border-bottom:1px solid var(--rule);color:var(--dark);line-height:1.5;vertical-align:middle}
-    .badge{display:inline-block;padding:3px 10px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .decision-table tbody tr:hover{background:var(--gold-light)}
+    .decision-table tbody td{padding:16px 20px;border-bottom:1px solid var(--rule);color:var(--dark);line-height:1.55;vertical-align:middle}
+    .badge{display:inline-block;padding:4px 11px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
     .badge-green{background:var(--green-light);color:var(--green)}
-    .badge-gold{background:var(--gold-light);color:#7A5C00}
+    .badge-gold{background:var(--gold-light);color:var(--gold-deep)}
     .badge-red{background:var(--red-light);color:var(--red)}
     .badge-blue{background:var(--blue-light);color:var(--blue)}
 
-    /* ACTION ITEMS */
-    .action-band{border-left:4px solid;padding:14px 24px;margin-bottom:2px;display:flex;align-items:center;gap:16px}
+    /* ─────────────── ACTION ITEMS ─────────────── */
+    .action-band{border-left:4px solid;padding:16px 24px;margin-bottom:2px;display:flex;align-items:center;gap:18px;border-radius:0 4px 4px 0}
     .action-band.june{background:var(--gold-light);border-color:var(--gold)}
     .action-band.aug{background:var(--green-light);border-color:var(--green)}
     .action-band.dec{background:rgba(26,26,26,.06);border-color:var(--black)}
-    .action-band .band-label{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap}
-    .action-band .band-label.gold{color:var(--gold)}
+    .action-band .band-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+    .action-band .band-label.gold{color:var(--gold-deep)}
     .action-band .band-label.green{color:var(--green)}
     .action-band .band-label.black{color:var(--black)}
-    .action-band .band-note{font-size:13px;color:var(--dark)}
-    .action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);margin-bottom:32px}
+    .action-band .band-note{font-size:13px;color:var(--dark);line-height:1.5}
+    .action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);margin-bottom:32px;border-radius:4px;overflow:hidden}
     .action-card{background:var(--white);padding:36px}
-    .action-owner{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+    .action-owner{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
     .action-items{list-style:none}
-    .action-items li{font-size:14px;color:var(--dark);padding:8px 0;border-bottom:1px solid var(--rule);display:flex;gap:10px;line-height:1.5}
+    .action-items li{font-size:14px;color:var(--dark);padding:10px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;line-height:1.55}
     .action-items li:last-child{border-bottom:none}
-    .checkbox{display:inline-flex;width:16px;height:16px;border:1.5px solid var(--light);border-radius:2px;flex-shrink:0;margin-top:2px}
+    .checkbox{display:inline-flex;width:16px;height:16px;border:1.5px solid var(--light);border-radius:2px;flex-shrink:0;margin-top:2px;transition:background .2s,border-color .2s}
+    .action-items li:hover .checkbox{border-color:var(--gold)}
 
-    /* FOOTER */
+    /* ─────────────── FOOTER ─────────────── */
     .site-footer{background:var(--black);padding:48px 80px;display:flex;align-items:center;justify-content:space-between}
-    .footer-logo{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4)}
-    .footer-note{font-size:12px;color:rgba(255,255,255,.3)}
+    .footer-logo{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:10px}
+    .footer-logo::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%}
+    .footer-note{font-size:12px;color:rgba(255,255,255,.32)}
+
+    /* ─────────────── RESPONSIVE ─────────────── */
+    @media (max-width:1100px){
+      .section,.section-sm{padding:72px 40px}
+      .meeting-hero{padding:72px 40px 56px}
+      .time-rail,.logo-row,.site-nav,.site-footer{padding-left:40px;padding-right:40px}
+      .hero-content{padding:0 40px 64px}
+      .stat-strip,.wallet-types,.data-grid,.brand-grid,.goals-grid{grid-template-columns:repeat(2,1fr)}
+      .agenda,.timeline-grid,.action-grid,.stat-row,.ref-grid{grid-template-columns:repeat(2,1fr)}
+      .timeline-grid::before{display:none}
+      .time-rail-marks{grid-template-columns:repeat(2,1fr);gap:24px}
+      .split{grid-template-columns:1fr}
+      .split-text{padding:64px 40px}
+      .d-card-body{grid-template-columns:1fr}
+      .brand-q-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .section,.section-sm{padding:56px 24px}
+      .meeting-hero{padding:56px 24px 48px}
+      .stat-cell{padding:32px 20px}
+      .stat-number{font-size:42px}
+      .hero-content{padding:0 24px 48px}
+      .stat-strip,.wallet-types,.data-grid,.brand-grid,.goals-grid,.agenda,.timeline-grid,.action-grid,.stat-row,.ref-grid{grid-template-columns:1fr}
+    }
+
+    /* ─────────────── PRINT ─────────────── */
+    @media print{
+      .site-nav,.hero-scroll,.site-footer{display:none}
+      .tab-panel{display:block!important;page-break-before:always}
+      body{background:var(--white)}
+      .section,.section-sm{padding:32px 24px;page-break-inside:avoid}
+      .hero{height:auto;min-height:0;max-height:none;padding:24px 0}
+      .hero-img{display:none}
+      .hero-overlay{display:none}
+      .hero-content{padding:24px 24px 0;color:var(--black)}
+      .hero-headline{color:var(--black);font-size:32px}
+      .hero-sub{color:var(--black)}
+      .image-break,.logo-row{display:none}
+      .reveal{opacity:1;transform:none}
+      .stat-strip,.section-black{background:var(--black);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    }
   </style>
 </head>
 <body>
 
-<nav class="site-nav">
+<nav class="site-nav" role="navigation" aria-label="Primary">
   <div class="nav-logo">RAA Accessories · Wallet Strategy</div>
-  <div class="nav-tabs">
-    <div class="nav-tab active" onclick="showTab('strategy',this)">Strategy 2026</div>
-    <div class="nav-tab" onclick="showTab('meeting',this)">Meeting Guide</div>
+  <div class="nav-tabs" role="tablist" aria-label="Main sections">
+    <button class="nav-tab" role="tab" id="tab-btn-strategy" aria-controls="tab-strategy" aria-selected="true" onclick="showTab('strategy',this)">Strategy 2026</button>
+    <button class="nav-tab" role="tab" id="tab-btn-meeting" aria-controls="tab-meeting" aria-selected="false" onclick="showTab('meeting',this)">Meeting Guide</button>
   </div>
   <div class="nav-date">May 2026</div>
 </nav>
@@ -292,32 +392,37 @@
 <!-- ══════════════════════════════════════
      STRATEGY TAB
 ══════════════════════════════════════ -->
-<div id="tab-strategy" class="tab-panel active">
+<div id="tab-strategy" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-strategy">
 
   <section class="hero">
-    <img class="hero-img" src="images/hero-main.jpg" alt="Wallet strategy hero">
+    <img class="hero-img" src="images/hero-main.jpg" alt="Wallet strategy hero" fetchpriority="high" decoding="async">
     <div class="hero-overlay"></div>
     <div class="hero-content">
+      <div class="hero-rule"></div>
       <p class="hero-eyebrow">RAA Accessories · Wallet Category · 2026</p>
-      <h1 class="hero-headline">The Wallet Is Evolving.<br>So Is Our Strategy.</h1>
+      <h1 class="hero-headline">The Wallet Is Evolving.<br><em>So Is Our Strategy.</em></h1>
       <p class="hero-sub">How people pay has fundamentally changed. Our wallet program needs to reflect that shift — with a clear category architecture, stronger storytelling, and a retail presence that actually sells.</p>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
     </div>
   </section>
 
   <div class="stat-strip">
-    <div class="stat-cell">
+    <div class="stat-cell reveal">
       <div class="stat-number"><span class="accent">14</span>%</div>
       <div class="stat-label">of transactions<br>still use cash</div>
     </div>
-    <div class="stat-cell">
+    <div class="stat-cell reveal delay-1">
       <div class="stat-number"><span class="accent">65</span>%</div>
       <div class="stat-label">of consumers use<br>digital wallets regularly</div>
     </div>
-    <div class="stat-cell">
+    <div class="stat-cell reveal delay-2">
       <div class="stat-number"><span class="accent">3–4</span></div>
       <div class="stat-label">cards carried daily<br>— down from 6–8</div>
     </div>
-    <div class="stat-cell">
+    <div class="stat-cell reveal delay-3">
       <div class="stat-number"><span class="accent">7</span>%</div>
       <div class="stat-label">CAGR in slim wallet<br>category growth</div>
     </div>
@@ -325,14 +430,14 @@
 
   <!-- WHY NOW -->
   <div class="split">
-    <div class="split-img"><img src="images/phone-vs-wallet.jpg" alt="Payment shift"></div>
+    <div class="split-img"><img src="images/phone-vs-wallet.jpg" alt="Payment shift" loading="lazy" decoding="async"></div>
     <div class="split-text">
       <p class="section-eyebrow">The Shift</p>
       <h2 class="section-title">Changing payment habits require a changing wallet strategy.</h2>
       <div class="divider"></div>
       <p style="font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:20px;">When Apple Pay launched in 2014, it was a novelty. Today, 65% of consumers use a digital wallet regularly, cash represents just 14% of transactions, and the average person carries 3–4 cards — down from 6–8 a decade ago. These aren't trends. They're permanent behavioral shifts.</p>
       <p style="font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:20px;">This doesn't mean wallets are going away. It means the <em>kind</em> of wallet people want has changed. The slim front-pocket and phone-companion categories are growing at 6–8% annually. But the extra-capacity and classic wallet still serve a real customer who isn't ready to carry less — they just want to carry smarter.</p>
-      <div class="insight-box"><p>"The market isn't shrinking. It's splitting. And our assortment needs to reflect all five lanes it's splitting into."</p></div>
+      <div class="insight-box"><p>The market isn't shrinking. It's splitting. And our assortment needs to reflect all five lanes it's splitting into.</p></div>
     </div>
   </div>
 
@@ -342,12 +447,31 @@
     <h2 class="section-title">Five wallet categories. Each one serves a distinct carry need.</h2>
     <p class="section-subtitle">This is the foundation of everything — product design, brand strategy, packaging, and display. Every decision maps back to one of these five categories.</p>
 
+    <!-- CARRY SPECTRUM -->
+    <div class="spectrum reveal" aria-hidden="false">
+      <div class="spectrum-head">
+        <span class="more">← More Carry · More Cash</span>
+        <span>The Customer Spectrum</span>
+        <span class="less">Less Carry · Phone-First →</span>
+      </div>
+      <div class="spectrum-bar"></div>
+      <div class="spectrum-dots">
+        <div class="spectrum-pt"><p class="spectrum-num">01</p><p class="spectrum-name">Extra Capacity</p></div>
+        <div class="spectrum-pt"><p class="spectrum-num">02</p><p class="spectrum-name">New Classic</p></div>
+        <div class="spectrum-pt"><p class="spectrum-num">03</p><p class="spectrum-name">Front Pocket</p></div>
+        <div class="spectrum-pt"><p class="spectrum-num">04</p><p class="spectrum-name">Phone Companion</p></div>
+        <div class="spectrum-pt"><p class="spectrum-num">05</p><p class="spectrum-name">Gift &amp; Special</p></div>
+      </div>
+    </div>
+
     <div class="wallet-types">
 
-      <div class="wt-card">
-        <img class="wt-img" src="images/archetype-essential.jpg" alt="Extra Capacity">
+      <div class="wt-card reveal">
+        <div class="wt-img-wrap">
+          <img class="wt-img" src="images/archetype-essential.jpg" alt="Extra Capacity wallet" loading="lazy" decoding="async">
+          <span class="wt-img-tag">Category 01</span>
+        </div>
         <div class="wt-body">
-          <p class="wt-number">Category 01</p>
           <h3 class="wt-name">Extra Capacity</h3>
           <p class="wt-target">The full-carry customer</p>
           <p class="wt-desc">Bifolds and trifolds built to hold more. Slimfolds, passcases, and travelers that carry 6+ cards, have a dedicated bill compartment for cash, and may include zipper pockets or a bill divider. These haven't disappeared — they've just gotten smarter.</p>
@@ -364,10 +488,12 @@
         </div>
       </div>
 
-      <div class="wt-card">
-        <img class="wt-img" src="images/archetype-commuter.jpg" alt="New Classic">
+      <div class="wt-card reveal delay-1">
+        <div class="wt-img-wrap">
+          <img class="wt-img" src="images/archetype-commuter.jpg" alt="New Classic wallet" loading="lazy" decoding="async">
+          <span class="wt-img-tag">Category 02</span>
+        </div>
         <div class="wt-body">
-          <p class="wt-number">Category 02</p>
           <h3 class="wt-name">New Classic</h3>
           <p class="wt-target">The updated traditionalist</p>
           <p class="wt-desc">Classic bifolds and trifolds — but slimmed down and upgraded. These hold 6–9 cards and some cash, with a bill compartment, but the focus is on slimmer profiles and modern features that reduce bulk without sacrificing the familiar format.</p>
@@ -384,10 +510,12 @@
         </div>
       </div>
 
-      <div class="wt-card">
-        <img class="wt-img" src="images/archetype-craftsman.jpg" alt="Front Pocket">
+      <div class="wt-card reveal delay-2">
+        <div class="wt-img-wrap">
+          <img class="wt-img" src="images/archetype-craftsman.jpg" alt="Front Pocket wallet" loading="lazy" decoding="async">
+          <span class="wt-img-tag">Category 03</span>
+        </div>
         <div class="wt-body">
-          <p class="wt-number">Category 03</p>
           <h3 class="wt-name">Front Pocket</h3>
           <p class="wt-target">The slim carry minimalist</p>
           <p class="wt-desc">Smaller, slimmer, designed to live in a front pocket. Holds 4–6 cards and a few folded bills — in a pocket, or secured with a metal or magnetic money clip. Sometimes featuring zip closures. Built for the person who wants to carry less but still access cash.</p>
@@ -404,10 +532,12 @@
         </div>
       </div>
 
-      <div class="wt-card">
-        <img class="wt-img" src="images/archetype-magsafe.jpg" alt="Phone Companion">
+      <div class="wt-card reveal delay-3">
+        <div class="wt-img-wrap">
+          <img class="wt-img" src="images/archetype-magsafe.jpg" alt="Phone Companion wallet" loading="lazy" decoding="async">
+          <span class="wt-img-tag">Category 04</span>
+        </div>
         <div class="wt-body">
-          <p class="wt-number">Category 04</p>
           <h3 class="wt-name">Phone Companion</h3>
           <p class="wt-target">The phone-first customer</p>
           <p class="wt-desc">For the person who has primarily switched to Apple Pay or Google Pay. They need a few card slots as backup or for ID, and a cash pocket is a plus — not a requirement. Designed to attach to the phone via MagSafe. Can include a kickstand for added functionality.</p>
@@ -424,10 +554,12 @@
         </div>
       </div>
 
-      <div class="wt-card">
-        <img class="wt-img" src="images/gift-packaging.jpg" alt="Gift & Special">
+      <div class="wt-card reveal delay-4">
+        <div class="wt-img-wrap">
+          <img class="wt-img" src="images/gift-packaging.jpg" alt="Gift &amp; Special wallet" loading="lazy" decoding="async">
+          <span class="wt-img-tag">Category 05</span>
+        </div>
         <div class="wt-body">
-          <p class="wt-number">Category 05</p>
           <h3 class="wt-name">Gift &amp; Special</h3>
           <p class="wt-target">The gift-giver</p>
           <p class="wt-desc">Wallets remain one of the most gifted men's accessories. This category adds value through presentation: a wallet paired with a card case, a key fob, or a money clip; or two coordinating wallets in premium packaging. The box is part of the product.</p>
@@ -449,9 +581,9 @@
 
   <!-- IMAGE BREAK -->
   <div class="image-break">
-    <img src="images/lifestyle-carry.jpg" alt="Carry lifestyle">
+    <img src="images/lifestyle-carry.jpg" alt="Carry lifestyle" loading="lazy" decoding="async">
     <div class="image-break-overlay">
-      <p class="image-break-quote">"It's not about carrying less. It's about carrying right."</p>
+      <p class="image-break-quote">It's not about carrying less. It's about carrying right.</p>
     </div>
   </div>
 
@@ -461,40 +593,16 @@
     <h2 class="section-title">The numbers that justify every category decision.</h2>
     <p class="section-subtitle">These aren't projections — they're documented structural shifts that set the direction for product, packaging, and placement.</p>
     <div class="data-grid">
-      <div class="data-card">
-        <div class="data-number"><span class="accent">$1.5B</span></div>
-        <div class="data-desc"><strong>Slim wallet market</strong> growing at 6–8% CAGR vs. flat 1% for the overall wallet category.</div>
-        <div class="data-source">Grand View Research · 2025</div>
-      </div>
-      <div class="data-card">
-        <div class="data-number"><span class="accent">$300M+</span></div>
-        <div class="data-desc"><strong>Ridge Wallet annual revenue</strong> — built entirely on the slim carry trend. They're winning customers we should own at retail.</div>
-        <div class="data-source">DTC category analysis · 2025</div>
-      </div>
-      <div class="data-card">
-        <div class="data-number"><span class="accent">55%</span></div>
-        <div class="data-desc"><strong>Of wallet purchases are gifts.</strong> Our packaging and display must communicate premium value the moment it's picked up.</div>
-        <div class="data-source">RAA internal retail data</div>
-      </div>
-      <div class="data-card">
-        <div class="data-number"><span class="accent">72%</span></div>
-        <div class="data-desc"><strong>Of consumers expect RFID blocking</strong> as standard — yet zero percent of our current packaging communicates this feature.</div>
-        <div class="data-source">Consumer research · 2025</div>
-      </div>
-      <div class="data-card">
-        <div class="data-number"><span class="accent">74%</span></div>
-        <div class="data-desc"><strong>Of consumers say packaging design</strong> directly influences their purchase decision at point of sale.</div>
-        <div class="data-source">Ipsos Consumer Research · 2024</div>
-      </div>
-      <div class="data-card">
-        <div class="data-number"><span class="accent">540%</span></div>
-        <div class="data-desc"><strong>Potential sales lift</strong> from a well-designed retail display vs. an unorganized or cluttered fixture. One in six purchases is display-driven.</div>
-        <div class="data-source">Retail display effectiveness research · 2024</div>
-      </div>
+      <div class="data-card reveal"><div class="data-number"><span class="accent">$1.5B</span></div><div class="data-desc"><strong>Slim wallet market</strong> growing at 6–8% CAGR vs. flat 1% for the overall wallet category.</div><div class="data-source">Grand View Research · 2025</div></div>
+      <div class="data-card reveal delay-1"><div class="data-number"><span class="accent">$300M+</span></div><div class="data-desc"><strong>Ridge Wallet annual revenue</strong> — built entirely on the slim carry trend. They're winning customers we should own at retail.</div><div class="data-source">DTC category analysis · 2025</div></div>
+      <div class="data-card reveal delay-2"><div class="data-number"><span class="accent">55%</span></div><div class="data-desc"><strong>Of wallet purchases are gifts.</strong> Our packaging and display must communicate premium value the moment it's picked up.</div><div class="data-source">RAA internal retail data</div></div>
+      <div class="data-card reveal"><div class="data-number"><span class="accent">72%</span></div><div class="data-desc"><strong>Of consumers expect RFID blocking</strong> as standard — yet zero percent of our current packaging communicates this feature.</div><div class="data-source">Consumer research · 2025</div></div>
+      <div class="data-card reveal delay-1"><div class="data-number"><span class="accent">74%</span></div><div class="data-desc"><strong>Of consumers say packaging design</strong> directly influences their purchase decision at point of sale.</div><div class="data-source">Ipsos Consumer Research · 2024</div></div>
+      <div class="data-card reveal delay-2"><div class="data-number"><span class="accent">540%</span></div><div class="data-desc"><strong>Potential sales lift</strong> from a well-designed retail display vs. an unorganized or cluttered fixture. One in six purchases is display-driven.</div><div class="data-source">Retail display effectiveness research · 2024</div></div>
     </div>
   </section>
 
-  <!-- PACKAGING + DISPLAY STRATEGY -->
+  <!-- PACKAGING + DISPLAY STRATEGY INTRO -->
   <section class="section">
     <p class="section-eyebrow">Packaging &amp; Display Strategy</p>
     <h2 class="section-title">We've built a better product. Now we need to tell the story.</h2>
@@ -504,96 +612,88 @@
   <!-- CURRENT STATE -->
   <div class="split" style="border-top:4px solid var(--red)">
     <div class="split-text">
-      <p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:20px;">Current State — The Problem</p>
-      <h3 style="font-family:'DM Serif Display',serif;font-size:34px;color:var(--black);margin-bottom:28px;line-height:1.15;">Plain box. No story. No features. No reason to buy over the one next to it.</h3>
+      <p style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:20px;display:inline-flex;align-items:center;gap:10px"><span style="width:8px;height:8px;background:var(--red);border-radius:50%;display:inline-block"></span>Current State — The Problem</p>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:36px;color:var(--black);margin-bottom:28px;line-height:1.12;letter-spacing:-.01em">Plain box. No story. No features. No reason to buy over the one next to it.</h3>
       <ul class="compare-items">
-        <li><span class="icon">✗</span>All product in closed boxes — customer must open every item to evaluate it</li>
-        <li><span class="icon">✗</span>No RFID callout, no capacity info, no slim profile claim, no material story</li>
-        <li><span class="icon">✗</span>Products organized by brand — not by how the customer shops (by need)</li>
-        <li><span class="icon">✗</span>No carry-type navigation — "Slim Carry", "Gift Ready", "Front Pocket" labels don't exist</li>
-        <li><span class="icon">✗</span>Empty shelf space signals clearance, not a living category</li>
-        <li><span class="icon">✗</span>Generic "Wallets" header — invisible next to other brands' destination displays three feet away</li>
+        <li><span class="icon bad">✕</span>All product in closed boxes — customer must open every item to evaluate it</li>
+        <li><span class="icon bad">✕</span>No RFID callout, no capacity info, no slim profile claim, no material story</li>
+        <li><span class="icon bad">✕</span>Products organized by brand — not by how the customer shops (by need)</li>
+        <li><span class="icon bad">✕</span>No carry-type navigation — "Slim Carry", "Gift Ready", "Front Pocket" labels don't exist</li>
+        <li><span class="icon bad">✕</span>Empty shelf space signals clearance, not a living category</li>
+        <li><span class="icon bad">✕</span>Generic "Wallets" header — invisible next to other brands' destination displays three feet away</li>
       </ul>
     </div>
-    <div class="split-img"><img src="images/display-kohl-current.jpg" alt="Current Kohl's display" style="min-height:700px"></div>
+    <div class="split-img"><img src="images/display-kohl-current.jpg" alt="Current Kohl's display" style="min-height:700px" loading="lazy" decoding="async"></div>
+  </div>
+
+  <!-- TRANSITION DIVIDER -->
+  <div class="transition-divider">
+    <div class="transition-divider-text">
+      <span>Where We Are</span>
+      <span class="transition-arrow">→</span>
+      <span>Where We're Going</span>
+    </div>
   </div>
 
   <!-- OPPORTUNITY -->
   <div class="split" style="border-top:4px solid var(--green)">
-    <div class="split-img"><img src="images/opportunity_display.jpg" alt="Future display concept" style="min-height:700px;object-position:center top"></div>
+    <div class="split-img"><img src="images/opportunity_display.jpg" alt="Future display concept" style="min-height:700px;object-position:center top" loading="lazy" decoding="async"></div>
     <div class="split-text">
-      <p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:20px;">Where We Need to Go — The Opportunity</p>
-      <h3 style="font-family:'DM Serif Display',serif;font-size:34px;color:var(--black);margin-bottom:28px;line-height:1.15;">Packaging and display that sell before the wallet is touched — in-store and online.</h3>
+      <p style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:20px;display:inline-flex;align-items:center;gap:10px"><span style="width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block"></span>Where We Need to Go — The Opportunity</p>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:36px;color:var(--black);margin-bottom:28px;line-height:1.12;letter-spacing:-.01em">Packaging and display that sell before the wallet is touched — in-store and online.</h3>
       <ul class="compare-items">
-        <li><span class="icon">✓</span>Display organized by carry type: Classic · Slim · Front Pocket · Phone Companion · Gift</li>
-        <li><span class="icon">✓</span>Category shelf rail labels and brand lifestyle header — a destination, not a shelf</li>
-        <li><span class="icon">✓</span>One open wallet per tier — tactile, visible, feels like what it is</li>
-        <li><span class="icon">✓</span>RFID badge + card capacity + profile dimension on front of every package</li>
-        <li><span class="icon">✓</span>Gift section with premium packaging and gift sets for Q4</li>
-        <li><span class="icon">✓</span>Online PDPs: lifestyle imagery, feature icons, same carry-type language as the fixture</li>
+        <li><span class="icon good">✓</span>Display organized by carry type: Classic · Slim · Front Pocket · Phone Companion · Gift</li>
+        <li><span class="icon good">✓</span>Category shelf rail labels and brand lifestyle header — a destination, not a shelf</li>
+        <li><span class="icon good">✓</span>One open wallet per tier — tactile, visible, feels like what it is</li>
+        <li><span class="icon good">✓</span>RFID badge + card capacity + profile dimension on front of every package</li>
+        <li><span class="icon good">✓</span>Gift section with premium packaging and gift sets for Q4</li>
+        <li><span class="icon good">✓</span>Online PDPs: lifestyle imagery, feature icons, same carry-type language as the fixture</li>
       </ul>
     </div>
   </div>
 
   <!-- DISPLAY COMPARISON IMAGES -->
   <section class="section-sm section-cream">
-    <p class="section-eyebrow" style="padding:0 0 0 0">Learning From Other Categories</p>
+    <p class="section-eyebrow">Learning From Other Categories</p>
     <h2 class="section-title" style="margin-bottom:16px">Electronics, personal care, and apparel are all doing this better. Here's what they teach us.</h2>
-    <p style="font-size:16px;color:var(--mid);line-height:1.7;max-width:720px;margin-bottom:48px;">Every reference image below was photographed in the same retail environment as our wallets. These aren't premium DTC brands — they're mass-market products that invested in communication design. The lesson isn't budget. It's intention.</p>
+    <p style="font-size:16px;color:var(--mid);line-height:1.7;max-width:760px;margin-bottom:48px;">Every reference image below was photographed in the same retail environment as our wallets. These aren't premium DTC brands — they're mass-market products that invested in communication design. The lesson isn't budget. It's intention.</p>
 
     <div class="ref-grid">
-      <div class="ref-card">
-        <img class="ref-img" src="packaging-reference/IMG_9440.jpg" alt="MagSafe feature callout">
+      <div class="ref-card reveal">
+        <img class="ref-img" src="packaging-reference/IMG_9440.jpg" alt="MagSafe feature callout" loading="lazy" decoding="async">
         <div class="ref-body">
           <p class="ref-lesson">Lesson: Feature Icons Sell</p>
           <p class="ref-desc">This phone case shelf card reads: "MAGNET — Snaps in place on all MagSafe-compatible smartphones." Three icon badges. Three seconds. That's what RFID messaging should look like on a wallet display or package.</p>
         </div>
       </div>
-      <div class="ref-card">
-        <img class="ref-img" src="packaging-reference/IMG_9604.JPG" alt="Amika shelf labels">
+      <div class="ref-card reveal delay-1">
+        <img class="ref-img" src="packaging-reference/IMG_9604.JPG" alt="Amika shelf labels" loading="lazy" decoding="async">
         <div class="ref-body">
           <p class="ref-lesson">Lesson: Category Rail Labels Navigate</p>
           <p class="ref-desc">Amika hair care uses shelf-front rail labels: "bestselling hair treatments," "stylist favorites," "our iconic scent." Applied to wallets: "Slim Carry," "Traditional," "Gift Ready," "Front Pocket." Same cost. Guides the customer without a sales associate.</p>
         </div>
       </div>
-      <div class="ref-card">
-        <img class="ref-img" src="packaging-reference/IMG_9618.JPG" alt="Dockers feature callout at Kohls">
+      <div class="ref-card reveal delay-2">
+        <img class="ref-img" src="packaging-reference/IMG_9618.JPG" alt="Dockers feature callout at Kohls" loading="lazy" decoding="async">
         <div class="ref-body">
           <p class="ref-lesson">Lesson: It Happens in the Same Store</p>
           <p class="ref-desc">This Dockers pants table is in the same Kohl's men's department as our wallets. It has a branded signage panel with feature icons (All-Direction Stretch, Moisture Wicking, Security Pocket). Our wallets get "Leather Wallets." Same retailer. Different investment.</p>
         </div>
       </div>
     </div>
-
   </section>
 
   <!-- DISPLAY RESEARCH STATS -->
   <section class="section-sm section-black">
     <p class="section-eyebrow">The Research Case</p>
-    <h2 class="section-title white" style="max-width:800px;margin-bottom:16px">The data on packaging and display is unambiguous. This is a revenue decision, not a design preference.</h2>
+    <h2 class="section-title white" style="max-width:840px;margin-bottom:16px">The data on packaging and display is unambiguous. This is a revenue decision, not a design preference.</h2>
     <div class="stat-row" style="margin-top:40px">
-      <div class="stat-row-card">
-        <div class="stat-row-num">74%</div>
-        <div class="stat-row-label">of consumers say packaging design directly influences their purchase decision</div>
-        <div class="stat-row-src">Ipsos, 2024</div>
-      </div>
-      <div class="stat-row-card">
-        <div class="stat-row-num">81%</div>
-        <div class="stat-row-label">of consumers have bought a new product specifically because of its packaging design</div>
-        <div class="stat-row-src">Consumer Research, 2024</div>
-      </div>
-      <div class="stat-row-card">
-        <div class="stat-row-num">540%</div>
-        <div class="stat-row-label">potential sales lift from a well-designed display vs. a cluttered or disorganized fixture</div>
-        <div class="stat-row-src">Retail Display Research, 2024</div>
-      </div>
-      <div class="stat-row-card">
-        <div class="stat-row-num">32%</div>
-        <div class="stat-row-label">of businesses saw direct revenue increase after improving their packaging</div>
-        <div class="stat-row-src">Forbes / Dotcom Distribution, 2024</div>
-      </div>
+      <div class="stat-row-card reveal"><div class="stat-row-num">74%</div><div class="stat-row-label">of consumers say packaging design directly influences their purchase decision</div><div class="stat-row-src">Ipsos, 2024</div></div>
+      <div class="stat-row-card reveal delay-1"><div class="stat-row-num">81%</div><div class="stat-row-label">of consumers have bought a new product specifically because of its packaging design</div><div class="stat-row-src">Consumer Research, 2024</div></div>
+      <div class="stat-row-card reveal delay-2"><div class="stat-row-num">540%</div><div class="stat-row-label">potential sales lift from a well-designed display vs. a cluttered or disorganized fixture</div><div class="stat-row-src">Retail Display Research, 2024</div></div>
+      <div class="stat-row-card reveal delay-3"><div class="stat-row-num">32%</div><div class="stat-row-label">of businesses saw direct revenue increase after improving their packaging</div><div class="stat-row-src">Forbes / Dotcom Distribution, 2024</div></div>
     </div>
-    <p style="font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;max-width:700px;margin-top:32px">One in six purchases at a well-designed retail display happens <em>only because of the display</em> — the customer would not have bought otherwise. That's 17% of revenue that exists or doesn't based on how the fixture looks and communicates. (Source: NielsenIQ point-of-purchase research)</p>
+    <p style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.7;max-width:720px;margin-top:32px">One in six purchases at a well-designed retail display happens <em style="color:var(--gold-light)">only because of the display</em> — the customer would not have bought otherwise. That's 17% of revenue that exists or doesn't based on how the fixture looks and communicates. (Source: NielsenIQ point-of-purchase research)</p>
   </section>
 
   <!-- ECOMM ALIGNMENT -->
@@ -604,33 +704,33 @@
       <div class="divider"></div>
       <p style="font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:20px;">A shopper who sees our wallet in-store and then researches it online — or discovers it online and goes to find it in-store — should feel continuous. The same carry-type language, the same feature callouts, the same brand positioning. Right now, neither channel tells the story well. Fixing both together creates compounding impact.</p>
       <p style="font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:20px;">Online PDPs should lead with lifestyle photography — wallet in hand, not sitting in a box. Then feature icons: RFID, card capacity, profile dimension, material. The five carry-type category names that appear on the shelf rail should be the same ones that appear in the online navigation. A customer who shops both channels should feel like it's the same brand speaking.</p>
-      <div class="insight-box"><p>"The display teaches the customer the language. The PDP closes the sale. They need to use the same vocabulary."</p></div>
+      <div class="insight-box"><p>The display teaches the customer the language. The PDP closes the sale. They need to use the same vocabulary.</p></div>
     </div>
-    <div class="split-img"><img src="images/ecomm-online-pdp.jpg" alt="Product in hand — the eComm standard"></div>
+    <div class="split-img"><img src="images/ecomm-online-pdp.jpg" alt="Product in hand — the eComm standard" loading="lazy" decoding="async"></div>
   </div>
 
   <!-- PACKAGING DIRECTION -->
   <section class="section-sm section-cream">
     <p class="section-eyebrow">Packaging Direction</p>
     <h2 class="section-title" style="margin-bottom:16px">Good packaging communicates before the customer touches the product.</h2>
-    <p style="font-size:16px;color:var(--mid);line-height:1.75;max-width:700px;margin-bottom:40px">The goal isn't a beautiful box — it's a box that sells. That means three things on the front panel: what it holds (card capacity), what it does (RFID blocking), and what kind of carry it's built for. That same information should be consistent across every brand and every fixture, so the display and the package speak the same language.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--rule)">
-      <div style="overflow:hidden;aspect-ratio:4/3"><img src="images/levis-detail-packaging.jpg" style="width:100%;height:100%;object-fit:cover" alt="Packaging with brand identity"></div>
-      <div style="overflow:hidden;aspect-ratio:4/3"><img src="images/cole-haan-packaging.jpg" style="width:100%;height:100%;object-fit:cover" alt="Clean premium packaging"></div>
-      <div style="overflow:hidden;aspect-ratio:4/3"><img src="images/columbia-packaging-gift.jpg" style="width:100%;height:100%;object-fit:cover" alt="Gift-ready structured packaging"></div>
+    <p style="font-size:16px;color:var(--mid);line-height:1.75;max-width:720px;margin-bottom:40px">The goal isn't a beautiful box — it's a box that sells. That means three things on the front panel: what it holds (card capacity), what it does (RFID blocking), and what kind of carry it's built for. That same information should be consistent across every brand and every fixture, so the display and the package speak the same language.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)">
+      <div style="overflow:hidden;aspect-ratio:4/3"><img src="images/levis-detail-packaging.jpg" style="width:100%;height:100%;object-fit:cover" alt="Packaging with brand identity" loading="lazy" decoding="async"></div>
+      <div style="overflow:hidden;aspect-ratio:4/3"><img src="images/cole-haan-packaging.jpg" style="width:100%;height:100%;object-fit:cover" alt="Clean premium packaging" loading="lazy" decoding="async"></div>
+      <div style="overflow:hidden;aspect-ratio:4/3"><img src="images/columbia-packaging-gift.jpg" style="width:100%;height:100%;object-fit:cover" alt="Gift-ready structured packaging" loading="lazy" decoding="async"></div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--rule)">
-      <div style="background:var(--white);padding:20px 24px"><p style="font-size:12px;color:var(--mid);line-height:1.6"><strong style="display:block;color:var(--black);margin-bottom:4px">Brand Identity Signal</strong>Every package should communicate the brand's positioning — not just carry a logo. Material, texture, and typography do that work.</p></div>
-      <div style="background:var(--white);padding:20px 24px"><p style="font-size:12px;color:var(--mid);line-height:1.6"><strong style="display:block;color:var(--black);margin-bottom:4px">Feature Hierarchy</strong>Lead with what matters: RFID protection, card capacity, slim profile. These are the features that move product on a shelf without a sales associate.</p></div>
-      <div style="background:var(--white);padding:20px 24px"><p style="font-size:12px;color:var(--mid);line-height:1.6"><strong style="display:block;color:var(--black);margin-bottom:4px">Gift-Ready Construction</strong>55% of wallet purchases are gifts. Packaging that looks gift-ready on the shelf eliminates the need for additional wrapping — and commands a higher price point.</p></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--rule);border-radius:0 0 4px 4px;overflow:hidden">
+      <div style="background:var(--white);padding:24px 28px"><p style="font-size:13px;color:var(--mid);line-height:1.65"><strong style="display:block;color:var(--black);margin-bottom:6px;font-size:14px">Brand Identity Signal</strong>Every package should communicate the brand's positioning — not just carry a logo. Material, texture, and typography do that work.</p></div>
+      <div style="background:var(--white);padding:24px 28px"><p style="font-size:13px;color:var(--mid);line-height:1.65"><strong style="display:block;color:var(--black);margin-bottom:6px;font-size:14px">Feature Hierarchy</strong>Lead with what matters: RFID protection, card capacity, slim profile. These are the features that move product on a shelf without a sales associate.</p></div>
+      <div style="background:var(--white);padding:24px 28px"><p style="font-size:13px;color:var(--mid);line-height:1.65"><strong style="display:block;color:var(--black);margin-bottom:6px;font-size:14px">Gift-Ready Construction</strong>55% of wallet purchases are gifts. Packaging that looks gift-ready on the shelf eliminates the need for additional wrapping — and commands a higher price point.</p></div>
     </div>
   </section>
 
   <!-- IMAGE BREAK -->
   <div class="image-break">
-    <img src="images/gift-packaging.jpg" alt="Gift packaging">
+    <img src="images/gift-packaging.jpg" alt="Gift packaging" loading="lazy" decoding="async">
     <div class="image-break-overlay">
-      <p class="image-break-quote">"The box is the first thing a gift-giver buys. Make it worth buying."</p>
+      <p class="image-break-quote">The box is the first thing a gift-giver buys. Make it worth buying.</p>
     </div>
   </div>
 
@@ -640,84 +740,116 @@
     <h2 class="section-title">Eight brands. The right category for each one.</h2>
     <p class="section-subtitle">Not every brand needs to cover all five wallet categories. The question for each brand is: where do you have the most credibility, the clearest customer, and the biggest opportunity?</p>
     <div class="brand-grid">
-      <div class="brand-card">
-        <img class="brand-card-img" src="images/levis-lifestyle.jpg" alt="Levi's">
+
+      <div class="brand-card reveal">
+        <div class="brand-card-img-wrap">
+          <img class="brand-card-img" src="images/levis-lifestyle.jpg" alt="Levi's" loading="lazy" decoding="async">
+          <span class="brand-lane">Lane → New Classic · Extra Capacity</span>
+        </div>
         <div class="brand-card-body">
           <p class="brand-card-name">Levi's</p>
           <p class="brand-card-pos">Icon positioning. Bifold authority. Core volume driver. Heritage denim DNA aligns with New Classic and Extra Capacity.</p>
           <p class="brand-card-q">Are we happy with the current Levi's wallet direction? Does the design reflect the same energy as the belt update?</p>
         </div>
       </div>
-      <div class="brand-card">
-        <img class="brand-card-img" src="images/ck-lifestyle.jpg" alt="Calvin Klein">
+
+      <div class="brand-card reveal delay-1">
+        <div class="brand-card-img-wrap">
+          <img class="brand-card-img" src="images/ck-lifestyle.jpg" alt="Calvin Klein" loading="lazy" decoding="async">
+          <span class="brand-lane">Lane → New Classic · Front Pocket</span>
+        </div>
         <div class="brand-card-body">
           <p class="brand-card-name">Calvin Klein</p>
           <p class="brand-card-pos">Minimalist premium. Slim bifold and card case authority. Clean lines, monochromatic. Strong fit for New Classic and Front Pocket.</p>
           <p class="brand-card-q">Should CK own the slim and front-pocket tiers more aggressively? Does the current line reflect CK's premium minimalist identity?</p>
         </div>
       </div>
-      <div class="brand-card">
-        <img class="brand-card-img" src="images/tommy-h-lifestyle.jpg" alt="Tommy Hilfiger">
+
+      <div class="brand-card reveal delay-2">
+        <div class="brand-card-img-wrap">
+          <img class="brand-card-img" src="images/tommy-h-lifestyle.jpg" alt="Tommy Hilfiger" loading="lazy" decoding="async">
+          <span class="brand-lane">Lane → New Classic · Gift</span>
+        </div>
         <div class="brand-card-body">
           <p class="brand-card-name">Tommy Hilfiger</p>
           <p class="brand-card-pos">Americana premium. Classic bifold with updated construction. Navy as key color story. Strong gifting potential.</p>
           <p class="brand-card-q">Does Tommy Hilfiger have legacy styles that are overdue for a significant redesign? Where does the brand need the biggest update?</p>
         </div>
       </div>
-      <div class="brand-card">
-        <img class="brand-card-img" src="images/columbia-lifestyle.jpg" alt="Columbia">
+
+      <div class="brand-card reveal delay-3">
+        <div class="brand-card-img-wrap">
+          <img class="brand-card-img" src="images/columbia-lifestyle.jpg" alt="Columbia" loading="lazy" decoding="async">
+          <span class="brand-lane">Lane → Front Pocket · Technical</span>
+        </div>
         <div class="brand-card-body">
           <p class="brand-card-name">Columbia</p>
           <p class="brand-card-pos">Outdoor credibility. Front Pocket and technical carry. Nylon and coated canvas materials for the travel/outdoor segment.</p>
           <p class="brand-card-q">Should Columbia wallets follow the belt design update to align the full accessories line? What does a cohesive Columbia accessories story look like?</p>
         </div>
       </div>
-      <div class="brand-card">
-        <img class="brand-card-img" src="images/tommy-b-lifestyle.jpg" alt="Tommy Bahama">
+
+      <div class="brand-card reveal">
+        <div class="brand-card-img-wrap">
+          <img class="brand-card-img" src="images/tommy-b-lifestyle.jpg" alt="Tommy Bahama" loading="lazy" decoding="async">
+          <span class="brand-lane">Lane → Extra Capacity · Gift</span>
+        </div>
         <div class="brand-card-body">
           <p class="brand-card-name">Tommy Bahama</p>
           <p class="brand-card-pos">Resort lifestyle. Warm tones, woven accents, relaxed carry. Seasonal gift driver. Strong Extra Capacity and Gift positioning.</p>
           <p class="brand-card-q">Is Tommy Bahama differentiated enough from Tommy Hilfiger in the wallet category? Where does it win distinctly?</p>
         </div>
       </div>
-      <div class="brand-card">
-        <img class="brand-card-img" src="images/kc-lifestyle.jpg" alt="Kenneth Cole">
+
+      <div class="brand-card reveal delay-1">
+        <div class="brand-card-img-wrap">
+          <img class="brand-card-img" src="images/kc-lifestyle.jpg" alt="Kenneth Cole" loading="lazy" decoding="async">
+          <span class="brand-lane">Lane → Phone Companion · New Classic</span>
+        </div>
         <div class="brand-card-body">
           <p class="brand-card-name">Kenneth Cole</p>
           <p class="brand-card-pos">Urban professional. Smooth grain, clean hardware. NYC design sensibility. Strong fit for Phone Companion and New Classic.</p>
           <p class="brand-card-q">Should Kenneth Cole lead the Phone Companion / MagSafe category for the portfolio? Does the brand's urban positioning make it the right flag to plant there?</p>
         </div>
       </div>
-      <div class="brand-card">
-        <img class="brand-card-img" src="images/cole-haan-lifestyle.jpg" alt="Cole Haan">
+
+      <div class="brand-card reveal delay-2">
+        <div class="brand-card-img-wrap">
+          <img class="brand-card-img" src="images/cole-haan-lifestyle.jpg" alt="Cole Haan" loading="lazy" decoding="async">
+          <span class="brand-lane">Lane → New Classic Premium · Front Pocket</span>
+        </div>
         <div class="brand-card-body">
           <p class="brand-card-name">Cole Haan</p>
           <p class="brand-card-pos">Premium leather authority. Full-grain and pebble grain. Priced at $40–60. Best fit for New Classic premium tier and Front Pocket.</p>
           <p class="brand-card-q">Cole Haan anchors the premium tier — are we fully leveraging this position in how we merchandise and price vs. the rest of the portfolio?</p>
         </div>
       </div>
-      <div class="brand-card">
-        <img class="brand-card-img" src="images/haggar-lifestyle.jpg" alt="Haggar">
+
+      <div class="brand-card reveal delay-3">
+        <div class="brand-card-img-wrap">
+          <img class="brand-card-img" src="images/haggar-lifestyle.jpg" alt="Haggar" loading="lazy" decoding="async">
+          <span class="brand-lane">Lane → Two Tracks: Dress + Sport</span>
+        </div>
         <div class="brand-card-body">
           <p class="brand-card-name">Haggar — Two Tracks</p>
-          <p class="brand-card-pos"><strong style="color:var(--black)">Haggar Premium Dress</strong> — elevated bifold and trifold with updated construction, mirroring the belt line. <strong style="color:var(--black)">Haggar Sport (Slim)</strong> — front pocket and slim carry for the active, khaki-and-sport apparel customer.</p>
+          <p class="brand-card-pos"><strong>Haggar Premium Dress</strong> — elevated bifold and trifold with updated construction, mirroring the belt line. <strong>Haggar Sport (Slim)</strong> — front pocket and slim carry for the active, khaki-and-sport apparel customer.</p>
           <p class="brand-card-q">How do both tracks align with what we're doing in Haggar belts and apparel? Does splitting the line create clarity or confusion at retail?</p>
         </div>
       </div>
+
     </div>
   </section>
 
   <div class="logo-row">
-    <img src="images/levis-logo.png" alt="Levi's">
-    <img src="images/ck-logo.png" alt="Calvin Klein">
-    <img src="images/tommy-h-logo.png" alt="Tommy Hilfiger">
-    <img src="images/columbia-logo.png" alt="Columbia">
-    <img src="images/tommy-b-logo.png" alt="Tommy Bahama">
-    <img src="images/kc-logo.png" alt="Kenneth Cole">
-    <img src="images/cole-haan-logo.png" alt="Cole Haan">
-    <img src="images/haggar-logo.png" alt="Haggar">
+    <img src="images/levis-logo.png" alt="Levi's" loading="lazy" decoding="async">
+    <img src="images/ck-logo.png" alt="Calvin Klein" loading="lazy" decoding="async">
+    <img src="images/tommy-h-logo.png" alt="Tommy Hilfiger" loading="lazy" decoding="async">
+    <img src="images/columbia-logo.png" alt="Columbia" loading="lazy" decoding="async">
+    <img src="images/tommy-b-logo.png" alt="Tommy Bahama" loading="lazy" decoding="async">
+    <img src="images/kc-logo.png" alt="Kenneth Cole" loading="lazy" decoding="async">
+    <img src="images/cole-haan-logo.png" alt="Cole Haan" loading="lazy" decoding="async">
+    <img src="images/haggar-logo.png" alt="Haggar" loading="lazy" decoding="async">
   </div>
-
 
 </div><!-- /strategy tab -->
 
@@ -725,12 +857,25 @@
 <!-- ══════════════════════════════════════
      MEETING GUIDE TAB
 ══════════════════════════════════════ -->
-<div id="tab-meeting" class="tab-panel">
+<div id="tab-meeting" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-meeting">
 
   <div class="meeting-hero">
     <p class="meeting-eyebrow">Wallet Program Review · 60 Minutes · Facilitation Guide</p>
     <h1 class="meeting-title">Wallet Strategy<br>Meeting Guide</h1>
     <p class="meeting-sub">A focused 60-minute session to align on the five wallet categories, define which brands own which lanes, and leave with a clear plan — including owners for every H2 milestone.</p>
+  </div>
+
+  <!-- 60-MIN TIME RAIL -->
+  <div class="time-rail">
+    <p style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:10px">The 60-Minute Map</p>
+    <div class="time-rail-track"><div class="time-rail-fill"></div></div>
+    <div class="time-rail-marks">
+      <div class="time-rail-mark"><p class="time-rail-min">0–5 min</p><p class="time-rail-label">Goals + Timeline</p></div>
+      <div class="time-rail-mark"><p class="time-rail-min">5–20 min</p><p class="time-rail-label">Customer + 5 Categories</p></div>
+      <div class="time-rail-mark"><p class="time-rail-min">20–40 min</p><p class="time-rail-label">Brand × Category</p></div>
+      <div class="time-rail-mark"><p class="time-rail-min">40–50 min</p><p class="time-rail-label">Packaging + Display</p></div>
+      <div class="time-rail-mark"><p class="time-rail-min">50–60 min</p><p class="time-rail-label">Actions + Owners</p></div>
+    </div>
   </div>
 
   <!-- GOALS -->
@@ -739,42 +884,18 @@
     <h2 class="section-title">Three goals for this meeting.</h2>
     <p class="section-subtitle" style="margin-bottom:36px">Before we get into product, we need to agree on what we're trying to achieve. These three goals frame every decision in this meeting.</p>
     <div class="goals-grid">
-      <div class="goal-card">
-        <div class="goal-num">01</div>
-        <p class="goal-title">Put the customer at the center of every product decision.</p>
-        <p class="goal-desc">We're not designing wallets for their own sake. We're designing for five specific carry types — people with distinct habits, needs, and purchase triggers. Every SKU, every feature, every price point should connect back to one of those five people. If it doesn't, we shouldn't make it.</p>
-      </div>
-      <div class="goal-card">
-        <div class="goal-num">02</div>
-        <p class="goal-title">Define which categories each brand should own — and which they shouldn't.</p>
-        <p class="goal-desc">Not every brand needs to cover all five wallet categories. Some brands have a clear lane. Others need one assigned. The challenge we leave this room with: a brand-by-category matrix that gives designers a focused brief — not a blank canvas with eight brands and five categories.</p>
-      </div>
-      <div class="goal-card">
-        <div class="goal-num">03</div>
-        <p class="goal-title">Commit to a final product + packaging + display presentation by December.</p>
-        <p class="goal-desc">The December deliverable isn't a deck. It's something sales can hand to a buyer and say: here's the new program. That means finalized product samples, printed packaging prototypes, and physical display mockups. Today we set the plan that makes that possible.</p>
-      </div>
+      <div class="goal-card reveal"><div class="goal-num">01</div><p class="goal-title">Put the customer at the center of every product decision.</p><p class="goal-desc">We're not designing wallets for their own sake. We're designing for five specific carry types — people with distinct habits, needs, and purchase triggers. Every SKU, every feature, every price point should connect back to one of those five people. If it doesn't, we shouldn't make it.</p></div>
+      <div class="goal-card reveal delay-1"><div class="goal-num">02</div><p class="goal-title">Define which categories each brand should own — and which they shouldn't.</p><p class="goal-desc">Not every brand needs to cover all five wallet categories. Some brands have a clear lane. Others need one assigned. The challenge we leave this room with: a brand-by-category matrix that gives designers a focused brief — not a blank canvas with eight brands and five categories.</p></div>
+      <div class="goal-card reveal delay-2"><div class="goal-num">03</div><p class="goal-title">Commit to a final product + packaging + display presentation by December.</p><p class="goal-desc">The December deliverable isn't a deck. It's something sales can hand to a buyer and say: here's the new program. That means finalized product samples, printed packaging prototypes, and physical display mockups. Today we set the plan that makes that possible.</p></div>
     </div>
   </section>
 
   <!-- MILESTONE STRIP -->
   <div class="stat-strip">
-    <div class="stat-cell">
-      <div class="stat-number" style="font-size:34px;letter-spacing:-.02em"><span class="accent">June</span></div>
-      <div class="stat-label">Product design kickoff<br>— new SKUs briefed</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-number" style="font-size:30px;letter-spacing:-.02em"><span class="accent">Jun–Aug</span></div>
-      <div class="stat-label">Brand plans + packaging<br>&amp; display strategy built</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-number" style="font-size:28px;letter-spacing:-.02em"><span class="accent">Early Aug</span></div>
-      <div class="stat-label">Sales seed presentation<br>— plant the flag, get input</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-number" style="font-size:34px;letter-spacing:-.02em"><span class="accent">Dec</span></div>
-      <div class="stat-label">Final show presentation<br>— product, packaging, displays</div>
-    </div>
+    <div class="stat-cell"><div class="stat-number" style="font-size:36px;letter-spacing:-.02em"><span class="accent">June</span></div><div class="stat-label">Product design kickoff<br>— new SKUs briefed</div></div>
+    <div class="stat-cell"><div class="stat-number" style="font-size:32px;letter-spacing:-.02em"><span class="accent">Jun–Aug</span></div><div class="stat-label">Brand plans + packaging<br>&amp; display strategy built</div></div>
+    <div class="stat-cell"><div class="stat-number" style="font-size:30px;letter-spacing:-.02em"><span class="accent">Early Aug</span></div><div class="stat-label">Sales seed presentation<br>— plant the flag, get input</div></div>
+    <div class="stat-cell"><div class="stat-number" style="font-size:36px;letter-spacing:-.02em"><span class="accent">Dec</span></div><div class="stat-label">Final show presentation<br>— product, packaging, displays</div></div>
   </div>
 
   <section class="section">
@@ -782,72 +903,31 @@
     <!-- AGENDA -->
     <p class="section-eyebrow">Agenda</p>
     <h2 class="section-title" style="margin-bottom:16px">60 Minutes — Five Conversations</h2>
-    <p style="font-size:16px;color:var(--mid);line-height:1.7;max-width:640px;margin-bottom:36px">The goal isn't a perfect discussion — it's a clear set of decisions and an owner for every action. Move quickly through each block. If something needs deeper work, assign an owner and keep going.</p>
+    <p style="font-size:16px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:36px">The goal isn't a perfect discussion — it's a clear set of decisions and an owner for every action. Move quickly through each block. If something needs deeper work, assign an owner and keep going.</p>
     <div class="agenda">
-      <div class="agenda-block">
-        <p class="agenda-time">0–5 min</p>
-        <p class="agenda-title">Goals + Timeline</p>
-        <p class="agenda-desc">State the three goals. Walk the H2 roadmap. Return to this at the end to confirm alignment.</p>
-      </div>
-      <div class="agenda-block">
-        <p class="agenda-time">5–20 min</p>
-        <p class="agenda-title">The Customer &amp; Five Categories</p>
-        <p class="agenda-desc">Who are we designing for? Do we all agree on the five carry types? Where are the gaps in our current assortment?</p>
-      </div>
-      <div class="agenda-block">
-        <p class="agenda-time">20–40 min</p>
-        <p class="agenda-title">Brand × Category Strategy</p>
-        <p class="agenda-desc">Which brands own which categories? Specific design questions per brand. Leave with a brand-by-category matrix.</p>
-      </div>
-      <div class="agenda-block">
-        <p class="agenda-time">40–50 min</p>
-        <p class="agenda-title">Packaging &amp; Display Goals</p>
-        <p class="agenda-desc">What do we want to show in December? What needs to be built — in-store and online?</p>
-      </div>
-      <div class="agenda-block">
-        <p class="agenda-time">50–60 min</p>
-        <p class="agenda-title">Actions + Owners</p>
-        <p class="agenda-desc">One owner per action. One date. Every item must have a name next to it before the meeting ends.</p>
-      </div>
+      <div class="agenda-block"><p class="agenda-time">0–5 min</p><p class="agenda-title">Goals + Timeline</p><p class="agenda-desc">State the three goals. Walk the H2 roadmap. Return to this at the end to confirm alignment.</p></div>
+      <div class="agenda-block"><p class="agenda-time">5–20 min</p><p class="agenda-title">The Customer &amp; Five Categories</p><p class="agenda-desc">Who are we designing for? Do we all agree on the five carry types? Where are the gaps in our current assortment?</p></div>
+      <div class="agenda-block"><p class="agenda-time">20–40 min</p><p class="agenda-title">Brand × Category Strategy</p><p class="agenda-desc">Which brands own which categories? Specific design questions per brand. Leave with a brand-by-category matrix.</p></div>
+      <div class="agenda-block"><p class="agenda-time">40–50 min</p><p class="agenda-title">Packaging &amp; Display Goals</p><p class="agenda-desc">What do we want to show in December? What needs to be built — in-store and online?</p></div>
+      <div class="agenda-block"><p class="agenda-time">50–60 min</p><p class="agenda-title">Actions + Owners</p><p class="agenda-desc">One owner per action. One date. Every item must have a name next to it before the meeting ends.</p></div>
     </div>
 
     <!-- TIMELINE -->
     <p class="section-eyebrow" style="margin-top:16px">H2 2026 Roadmap</p>
     <h2 class="section-title" style="margin-bottom:16px">Four milestones. Every decision maps back to one of them.</h2>
-    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:640px;margin-bottom:36px">Walk this at the start so every discussion has a deadline context. Return to it at the end of the meeting to confirm owners and dates before anyone leaves the room.</p>
+    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:36px">Walk this at the start so every discussion has a deadline context. Return to it at the end of the meeting to confirm owners and dates before anyone leaves the room.</p>
     <div class="timeline-grid">
-      <div class="timeline-card">
-        <div class="timeline-dot gold"></div>
-        <p class="timeline-period gold">June — Now</p>
-        <p class="timeline-name">Product Design Kickoff</p>
-        <p class="timeline-desc">Brief vendors. Lock new SKU direction per brand and category. Start designs based on today's decisions.</p>
-      </div>
-      <div class="timeline-card">
-        <div class="timeline-dot gold"></div>
-        <p class="timeline-period gold">June – August</p>
-        <p class="timeline-name">Build the Plan</p>
-        <p class="timeline-desc">Per-brand assortment plans. Overall wallet strategy documented. Packaging direction and display concepts drafted.</p>
-      </div>
-      <div class="timeline-card">
-        <div class="timeline-dot green"></div>
-        <p class="timeline-period green">Early August</p>
-        <p class="timeline-name">Sales Seed Presentation</p>
-        <p class="timeline-desc">Plant the flag. Share strategy direction. Collect sales feedback on focus areas and potential pivots.</p>
-      </div>
-      <div class="timeline-card">
-        <div class="timeline-dot black"></div>
-        <p class="timeline-period black">December</p>
-        <p class="timeline-name">Final Show Presentation</p>
-        <p class="timeline-desc">Finalized product samples. Printed packaging. Physical display mockups. Built to hand to a buyer — not just show on a screen.</p>
-      </div>
+      <div class="timeline-card"><div class="timeline-dot gold"></div><p class="timeline-period gold">June — Now</p><p class="timeline-name">Product Design Kickoff</p><p class="timeline-desc">Brief vendors. Lock new SKU direction per brand and category. Start designs based on today's decisions.</p></div>
+      <div class="timeline-card"><div class="timeline-dot gold"></div><p class="timeline-period gold">June – August</p><p class="timeline-name">Build the Plan</p><p class="timeline-desc">Per-brand assortment plans. Overall wallet strategy documented. Packaging direction and display concepts drafted.</p></div>
+      <div class="timeline-card"><div class="timeline-dot green"></div><p class="timeline-period green">Early August</p><p class="timeline-name">Sales Seed Presentation</p><p class="timeline-desc">Plant the flag. Share strategy direction. Collect sales feedback on focus areas and potential pivots.</p></div>
+      <div class="timeline-card"><div class="timeline-dot black"></div><p class="timeline-period black">December</p><p class="timeline-name">Final Show Presentation</p><p class="timeline-desc">Finalized product samples. Printed packaging. Physical display mockups. Built to hand to a buyer — not just show on a screen.</p></div>
     </div>
 
     <!-- DISCUSSION CARDS -->
     <p class="section-eyebrow" style="margin-top:48px">Discussion Blocks</p>
     <h2 class="section-title" style="margin-bottom:16px">Five focused conversations.</h2>
-    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:640px;margin-bottom:36px">Each card has objectives and key questions. The facilitator's job is to drive toward a decision — not a perfect discussion.</p>
+    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:36px">Each card has objectives and key questions. The facilitator's job is to drive toward a decision — not a perfect discussion.</p>
 
-    <!-- BLOCK 1 -->
     <div class="d-card">
       <div class="d-card-header green">
         <div><p class="d-card-num">Block 01 · 0–5 min</p><p class="d-card-session-title">Goals, Timeline &amp; Why This Matters Now</p></div>
@@ -873,7 +953,6 @@
       </div>
     </div>
 
-    <!-- BLOCK 2 -->
     <div class="d-card">
       <div class="d-card-header gold">
         <div><p class="d-card-num">Block 02 · 5–20 min</p><p class="d-card-session-title">The Customer &amp; The Five Wallet Categories</p></div>
@@ -901,7 +980,6 @@
       </div>
     </div>
 
-    <!-- BLOCK 3 -->
     <div class="d-card">
       <div class="d-card-header blue">
         <div><p class="d-card-num">Block 03 · 20–40 min</p><p class="d-card-session-title">Brand × Category Strategy — Which Brand Owns What?</p></div>
@@ -916,7 +994,6 @@
       </div>
     </div>
 
-    <!-- BRAND QUESTIONS -->
     <div class="brand-q-grid">
       <div class="brand-q-card">
         <p class="brand-q-name">Levi's</p>
@@ -967,7 +1044,6 @@
       </div>
     </div>
 
-    <!-- BLOCK 4 -->
     <div class="d-card">
       <div class="d-card-header dark">
         <div><p class="d-card-num">Block 04 · 40–50 min</p><p class="d-card-session-title">Packaging &amp; Display Goals — What Do We Build by December?</p></div>
@@ -995,7 +1071,6 @@
       </div>
     </div>
 
-    <!-- BLOCK 5 -->
     <div class="d-card">
       <div class="d-card-header black">
         <div><p class="d-card-num">Block 05 · 50–60 min</p><p class="d-card-session-title">Actions, Owners &amp; Timeline Confirmation</p></div>
@@ -1018,13 +1093,13 @@
     <!-- OWNER TABLE -->
     <p class="section-eyebrow" style="margin-top:64px">Who Does What</p>
     <h2 class="section-title" style="margin-bottom:16px">Five responsibilities. One owner each. Decided before the meeting ends.</h2>
-    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:640px;margin-bottom:36px">Keep it simple. Each bucket covers a meaningful area of work. Assign one owner per row — they're accountable for driving that workstream to the milestone.</p>
+    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:36px">Keep it simple. Each bucket covers a meaningful area of work. Assign one owner per row — they're accountable for driving that workstream to the milestone.</p>
 
     <div class="decision-table-wrap">
       <table class="decision-table">
         <thead>
           <tr>
-            <th style="width:45%">Responsibility</th>
+            <th style="width:30%">Responsibility</th>
             <th>What It Covers</th>
             <th>Milestone</th>
             <th style="min-width:160px">Owner</th>
@@ -1046,7 +1121,7 @@
           <tr>
             <td><strong>Packaging &amp; Display Concepts</strong></td>
             <td style="font-size:13px;color:var(--mid)">Work with the packaging team on new packaging direction and in-store display concepts. Deliver comps for the August presentation and physical prototypes by December.</td>
-            <td><span class="badge badge-blue">August + <span class="badge badge-gold">December</span></span></td>
+            <td><span class="badge badge-blue">August</span> <span class="badge badge-gold">December</span></td>
             <td style="color:var(--light);font-style:italic">Assign name →</td>
           </tr>
           <tr>
@@ -1068,7 +1143,7 @@
     <!-- ACTION ITEMS -->
     <p class="section-eyebrow" style="margin-top:64px">Post-Meeting Action Items</p>
     <h2 class="section-title" style="margin-bottom:16px">Organized by milestone. One owner. One date.</h2>
-    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:640px;margin-bottom:36px">Fill in owner names during Block 05. June items are non-negotiable starting points — without them, everything downstream slips.</p>
+    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:36px">Fill in owner names during Block 05. June items are non-negotiable starting points — without them, everything downstream slips.</p>
 
     <div class="action-band june"><span class="band-label gold">Due in June — Start Now</span><span class="band-note">Foundation for the August presentation. Must be in motion immediately.</span></div>
     <div class="action-grid">
@@ -1168,24 +1243,24 @@
     </div>
 
     <!-- FACILITATOR NOTES -->
-    <div style="background:var(--cream);border:1px solid var(--rule);padding:48px;border-radius:2px;margin-bottom:40px">
-      <p style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);margin-bottom:20px">Facilitator Notes</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+    <div style="background:var(--cream);border:1px solid var(--rule);padding:48px;border-radius:4px;margin-bottom:40px;box-shadow:var(--shadow-sm)">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:24px;display:inline-flex;align-items:center;gap:10px"><span style="width:24px;height:1px;background:var(--gold-deep);display:inline-block"></span>Facilitator Notes</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
         <div>
-          <p style="font-size:14px;font-weight:700;color:var(--black);margin-bottom:8px">Keep the customer in the room</p>
-          <p style="font-size:14px;color:var(--mid);line-height:1.7">Every time the conversation moves to SKU counts or vendor timelines, bring it back: "Which of the five customers does this serve? What does that person need?" Product decisions that can't answer that question shouldn't get made.</p>
+          <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.3">Keep the customer in the room</p>
+          <p style="font-size:14px;color:var(--mid);line-height:1.75">Every time the conversation moves to SKU counts or vendor timelines, bring it back: "Which of the five customers does this serve? What does that person need?" Product decisions that can't answer that question shouldn't get made.</p>
         </div>
         <div>
-          <p style="font-size:14px;font-weight:700;color:var(--black);margin-bottom:8px">June is the real deadline</p>
-          <p style="font-size:14px;color:var(--mid);line-height:1.7">The chain: product starts in June → samples exist by August → December has something to show. If product doesn't kick off in June, December is a deck — not a demonstration. Keep returning to: "What needs to happen this month?"</p>
+          <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.3">June is the real deadline</p>
+          <p style="font-size:14px;color:var(--mid);line-height:1.75">The chain: product starts in June → samples exist by August → December has something to show. If product doesn't kick off in June, December is a deck — not a demonstration. Keep returning to: "What needs to happen this month?"</p>
         </div>
         <div>
-          <p style="font-size:14px;font-weight:700;color:var(--black);margin-bottom:8px">August is a listening session</p>
-          <p style="font-size:14px;color:var(--mid);line-height:1.7">The August presentation to sales is not a finished reveal — it's a seed and a feedback loop. Build in explicit time for sales to react. Their input between August and December is what makes December land with buyers.</p>
+          <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.3">August is a listening session</p>
+          <p style="font-size:14px;color:var(--mid);line-height:1.75">The August presentation to sales is not a finished reveal — it's a seed and a feedback loop. Build in explicit time for sales to react. Their input between August and December is what makes December land with buyers.</p>
         </div>
         <div>
-          <p style="font-size:14px;font-weight:700;color:var(--black);margin-bottom:8px">December must be physical</p>
-          <p style="font-size:14px;color:var(--mid);line-height:1.7">Slides don't close orders. If a sales rep can't pick it up and hand it to a buyer, it isn't done. Budget for physical packaging prototypes and display mockups now — not as a nice-to-have at the end of the project.</p>
+          <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.3">December must be physical</p>
+          <p style="font-size:14px;color:var(--mid);line-height:1.75">Slides don't close orders. If a sales rep can't pick it up and hand it to a buyer, it isn't done. Budget for physical packaging prototypes and display mockups now — not as a nice-to-have at the end of the project.</p>
         </div>
       </div>
     </div>
@@ -1199,19 +1274,48 @@
 </footer>
 
 <script>
-function showTab(tab,el){
-  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('tab-'+tab).classList.add('active');
-  el.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-document.querySelectorAll('img').forEach(img=>{
-  img.addEventListener('error',function(){
-    this.style.opacity='0.05';
-    this.style.background='#F8F5EF';
+  // ─── Tab handling (semantic + keyboard) ───
+  function showTab(name, btn){
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t=>t.setAttribute('aria-selected','false'));
+    document.getElementById('tab-'+name).classList.add('active');
+    btn.setAttribute('aria-selected','true');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  // Keyboard nav for tabs
+  document.querySelectorAll('.nav-tab').forEach((tab, i, arr)=>{
+    tab.addEventListener('keydown', e=>{
+      if(e.key==='ArrowRight' || e.key==='ArrowLeft'){
+        e.preventDefault();
+        const next = e.key==='ArrowRight' ? (i+1)%arr.length : (i-1+arr.length)%arr.length;
+        arr[next].focus();
+        arr[next].click();
+      }
+    });
   });
-});
+
+  // ─── Image error fallback ───
+  document.querySelectorAll('img').forEach(img=>{
+    img.addEventListener('error', function(){
+      this.style.opacity='0.05';
+      this.style.background='#F8F5EF';
+    });
+  });
+
+  // ─── Reveal on scroll (IntersectionObserver) ───
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    },{rootMargin:'0px 0px -60px 0px', threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-in'));
+  }
 </script>
 </body>
 </html>
