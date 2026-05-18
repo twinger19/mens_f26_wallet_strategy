@@ -355,6 +355,31 @@
     .brand-q-list li:last-child{border-bottom:none}
     .brand-q-list li::before{content:'?';color:var(--gold);font-weight:700;font-style:normal;flex-shrink:0;width:18px;height:18px;background:var(--gold-light);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px}
 
+    /* ─────────────── STRATEGIC CHALLENGE (Pricing) ─────────────── */
+    .challenge{margin:48px 0;border:1px solid var(--rule);border-top:4px solid var(--red);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-md);background:var(--white)}
+    .challenge-head{padding:32px 36px 28px;border-bottom:1px solid var(--rule)}
+    .challenge-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);background:var(--red-light);padding:6px 12px;border-radius:2px;margin-bottom:16px}
+    .challenge-tag::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
+    .challenge-title{font-family:'DM Serif Display',serif;font-size:28px;color:var(--black);line-height:1.18;font-weight:400;letter-spacing:-.01em;margin-bottom:10px}
+    .challenge-sub{font-size:14px;color:var(--mid);line-height:1.65;max-width:680px}
+    .challenge-grid{display:grid;grid-template-columns:1fr 1fr;background:var(--rule);gap:1px}
+    .challenge-col{padding:30px 36px;background:var(--white)}
+    .challenge-col.path{background:var(--cream)}
+    .challenge-col-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .challenge-col.problem .challenge-col-label{color:var(--red)}
+    .challenge-col.path .challenge-col-label{color:var(--green)}
+    .challenge-col-label::before{content:'';width:18px;height:1px;background:currentColor}
+    .challenge-col p{font-size:14px;color:var(--dark);line-height:1.75;margin-bottom:12px}
+    .challenge-col p:last-child{margin-bottom:0}
+    .challenge-col strong{color:var(--black);font-weight:600}
+    .challenge-questions{padding:28px 36px;border-top:1px solid var(--rule)}
+    .challenge-decisions{padding:26px 36px;background:var(--black);display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .challenge-decisions::before{content:''}
+    .challenge-decision{display:flex;gap:12px;align-items:flex-start}
+    .challenge-decision::before{content:'';width:10px;height:10px;background:var(--gold);border-radius:50%;margin-top:6px;flex-shrink:0;box-shadow:0 0 0 3px rgba(201,168,76,.18)}
+    .challenge-decision h5{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+    .challenge-decision p{font-size:12.5px;color:rgba(255,255,255,.78);line-height:1.55}
+
     /* ─────────────── DECISION TABLE ─────────────── */
     .decision-table-wrap{overflow-x:auto;margin-bottom:64px;border-radius:4px;box-shadow:var(--shadow-sm)}
     .decision-table{width:100%;border-collapse:collapse;font-size:14px;background:var(--white)}
@@ -417,6 +442,8 @@
       .phase-rail{text-align:left;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:12px}
       .phase-rail::after{display:none}
       .phase-body{padding-left:0;border-left:none}
+      .challenge-grid{grid-template-columns:1fr}
+      .challenge-decisions{grid-template-columns:1fr;gap:16px}
     }
     @media (max-width:640px){
       .section,.section-sm{padding:56px 24px}
@@ -1111,6 +1138,7 @@
             <li><strong>Earliest brand designs locked</strong> — sampling clock starts on those</li>
             <li>Packaging direction translated into per-brand mood boards</li>
             <li>Display concept design begins in parallel</li>
+            <li><strong>Pricing proposal scoped</strong> — tiered framework draft begins; sales involvement timing locked</li>
           </ul>
           <div class="phase-callout">
             <strong>Staggering note:</strong> Designs locked early-to-mid June arrive as physical samples by late July / early August — exactly what the preview needs. Later locks become September arrivals, which is fine — those brands get shown as designs at the preview and as samples by December.
@@ -1133,6 +1161,7 @@
             <li>Decide what the August preview shows for each brand — sample, CAD, or concept</li>
             <li>Align display concepts to what's most ready</li>
             <li>Lock the seed presentation narrative + storyline</li>
+            <li><strong>Pricing framework status check</strong> — is the tiered proposal ready to show, or still in draft?</li>
           </ul>
         </div>
       </div>
@@ -1386,6 +1415,61 @@
       </div>
     </div>
 
+    <!-- STRATEGIC CHALLENGE: PRICING -->
+    <section class="challenge" aria-labelledby="challenge-pricing-title">
+      <div class="challenge-head">
+        <span class="challenge-tag">Strategic Challenge · Open</span>
+        <h2 class="challenge-title" id="challenge-pricing-title">Pricing — One Price Per Brand No Longer Works</h2>
+        <p class="challenge-sub">A topic this meeting should launch, not finish. Touched on during Block 05 — owner and sales-involvement timing decided before anyone leaves the room.</p>
+      </div>
+
+      <div class="challenge-grid">
+        <div class="challenge-col problem">
+          <p class="challenge-col-label">The challenge today</p>
+          <p>We use a <strong>single price per brand/retailer</strong>. So a small card case sells for the same price as a much bigger extra-capacity wallet. To a customer, that reads as "way less product for the same money."</p>
+          <p>In effect, the larger wallets subsidize the smaller ones — and customers comparing on the shelf walk away feeling like the smaller piece is overpriced. We lose the sale either way.</p>
+          <p>We've hesitated to move to tiered pricing because of operational complexity and retailer push-back. That hesitation is starting to cost us at point of sale and in margin mix.</p>
+        </div>
+        <div class="challenge-col path">
+          <p class="challenge-col-label">The path forward</p>
+          <p>Propose <strong>tiered pricing by brand and retailer</strong> — different price points across Extra Capacity, New Classic, Front Pocket, Phone Companion, and Gift. Each tier reflects what's actually in the box.</p>
+          <p>Not a decision the whole room makes today. The job today is simpler: agree this is worth solving, pick an owner, and decide when sales joins the conversation.</p>
+          <p>One option to consider: a tiered framework drafted by August so the seed presentation includes a real proposal — not just the idea.</p>
+        </div>
+      </div>
+
+      <div class="challenge-questions">
+        <p class="d-section-label">Questions for the room</p>
+        <ul class="d-questions">
+          <li>"Who owns drafting the pricing proposal — merch, finance, or a small cross-functional team?"</li>
+          <li>"When does sales join the conversation — now for early input, mid-June, or with a draft proposal in August?"</li>
+          <li>"Do we want a tiered framework ready for the August preview, or only by the December show?"</li>
+          <li>"Are there 1–2 brand/retailer combinations we can pilot first before going broad?"</li>
+        </ul>
+      </div>
+
+      <div class="challenge-decisions">
+        <div class="challenge-decision">
+          <div>
+            <h5>Owner</h5>
+            <p>One name accountable for drafting the pricing proposal</p>
+          </div>
+        </div>
+        <div class="challenge-decision">
+          <div>
+            <h5>Sales Touchpoint</h5>
+            <p>Early input session before August, or proposal review in August?</p>
+          </div>
+        </div>
+        <div class="challenge-decision">
+          <div>
+            <h5>Target Deliverable</h5>
+            <p>Tiered framework ready by August, or by December show?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- OWNER TABLE -->
     <p class="section-eyebrow" style="margin-top:64px">Who Does What</p>
     <h2 class="section-title" style="margin-bottom:16px">Five responsibilities. One owner each. Decided before the meeting ends.</h2>
@@ -1432,6 +1516,12 @@
             <td><span class="badge badge-gold">December</span></td>
             <td style="color:var(--light);font-style:italic">Assign name →</td>
           </tr>
+          <tr>
+            <td><strong>Pricing Strategy Proposal</strong></td>
+            <td style="font-size:13px;color:var(--mid)">Draft a tiered pricing framework by brand and retailer — moving away from a single price per brand. Decide when sales joins the conversation. Target a real proposal (not just the idea) for the August preview.</td>
+            <td><span class="badge badge-red">Aug draft</span></td>
+            <td style="color:var(--light);font-style:italic">Assign name →</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -1460,6 +1550,7 @@
           <li><span class="checkbox"></span>Write packaging brief: RFID badge, capacity callout, slim profile, gift positioning</li>
           <li><span class="checkbox"></span>Draft one-line positioning for each of the 5 wallet categories</li>
           <li><span class="checkbox"></span>Draft one-line brand story for each brand in their primary category lane</li>
+          <li><span class="checkbox"></span><strong>Scope the pricing proposal</strong> — frame the tiered approach by brand × retailer; identify who else needs to be at the table</li>
           <li><span class="checkbox"></span>Source slim vs. thick bifold comparison photo for strategy deck</li>
           <li><span class="checkbox"></span>Source MagSafe wallet in-use lifestyle photo</li>
         </ul>
@@ -1469,6 +1560,7 @@
         <ul class="action-items">
           <li><span class="checkbox"></span>Identify key sales team members to brief on the strategy before August</li>
           <li><span class="checkbox"></span>Confirm August seed presentation date and attendee list</li>
+          <li><span class="checkbox"></span><strong>Confirm pricing-conversation timing</strong> — early input session in June/July, or proposal review in August?</li>
           <li><span class="checkbox"></span>Review planogram constraints at key accounts — display flexibility?</li>
           <li><span class="checkbox"></span>Pull POS data: slim vs. traditional trend by account, last 24 months</li>
           <li><span class="checkbox"></span>Collect current buyer feedback on wallet gaps or requests</li>
@@ -1493,6 +1585,7 @@
           <li><span class="checkbox"></span>Packaging concept comps — one direction per brand, mood board level</li>
           <li><span class="checkbox"></span>Display concept renders — 2–3 retail scenarios, carry-type organized</li>
           <li><span class="checkbox"></span>Sales presentation deck: strategy + product direction + packaging + display</li>
+          <li><span class="checkbox"></span><strong>Tiered pricing framework ready for seed</strong> — proposal-level by brand × retailer, not idea-level</li>
           <li><span class="checkbox"></span>Side-by-side: current program vs. new program direction</li>
         </ul>
       </div>
@@ -1501,6 +1594,7 @@
         <ul class="action-items">
           <li><span class="checkbox"></span>Host seed presentation with key sales team members — plant the flag, gauge excitement</li>
           <li><span class="checkbox"></span>Document reactions: what resonates, what concerns, what to pivot</li>
+          <li><span class="checkbox"></span><strong>Capture sales reaction to tiered pricing framework</strong> — and identify 1–2 pilot brand/retailer combos</li>
           <li><span class="checkbox"></span>Identify which accounts are best for display and packaging pilots</li>
           <li><span class="checkbox"></span>Feed sales input back into December plan before September</li>
         </ul>
