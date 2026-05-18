@@ -102,21 +102,47 @@
     .insight-box::before{content:'"';position:absolute;top:-12px;left:20px;font-family:'DM Serif Display',serif;font-size:64px;color:var(--gold);line-height:1;opacity:.4}
     .insight-box p{font-family:'DM Serif Display',serif;font-size:21px;line-height:1.5;color:var(--black);position:relative;z-index:1}
 
-    /* ─────────────── CARRY SPECTRUM ─────────────── */
-    .spectrum{margin:0 0 56px;padding:36px 40px;background:linear-gradient(135deg,#fff 0%,#fafaf7 100%);border:1px solid var(--rule);border-radius:4px;box-shadow:var(--shadow-sm)}
-    .spectrum-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mid)}
-    .spectrum-head .more{color:var(--black)}
-    .spectrum-head .less{color:var(--black)}
-    .spectrum-bar{position:relative;height:4px;background:linear-gradient(90deg,var(--black) 0%,var(--gold) 60%,var(--gold-light) 100%);border-radius:2px;margin-bottom:18px}
-    .spectrum-dots{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-    .spectrum-pt{position:relative;text-align:center}
-    .spectrum-pt::before{content:'';position:absolute;top:-22px;left:50%;transform:translateX(-50%);width:14px;height:14px;background:var(--white);border:3px solid var(--black);border-radius:50%;box-shadow:var(--shadow-sm)}
-    .spectrum-pt:nth-child(2)::before{border-color:#3a3a3a}
-    .spectrum-pt:nth-child(3)::before{border-color:var(--gold-deep)}
-    .spectrum-pt:nth-child(4)::before{border-color:var(--gold)}
-    .spectrum-pt:nth-child(5)::before{border-color:var(--gold);background:var(--gold-light)}
-    .spectrum-num{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--gold);margin-bottom:4px}
-    .spectrum-name{font-family:'DM Serif Display',serif;font-size:15px;color:var(--black);line-height:1.2}
+    /* ─────────────── CARRY LADDER (card-slot visualization) ─────────────── */
+    .carry-ladder{margin:0 0 64px;padding:40px 44px 36px;background:linear-gradient(135deg,#fff 0%,#fafaf7 100%);border:1px solid var(--rule);border-radius:4px;box-shadow:var(--shadow-sm)}
+    .ladder-head{margin-bottom:28px;padding-bottom:22px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+    .ladder-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+    .ladder-eyebrow::before{content:'';width:20px;height:1px;background:var(--gold-deep)}
+    .ladder-sub{font-size:15px;color:var(--mid);line-height:1.55;max-width:520px}
+    .ladder-key{display:flex;gap:18px;font-size:11px;color:var(--mid);letter-spacing:.06em}
+    .ladder-key span{display:inline-flex;align-items:center;gap:6px}
+    .ladder-key .key-swatch{width:14px;height:18px;border-radius:2px}
+    .ladder-key .key-swatch.filled{background:var(--gold);border:1.5px solid var(--gold)}
+    .ladder-key .key-swatch.empty{background:var(--white);border:1.5px solid var(--rule)}
+    .ladder-grid{display:flex;flex-direction:column;gap:0}
+    .ladder-row{display:grid;grid-template-columns:260px 1fr 64px;gap:32px;align-items:center;padding:18px 0;border-bottom:1px solid var(--rule);transition:background .25s var(--ease)}
+    .ladder-row:last-child{border-bottom:none}
+    .ladder-row:hover{background:rgba(201,168,76,.04)}
+    .ladder-label{display:flex;align-items:center;gap:16px}
+    .ladder-num{font-family:'DM Serif Display',serif;font-size:30px;color:var(--gold);line-height:1;font-weight:400;letter-spacing:-.01em;min-width:32px;font-variant-numeric:tabular-nums}
+    .ladder-name{font-family:'DM Serif Display',serif;font-size:19px;color:var(--black);margin-bottom:3px;line-height:1.2;font-weight:400;letter-spacing:-.005em}
+    .ladder-detail{font-size:12px;color:var(--mid);line-height:1.4}
+    .ladder-slots{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;max-width:460px}
+    .slot{display:block;aspect-ratio:5/7;border-radius:3px;background:var(--white);border:1.5px solid var(--rule);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+    .slot.filled{background:var(--gold);border-color:var(--gold);box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 1px 2px rgba(168,133,46,.18)}
+    .slot.cash{background:var(--black);border-color:var(--black);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 1px 2px rgba(0,0,0,.18)}
+    .ladder-row:hover .slot.filled,.ladder-row:hover .slot.cash{transform:translateY(-2px)}
+    .ladder-count{font-family:'DM Serif Display',serif;font-size:18px;color:var(--gold-deep);text-align:right;font-variant-numeric:tabular-nums;letter-spacing:-.01em;line-height:1.1}
+    .ladder-count small{display:block;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;color:var(--light);letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+
+    /* GIFT — offset, separate axis */
+    .ladder-gift-wrap{margin-top:36px;padding-top:32px;position:relative}
+    .ladder-gift-divider{text-align:center;margin-bottom:24px;position:relative}
+    .ladder-gift-divider::before,.ladder-gift-divider::after{content:'';position:absolute;top:50%;width:calc(50% - 90px);height:1px;background:repeating-linear-gradient(90deg,var(--rule) 0,var(--rule) 4px,transparent 4px,transparent 8px)}
+    .ladder-gift-divider::before{left:0}
+    .ladder-gift-divider::after{right:0}
+    .ladder-gift-divider span{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);display:inline-block;padding:0 14px}
+    .ladder-gift{display:grid;grid-template-columns:260px 1fr;gap:32px;align-items:center;padding:24px 28px;background:var(--gold-light);border-left:3px solid var(--gold);border-radius:0 4px 4px 0}
+    .ladder-gift-label{display:flex;align-items:center;gap:16px}
+    .ladder-gift-num{font-family:'DM Serif Display',serif;font-size:30px;color:var(--gold-deep);line-height:1;font-weight:400;min-width:32px}
+    .ladder-gift-name{font-family:'DM Serif Display',serif;font-size:19px;color:var(--black);margin-bottom:3px;line-height:1.2;font-weight:400}
+    .ladder-gift-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+    .ladder-gift-desc{font-size:13px;color:var(--dark);line-height:1.65}
+    .ladder-gift-desc strong{color:var(--black)}
 
     /* ─────────────── WALLET TYPE CARDS ─────────────── */
     .wallet-types{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-md)}
@@ -348,6 +374,9 @@
       .split-text{padding:64px 40px}
       .d-card-body{grid-template-columns:1fr}
       .brand-q-grid{grid-template-columns:1fr}
+      .ladder-row,.ladder-gift{grid-template-columns:1fr;gap:14px}
+      .ladder-count{text-align:left}
+      .ladder-slots{max-width:100%}
     }
     @media (max-width:640px){
       .section,.section-sm{padding:56px 24px}
@@ -447,20 +476,92 @@
     <h2 class="section-title">Five wallet categories. Each one serves a distinct carry need.</h2>
     <p class="section-subtitle">This is the foundation of everything — product design, brand strategy, packaging, and display. Every decision maps back to one of these five categories.</p>
 
-    <!-- CARRY SPECTRUM -->
-    <div class="spectrum reveal" aria-hidden="false">
-      <div class="spectrum-head">
-        <span class="more">← More Carry · More Cash</span>
-        <span>The Customer Spectrum</span>
-        <span class="less">Less Carry · Phone-First →</span>
+    <!-- CARRY LADDER — card-slot capacity by category -->
+    <div class="carry-ladder reveal">
+      <div class="ladder-head">
+        <div>
+          <p class="ladder-eyebrow">The Carry Ladder</p>
+          <p class="ladder-sub">How much each wallet holds. Four categories arranged from full carry to phone-first — every product decision starts here.</p>
+        </div>
+        <div class="ladder-key" aria-hidden="true">
+          <span><span class="key-swatch filled"></span>Card slot</span>
+          <span><span class="key-swatch empty"></span>Unused</span>
+        </div>
       </div>
-      <div class="spectrum-bar"></div>
-      <div class="spectrum-dots">
-        <div class="spectrum-pt"><p class="spectrum-num">01</p><p class="spectrum-name">Extra Capacity</p></div>
-        <div class="spectrum-pt"><p class="spectrum-num">02</p><p class="spectrum-name">New Classic</p></div>
-        <div class="spectrum-pt"><p class="spectrum-num">03</p><p class="spectrum-name">Front Pocket</p></div>
-        <div class="spectrum-pt"><p class="spectrum-num">04</p><p class="spectrum-name">Phone Companion</p></div>
-        <div class="spectrum-pt"><p class="spectrum-num">05</p><p class="spectrum-name">Gift &amp; Special</p></div>
+
+      <div class="ladder-grid">
+
+        <div class="ladder-row">
+          <div class="ladder-label">
+            <span class="ladder-num">01</span>
+            <div>
+              <p class="ladder-name">Extra Capacity</p>
+              <p class="ladder-detail">6+ cards · dedicated bill compartment</p>
+            </div>
+          </div>
+          <div class="ladder-slots" role="img" aria-label="10 of 10 card slots filled">
+            <span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span>
+          </div>
+          <p class="ladder-count">10<small>cards</small></p>
+        </div>
+
+        <div class="ladder-row">
+          <div class="ladder-label">
+            <span class="ladder-num">02</span>
+            <div>
+              <p class="ladder-name">New Classic</p>
+              <p class="ladder-detail">6–9 cards · slimmed bifold profile</p>
+            </div>
+          </div>
+          <div class="ladder-slots" role="img" aria-label="8 of 10 card slots filled">
+            <span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot"></span><span class="slot"></span>
+          </div>
+          <p class="ladder-count">8<small>cards</small></p>
+        </div>
+
+        <div class="ladder-row">
+          <div class="ladder-label">
+            <span class="ladder-num">03</span>
+            <div>
+              <p class="ladder-name">Front Pocket</p>
+              <p class="ladder-detail">4–6 cards · cash via clip or pocket</p>
+            </div>
+          </div>
+          <div class="ladder-slots" role="img" aria-label="5 of 10 card slots filled">
+            <span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span>
+          </div>
+          <p class="ladder-count">5<small>cards</small></p>
+        </div>
+
+        <div class="ladder-row">
+          <div class="ladder-label">
+            <span class="ladder-num">04</span>
+            <div>
+              <p class="ladder-name">Phone Companion</p>
+              <p class="ladder-detail">2–4 cards · cash optional · MagSafe</p>
+            </div>
+          </div>
+          <div class="ladder-slots" role="img" aria-label="3 of 10 card slots filled">
+            <span class="slot filled"></span><span class="slot filled"></span><span class="slot filled"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span>
+          </div>
+          <p class="ladder-count">3<small>cards</small></p>
+        </div>
+
+      </div>
+
+      <!-- GIFT & SPECIAL — offset, separate axis -->
+      <div class="ladder-gift-wrap">
+        <div class="ladder-gift-divider"><span>A separate axis — not a carry type</span></div>
+        <div class="ladder-gift">
+          <div class="ladder-gift-label">
+            <span class="ladder-gift-num">05</span>
+            <div>
+              <p class="ladder-gift-name">Gift &amp; Special</p>
+              <p class="ladder-gift-tag">Crosses all four lanes</p>
+            </div>
+          </div>
+          <p class="ladder-gift-desc"><strong>A presentation layer — not a carry type.</strong> Any wallet above becomes a Gift &amp; Special SKU when paired with a card case, key fob, or coordinating wallet in premium packaging. 55% of wallet purchases are gifts; this is where Q4 lives.</p>
+        </div>
       </div>
     </div>
 
