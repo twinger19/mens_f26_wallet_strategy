@@ -288,6 +288,41 @@
     .timeline-name{font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.25;font-weight:400}
     .timeline-desc{font-size:13px;color:var(--mid);line-height:1.65}
 
+    /* ─────────────── INTERNAL CALENDAR ─────────────── */
+    .cal-legend{display:flex;flex-wrap:wrap;gap:24px;padding:18px 24px;background:var(--cream);border:1px solid var(--rule);border-radius:4px;margin-bottom:24px}
+    .cal-legend-item{display:inline-flex;align-items:center;gap:10px;font-size:12px;color:var(--dark)}
+    .cal-legend-dot{width:22px;height:22px;border-radius:50%;font-size:10px;font-weight:700;color:var(--white);display:inline-flex;align-items:center;justify-content:center;letter-spacing:0}
+    .cal-legend-dot.product{background:var(--gold)}
+    .cal-legend-dot.marketing{background:var(--green)}
+    .cal-legend-dot.sales{background:var(--blue)}
+    .cal-legend-dot.all{background:var(--black)}
+    .calendar{border:1px solid var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);background:var(--white);margin-bottom:48px}
+    .cal-month{display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--rule);transition:background .25s var(--ease)}
+    .cal-month:last-child{border-bottom:none}
+    .cal-month-label{padding:28px 28px;border-right:1px solid var(--rule);background:var(--cream);position:relative}
+    .cal-month.milestone .cal-month-label{background:linear-gradient(180deg,var(--gold-light) 0%,#fbf5e1 100%);border-left:3px solid var(--gold)}
+    .cal-month.current .cal-month-label{background:var(--white);border-left:3px solid var(--black)}
+    .cal-month-name{font-family:'DM Serif Display',serif;font-size:34px;color:var(--black);line-height:1;margin-bottom:6px;letter-spacing:-.02em}
+    .cal-month-sub{font-size:11px;font-weight:600;color:var(--light);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;font-variant-numeric:tabular-nums}
+    .cal-month-tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+    .cal-month.current .cal-month-tag{color:var(--black)}
+    .cal-milestone-flag{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 11px;border-radius:2px;margin-top:12px}
+    .cal-milestone-flag::before{content:'';width:6px;height:6px;background:var(--black);border-radius:50%}
+    .cal-items{padding:18px 28px}
+    .cal-item{display:grid;grid-template-columns:84px 26px 1fr;gap:14px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed var(--rule);font-size:14px}
+    .cal-item:last-child{border-bottom:none}
+    .cal-item:hover .cal-text{color:var(--black)}
+    .cal-date{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--mid);text-transform:uppercase;font-variant-numeric:tabular-nums;padding-top:3px;white-space:nowrap}
+    .cal-team{width:24px;height:24px;border-radius:50%;font-size:10px;font-weight:700;color:var(--white);display:inline-flex;align-items:center;justify-content:center;letter-spacing:0;margin-top:1px;flex-shrink:0}
+    .cal-team.product{background:var(--gold)}
+    .cal-team.marketing{background:var(--green)}
+    .cal-team.sales{background:var(--blue)}
+    .cal-team.all{background:var(--black)}
+    .cal-text{font-size:13.5px;color:var(--dark);line-height:1.55;transition:color .2s var(--ease)}
+    .cal-text strong{color:var(--black);font-weight:600}
+    .cal-status{margin-top:18px;padding:14px 18px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 3px 3px 0;font-size:12px;color:var(--dark);line-height:1.6}
+    .cal-status strong{color:var(--gold-deep);font-weight:700}
+
     /* ─────────────── DISCUSSION CARDS ─────────────── */
     .d-card{border-radius:4px;overflow:hidden;border:1px solid var(--rule);margin-bottom:24px;box-shadow:var(--shadow-sm)}
     .d-card-header{padding:22px 32px;display:flex;align-items:center;justify-content:space-between}
@@ -377,6 +412,9 @@
       .ladder-row,.ladder-gift{grid-template-columns:1fr;gap:14px}
       .ladder-count{text-align:left}
       .ladder-slots{max-width:100%}
+      .cal-month{grid-template-columns:1fr}
+      .cal-month-label{border-right:none;border-bottom:1px solid var(--rule)}
+      .cal-item{grid-template-columns:80px 26px 1fr;gap:10px}
     }
     @media (max-width:640px){
       .section,.section-sm{padding:56px 24px}
@@ -1022,6 +1060,149 @@
       <div class="timeline-card"><div class="timeline-dot gold"></div><p class="timeline-period gold">June – August</p><p class="timeline-name">Build the Plan</p><p class="timeline-desc">Per-brand assortment plans. Overall wallet strategy documented. Packaging direction and display concepts drafted.</p></div>
       <div class="timeline-card"><div class="timeline-dot green"></div><p class="timeline-period green">Early August</p><p class="timeline-name">Sales Seed Presentation</p><p class="timeline-desc">Plant the flag. Share strategy direction. Collect sales feedback on focus areas and potential pivots.</p></div>
       <div class="timeline-card"><div class="timeline-dot black"></div><p class="timeline-period black">December</p><p class="timeline-name">Final Show Presentation</p><p class="timeline-desc">Finalized product samples. Printed packaging. Physical display mockups. Built to hand to a buyer — not just show on a screen.</p></div>
+    </div>
+
+    <!-- INTERNAL CALENDAR — biweekly deadlines between milestones -->
+    <p class="section-eyebrow" style="margin-top:48px">Between the Milestones</p>
+    <h2 class="section-title" style="margin-bottom:16px">The working calendar. Internal deadlines that keep the four milestones honest.</h2>
+    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:28px">The roadmap above shows the four moments we're externally accountable to. This is the operational view between them — biweekly internal deadlines per function, so we know we're on track or off it. Owners sign up against each line; the table below this is where names get assigned.</p>
+
+    <div class="cal-legend" aria-label="Team color key">
+      <div class="cal-legend-item"><span class="cal-legend-dot product">P</span>Product</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot marketing">M</span>Marketing / Brand</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot sales">S</span>Sales</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot all">A</span>All / Cross-functional</div>
+    </div>
+
+    <div class="calendar">
+
+      <!-- MAY (current) -->
+      <div class="cal-month current">
+        <div class="cal-month-label">
+          <p class="cal-month-name">May</p>
+          <p class="cal-month-sub">Weeks of 5/18 – 5/31</p>
+          <p class="cal-month-tag">Pre-Kickoff · You are here</p>
+        </div>
+        <div class="cal-items">
+          <div class="cal-item"><span class="cal-date">May 22</span><span class="cal-team product" title="Product">P</span><p class="cal-text"><strong>Brand × category matrix v1</strong> drafted for review — which of the 5 categories each brand covers</p></div>
+          <div class="cal-item"><span class="cal-date">May 29</span><span class="cal-team all" title="All">A</span><p class="cal-text"><strong>Brand × category matrix locked</strong> + Aug seed presentation date &amp; attendee list confirmed</p></div>
+          <div class="cal-item"><span class="cal-date">May 29</span><span class="cal-team product" title="Product">P</span><p class="cal-text">RFID audit complete across full line — list what has it and what doesn't</p></div>
+          <div class="cal-item"><span class="cal-date">May 31</span><span class="cal-team sales" title="Sales">S</span><p class="cal-text">24-month POS pull: slim vs. traditional bifold trend by account</p></div>
+        </div>
+      </div>
+
+      <!-- JUNE — MILESTONE -->
+      <div class="cal-month milestone">
+        <div class="cal-month-label">
+          <p class="cal-month-name">June</p>
+          <p class="cal-month-sub">Weeks of 6/1 – 6/28</p>
+          <p class="cal-month-tag">Product Kickoff</p>
+          <span class="cal-milestone-flag">Milestone · Design Kickoff</span>
+        </div>
+        <div class="cal-items">
+          <div class="cal-item"><span class="cal-date">Jun 5</span><span class="cal-team product" title="Product">P</span><p class="cal-text"><strong>All 8 vendor briefs delivered</strong> — incl. Columbia (belt-align), Haggar two-track, Kenneth Cole Phone Companion lead</p></div>
+          <div class="cal-item"><span class="cal-date">Jun 12</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text"><strong>Packaging brief v1</strong> — RFID badge, capacity callout, slim profile, gift positioning + 5 one-line category positions</p></div>
+          <div class="cal-item"><span class="cal-date">Jun 12</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text">One-line brand story drafted for each brand in its primary lane</p></div>
+          <div class="cal-item"><span class="cal-date">Jun 19</span><span class="cal-team product" title="Product">P</span><p class="cal-text">First-round vendor sketches in for review · Tommy Hilfiger legacy audit complete</p></div>
+          <div class="cal-item"><span class="cal-date">Jun 26</span><span class="cal-team product" title="Product">P</span><p class="cal-text"><strong>Per-brand assortment plans v1</strong> — new SKUs, categories, colors, price tiers</p></div>
+          <div class="cal-item"><span class="cal-date">Jun 26</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text">Packaging mood boards v1 (one per brand)</p></div>
+        </div>
+      </div>
+
+      <!-- JULY -->
+      <div class="cal-month">
+        <div class="cal-month-label">
+          <p class="cal-month-name">July</p>
+          <p class="cal-month-sub">Weeks of 6/29 – 7/26</p>
+          <p class="cal-month-tag">Concepts &amp; Comps</p>
+        </div>
+        <div class="cal-items">
+          <div class="cal-item"><span class="cal-date">Jul 10</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text"><strong>Packaging concept comps complete</strong> — one direction per brand, mood-board level</p></div>
+          <div class="cal-item"><span class="cal-date">Jul 17</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text"><strong>Display concept renders v1</strong> — 2–3 retail scenarios, carry-type organized (mass, dept, specialty)</p></div>
+          <div class="cal-item"><span class="cal-date">Jul 24</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text">Sales seed deck assembled — strategy + product + packaging + display, with current-vs-new side-by-side</p></div>
+          <div class="cal-item"><span class="cal-date">Jul 31</span><span class="cal-team product" title="Product">P</span><p class="cal-text">2–3 design samples or line drawings per brand ready for seed presentation</p></div>
+          <div class="cal-item"><span class="cal-date">Jul 31</span><span class="cal-team all" title="All">A</span><p class="cal-text">Internal rehearsal of seed presentation — final tweaks before Aug 7</p></div>
+        </div>
+      </div>
+
+      <!-- AUGUST — MILESTONE -->
+      <div class="cal-month milestone">
+        <div class="cal-month-label">
+          <p class="cal-month-name">August</p>
+          <p class="cal-month-sub">Weeks of 8/3 – 8/30</p>
+          <p class="cal-month-tag">Sales Seed</p>
+          <span class="cal-milestone-flag">Milestone · Seed Presentation</span>
+        </div>
+        <div class="cal-items">
+          <div class="cal-item"><span class="cal-date">Aug 7</span><span class="cal-team sales" title="Sales">S</span><p class="cal-text"><strong>Sales seed presentation delivered</strong> — key sales members. Plant the flag, gauge excitement.</p></div>
+          <div class="cal-item"><span class="cal-date">Aug 14</span><span class="cal-team sales" title="Sales">S</span><p class="cal-text">Reactions documented — what resonates, what concerns, what to pivot · pilot accounts identified</p></div>
+          <div class="cal-item"><span class="cal-date">Aug 21</span><span class="cal-team all" title="All">A</span><p class="cal-text"><strong>Feedback synthesized into December plan</strong> — adjustments locked before September build phase</p></div>
+          <div class="cal-item"><span class="cal-date">Aug 28</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text">Physical prototype briefs delivered to printers (packaging) and fixture builders (display)</p></div>
+        </div>
+      </div>
+
+      <!-- SEPTEMBER -->
+      <div class="cal-month">
+        <div class="cal-month-label">
+          <p class="cal-month-name">September</p>
+          <p class="cal-month-sub">Weeks of 8/31 – 9/27</p>
+          <p class="cal-month-tag">Physical Builds</p>
+        </div>
+        <div class="cal-items">
+          <div class="cal-item"><span class="cal-date">Sep 11</span><span class="cal-team product" title="Product">P</span><p class="cal-text"><strong>First production samples in hand</strong> from vendors — all 8 brands represented</p></div>
+          <div class="cal-item"><span class="cal-date">Sep 18</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text">First printed packaging proofs from printer — review &amp; revise rounds begin</p></div>
+          <div class="cal-item"><span class="cal-date">Sep 25</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text">Display mockup framing complete — mass, dept store, specialty scenarios in physical form</p></div>
+        </div>
+      </div>
+
+      <!-- OCTOBER -->
+      <div class="cal-month">
+        <div class="cal-month-label">
+          <p class="cal-month-name">October</p>
+          <p class="cal-month-sub">Weeks of 9/28 – 10/25</p>
+          <p class="cal-month-tag">Lock &amp; Tailor</p>
+        </div>
+        <div class="cal-items">
+          <div class="cal-item"><span class="cal-date">Oct 9</span><span class="cal-team product" title="Product">P</span><p class="cal-text"><strong>Pricing, margin, MOQ locked</strong> on every new SKU — no more moving numbers</p></div>
+          <div class="cal-item"><span class="cal-date">Oct 16</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text">Per-account sell-in decks drafted — tailored to each buyer, not templated</p></div>
+          <div class="cal-item"><span class="cal-date">Oct 23</span><span class="cal-team sales" title="Sales">S</span><p class="cal-text">Account-prioritized lead list — which brands and products to lead with per buyer</p></div>
+          <div class="cal-item"><span class="cal-date">Oct 30</span><span class="cal-team product" title="Product">P</span><p class="cal-text">Final sample QC pass across all 8 brands — anything off-spec gets caught here</p></div>
+        </div>
+      </div>
+
+      <!-- NOVEMBER -->
+      <div class="cal-month">
+        <div class="cal-month-label">
+          <p class="cal-month-name">November</p>
+          <p class="cal-month-sub">Weeks of 10/26 – 11/29</p>
+          <p class="cal-month-tag">Pre-Show Prep</p>
+        </div>
+        <div class="cal-items">
+          <div class="cal-item"><span class="cal-date">Nov 6</span><span class="cal-team sales" title="Sales">S</span><p class="cal-text"><strong>December buyer meetings scheduled</strong> at key accounts</p></div>
+          <div class="cal-item"><span class="cal-date">Nov 13</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text">Final printed packaging prototypes delivered — at least one per brand, gift-ready</p></div>
+          <div class="cal-item"><span class="cal-date">Nov 20</span><span class="cal-team marketing" title="Marketing">M</span><p class="cal-text">Final display mockups complete · internal show rehearsal with sales</p></div>
+          <div class="cal-item"><span class="cal-date">Nov 27</span><span class="cal-team all" title="All">A</span><p class="cal-text">Buffer week for fixes · final QA pass before show</p></div>
+        </div>
+      </div>
+
+      <!-- DECEMBER — MILESTONE -->
+      <div class="cal-month milestone">
+        <div class="cal-month-label">
+          <p class="cal-month-name">December</p>
+          <p class="cal-month-sub">Weeks of 11/30 – 12/13</p>
+          <p class="cal-month-tag">Final Show</p>
+          <span class="cal-milestone-flag">Milestone · Hand-Off</span>
+        </div>
+        <div class="cal-items">
+          <div class="cal-item"><span class="cal-date">Dec 4</span><span class="cal-team all" title="All">A</span><p class="cal-text"><strong>Final show presentation</strong> — product samples, printed packaging, physical display mockups. Built to hand to a buyer.</p></div>
+          <div class="cal-item"><span class="cal-date">Dec 11+</span><span class="cal-team sales" title="Sales">S</span><p class="cal-text">Document buyer reactions · confirm path to orders · post-show debrief</p></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cal-status">
+      <strong>Read this calendar two ways.</strong> The bold lines are the dominoes — if those slip, everything after them slips with them. The biweekly cadence is the rhythm — every other week, every function should have a deliverable in hand or a clear reason why not. The Block 05 owner table below is where names get assigned to each of these lines.
     </div>
 
     <!-- DISCUSSION CARDS -->
