@@ -30,7 +30,6 @@
     img{max-width:100%;display:block}
     button{font:inherit;border:none;background:none;cursor:pointer;color:inherit}
     :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
-
     /* ─────────────── NAV ─────────────── */
     .site-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
     .nav-logo{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
@@ -43,7 +42,6 @@
     .tab-panel{display:none}
     .tab-panel.active{display:block;animation:fadeUp .55s var(--ease) both}
     @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
     /* ─────────────── REVEAL ─────────────── */
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
     .reveal.is-in{opacity:1;transform:none}
@@ -52,7 +50,6 @@
     .reveal.delay-3{transition-delay:.24s}
     .reveal.delay-4{transition-delay:.32s}
     @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important;transition:none!important}}
-
     /* ─────────────── HERO ─────────────── */
     .hero{position:relative;height:94vh;min-height:640px;max-height:920px;overflow:hidden;display:flex;align-items:flex-end}
     .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;transform:scale(1.04);animation:heroZoom 8s var(--ease) forwards}
@@ -67,7 +64,6 @@
     .hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.7);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;animation:scrollNudge 2.4s ease-in-out infinite}
     .hero-scroll-line{width:1px;height:32px;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent)}
     @keyframes scrollNudge{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
-
     /* ─────────────── STAT STRIP ─────────────── */
     .stat-strip{background:var(--black);display:grid;grid-template-columns:repeat(4,1fr);position:relative}
     .stat-strip::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold) 70%,transparent)}
@@ -77,7 +73,6 @@
     .stat-number{font-family:'DM Serif Display',serif;font-size:60px;color:var(--white);line-height:1;margin-bottom:12px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
     .stat-number .accent{color:var(--gold)}
     .stat-label{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--light);line-height:1.55}
-
     /* ─────────────── SECTIONS ─────────────── */
     .section{padding:112px 80px}
     .section-sm{padding:72px 80px}
@@ -90,19 +85,16 @@
     .section-subtitle{font-size:18px;font-weight:300;color:var(--mid);max-width:660px;line-height:1.7;margin-bottom:56px}
     .section-subtitle.white{color:rgba(255,255,255,.72)}
     .divider{width:48px;height:2px;background:var(--gold);margin:24px 0 40px}
-
     /* ─────────────── SPLIT ─────────────── */
     .split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
     .split-text{padding:96px 72px;display:flex;flex-direction:column;justify-content:center}
     .split-img{overflow:hidden;position:relative}
     .split-img img{width:100%;height:100%;min-height:500px;object-fit:cover;transition:transform 1.2s var(--ease)}
     .split-img:hover img{transform:scale(1.03)}
-
     /* ─────────────── INSIGHT BOX ─────────────── */
     .insight-box{background:var(--gold-light);border-left:4px solid var(--gold);padding:30px 36px;margin:32px 0;border-radius:0 4px 4px 0;position:relative}
     .insight-box::before{content:'"';position:absolute;top:-12px;left:20px;font-family:'DM Serif Display',serif;font-size:64px;color:var(--gold);line-height:1;opacity:.4}
     .insight-box p{font-family:'DM Serif Display',serif;font-size:21px;line-height:1.5;color:var(--black);position:relative;z-index:1}
-
     /* ─────────────── CARRY LADDER (card-slot visualization) ─────────────── */
     .carry-ladder{margin:0 0 64px;padding:40px 44px 36px;background:linear-gradient(135deg,#fff 0%,#fafaf7 100%);border:1px solid var(--rule);border-radius:4px;box-shadow:var(--shadow-sm)}
     .ladder-head{margin-bottom:28px;padding-bottom:22px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
@@ -125,12 +117,10 @@
     .ladder-slots{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;max-width:460px}
     .slot{display:block;aspect-ratio:5/7;border-radius:3px;background:var(--white);border:1.5px solid var(--rule);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
     .slot.filled{background:var(--gold);border-color:var(--gold);box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 1px 2px rgba(168,133,46,.18)}
-    .slot.cash{background:var(--black);border-color:var(--black);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 1px 2px rgba(0,0,0,.18)}
-    .ladder-row:hover .slot.filled,.ladder-row:hover .slot.cash{transform:translateY(-2px)}
+    .ladder-row:hover .slot.filled{transform:translateY(-2px)}
     .ladder-count{font-family:'DM Serif Display',serif;font-size:18px;color:var(--gold-deep);text-align:right;font-variant-numeric:tabular-nums;letter-spacing:-.01em;line-height:1.1}
     .ladder-count small{display:block;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;color:var(--light);letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
-
-    /* GIFT — offset, separate axis */
+    /* GIFT — offset,separate axis */
     .ladder-gift-wrap{margin-top:36px;padding-top:32px;position:relative}
     .ladder-gift-divider{text-align:center;margin-bottom:24px;position:relative}
     .ladder-gift-divider::before,.ladder-gift-divider::after{content:'';position:absolute;top:50%;width:calc(50% - 90px);height:1px;background:repeating-linear-gradient(90deg,var(--rule) 0,var(--rule) 4px,transparent 4px,transparent 8px)}
@@ -144,7 +134,6 @@
     .ladder-gift-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
     .ladder-gift-desc{font-size:13px;color:var(--dark);line-height:1.65}
     .ladder-gift-desc strong{color:var(--black)}
-
     /* ─────────────── WALLET TYPE CARDS ─────────────── */
     .wallet-types{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-md)}
     .wt-card{background:var(--white);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease);position:relative}
@@ -165,14 +154,12 @@
     .wt-customer-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:5px}
     .wt-customer-name{font-size:13px;font-weight:700;color:var(--black);margin-bottom:4px;line-height:1.3}
     .wt-customer-note{font-size:12px;color:var(--mid);line-height:1.55}
-
     /* ─────────────── IMAGE BREAK ─────────────── */
     .image-break{width:100%;height:520px;overflow:hidden;position:relative}
     .image-break img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
     .image-break-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,.55));display:flex;align-items:center;justify-content:center}
     .image-break-quote{font-family:'DM Serif Display',serif;font-size:clamp(24px,3.2vw,44px);color:var(--white);text-align:center;max-width:820px;padding:0 40px;line-height:1.25;letter-spacing:-.005em}
     .image-break-quote::before,.image-break-quote::after{content:'"';color:var(--gold);font-style:italic}
-
     /* ─────────────── DATA GRID ─────────────── */
     .data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)}
     .data-card{background:var(--white);padding:48px 40px;transition:background .3s var(--ease)}
@@ -181,7 +168,6 @@
     .data-number .accent{color:var(--gold)}
     .data-desc{font-size:15px;color:var(--dark);line-height:1.65;margin-bottom:10px}
     .data-source{font-size:11px;color:var(--light);letter-spacing:.08em}
-
     /* ─────────────── COMPARE ITEMS ─────────────── */
     .compare-items{list-style:none;margin-top:12px}
     .compare-items li{font-size:14px;color:var(--dark);padding:11px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;line-height:1.55;align-items:flex-start}
@@ -189,13 +175,11 @@
     .compare-items li .icon{flex-shrink:0;font-size:14px;font-weight:700;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;margin-top:1px}
     .compare-items li .icon.bad{background:var(--red-light);color:var(--red)}
     .compare-items li .icon.good{background:var(--green-light);color:var(--green)}
-
     /* ─────────────── TRANSITION DIVIDER (current → opportunity) ─────────────── */
     .transition-divider{background:var(--black);padding:32px 80px;display:flex;align-items:center;justify-content:center;gap:24px;position:relative}
     .transition-divider::before,.transition-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent)}
     .transition-divider-text{display:flex;align-items:center;gap:18px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;font-family:'Inter',sans-serif}
     .transition-arrow{font-family:'DM Serif Display',serif;font-size:24px;color:var(--gold)}
-
     /* ─────────────── REFERENCE GRID ─────────────── */
     .ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);margin-top:48px;border-radius:4px;overflow:hidden}
     .ref-card{background:var(--white);overflow:hidden;transition:transform .3s var(--ease)}
@@ -205,7 +189,6 @@
     .ref-body{padding:24px 28px}
     .ref-lesson{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
     .ref-desc{font-size:13px;color:var(--dark);line-height:1.65}
-
     /* ─────────────── STAT ROW ─────────────── */
     .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);margin:48px 0;border-radius:4px;overflow:hidden}
     .stat-row-card{background:var(--gold-light);padding:40px 32px;text-align:center;transition:background .3s var(--ease)}
@@ -213,7 +196,6 @@
     .stat-row-num{font-family:'DM Serif Display',serif;font-size:54px;color:var(--black);line-height:1;margin-bottom:10px;letter-spacing:-.02em}
     .stat-row-label{font-size:13px;color:var(--dark);line-height:1.55}
     .stat-row-src{font-size:10px;color:var(--mid);margin-top:8px;letter-spacing:.06em}
-
     /* ─────────────── BRAND GRID ─────────────── */
     .brand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);margin-top:48px;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)}
     .brand-card{background:var(--white);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
@@ -227,200 +209,15 @@
     .brand-card-pos{font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:14px;flex:1}
     .brand-card-pos strong{color:var(--black);font-weight:600}
     .brand-card-q{font-size:12px;font-style:italic;color:var(--gold-deep);line-height:1.55;border-top:1px solid var(--rule);padding-top:14px}
-
     /* ─────────────── LOGO ROW ─────────────── */
     .logo-row{display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;padding:64px 80px;background:var(--cream);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
     .logo-row img{height:30px;width:auto;opacity:.5;filter:grayscale(100%);transition:opacity .25s,filter .25s}
     .logo-row img:hover{opacity:1;filter:grayscale(0)}
-
-    /* ─────────────── MEETING HERO ─────────────── */
-    .meeting-hero{background:linear-gradient(135deg,#1A1A1A 0%,#2C2C2C 100%);padding:96px 80px 72px;position:relative;overflow:hidden}
-    .meeting-hero::before{content:'';position:absolute;top:0;right:0;width:480px;height:480px;background:radial-gradient(circle,rgba(201,168,76,.12),transparent 70%);pointer-events:none}
-    .meeting-eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;position:relative;display:inline-flex;align-items:center;gap:10px}
-    .meeting-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
-    .meeting-title{font-family:'DM Serif Display',serif;font-size:clamp(38px,4.4vw,64px);color:var(--white);margin-bottom:22px;line-height:1.08;letter-spacing:-.01em;position:relative}
-    .meeting-sub{font-size:18px;font-weight:300;color:rgba(255,255,255,.7);max-width:640px;line-height:1.65;position:relative}
-
-    /* ─────────────── TIME RAIL ─────────────── */
-    .time-rail{background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:28px 80px}
-    .time-rail-track{position:relative;height:6px;background:var(--rule);border-radius:3px;margin:10px 0 28px}
-    .time-rail-fill{position:absolute;top:0;left:0;height:100%;background:linear-gradient(90deg,var(--gold) 0%,var(--green) 65%,var(--black) 100%);border-radius:3px}
-    .time-rail-marks{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-    .time-rail-mark{position:relative;text-align:left}
-    .time-rail-mark::before{content:'';position:absolute;top:-30px;left:0;width:10px;height:10px;background:var(--white);border:2px solid var(--gold);border-radius:50%}
-    .time-rail-mark:nth-child(4)::before,.time-rail-mark:nth-child(5)::before{border-color:var(--green)}
-    .time-rail-mark:nth-child(5)::before{border-color:var(--black)}
-    .time-rail-min{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--gold);margin-bottom:4px;text-transform:uppercase}
-    .time-rail-label{font-size:12px;color:var(--dark);font-weight:600;line-height:1.35}
-
-    /* ─────────────── GOALS ─────────────── */
-    .goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);margin-top:48px;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)}
-    .goal-card{background:var(--white);padding:44px 40px;transition:background .3s var(--ease);position:relative}
-    .goal-card:hover{background:#fcfaf6}
-    .goal-num{font-family:'DM Serif Display',serif;font-size:54px;color:var(--gold);line-height:1;margin-bottom:14px;letter-spacing:-.02em}
-    .goal-title{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:var(--black);margin-bottom:14px;line-height:1.25;letter-spacing:-.005em}
-    .goal-desc{font-size:14px;color:var(--mid);line-height:1.7}
-
-    /* ─────────────── AGENDA ─────────────── */
-    .agenda{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--rule);margin-bottom:64px;border-radius:4px;overflow:hidden}
-    .agenda-block{background:var(--white);padding:32px 28px;border-top:3px solid transparent;transition:border-color .3s var(--ease),transform .3s var(--ease)}
-    .agenda-block:nth-child(1){border-top-color:var(--gold)}
-    .agenda-block:nth-child(2){border-top-color:var(--gold)}
-    .agenda-block:nth-child(3){border-top-color:var(--blue)}
-    .agenda-block:nth-child(4){border-top-color:var(--green)}
-    .agenda-block:nth-child(5){border-top-color:var(--black)}
-    .agenda-block:hover{transform:translateY(-2px)}
-    .agenda-time{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-variant-numeric:tabular-nums}
-    .agenda-title{font-family:'DM Serif Display',serif;font-size:17px;color:var(--black);margin-bottom:10px;line-height:1.3;font-weight:400}
-    .agenda-desc{font-size:13px;color:var(--mid);line-height:1.6}
-
-    /* ─────────────── TIMELINE ─────────────── */
-    .timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:64px;position:relative}
-    .timeline-grid::before{content:'';position:absolute;top:48px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold) 33%,var(--green) 66%,var(--black) 100%);z-index:0}
-    .timeline-card{text-align:center;position:relative;z-index:1;padding:0 12px}
-    .timeline-dot{width:28px;height:28px;border-radius:50%;margin:34px auto 22px;border:4px solid var(--white);box-shadow:0 0 0 2px currentColor}
-    .timeline-dot.gold{background:var(--gold);color:var(--gold)}
-    .timeline-dot.green{background:var(--green);color:var(--green)}
-    .timeline-dot.black{background:var(--black);color:var(--black)}
-    .timeline-period{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
-    .timeline-period.gold{color:var(--gold-deep)}
-    .timeline-period.green{color:var(--green)}
-    .timeline-period.black{color:var(--black)}
-    .timeline-name{font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.25;font-weight:400}
-    .timeline-desc{font-size:13px;color:var(--mid);line-height:1.65}
-
-    /* ─────────────── PHASES (Now → December) ─────────────── */
-    .phases-note{background:var(--gold-light);border-left:3px solid var(--gold);padding:18px 24px;font-size:13.5px;color:var(--dark);line-height:1.7;border-radius:0 4px 4px 0;margin-bottom:36px}
-    .phases-note strong{color:var(--gold-deep);font-weight:700}
-    .phases{position:relative;margin-bottom:24px}
-    .phases::before{content:'';position:absolute;top:32px;bottom:32px;left:120px;width:2px;background:linear-gradient(180deg,var(--gold) 0%,var(--gold) 35%,var(--green) 45%,var(--green) 55%,var(--gold) 65%,var(--gold) 85%,var(--black) 100%)}
-    .phase-card{display:grid;grid-template-columns:140px 1fr;gap:48px;position:relative;padding:28px 0;border-bottom:1px solid var(--rule)}
-    .phase-card:last-child{border-bottom:none}
-    .phase-rail{text-align:right;position:relative;padding-right:24px;padding-top:6px}
-    .phase-rail::after{content:'';position:absolute;top:14px;right:-8px;width:16px;height:16px;background:var(--white);border:3px solid var(--gold);border-radius:50%;z-index:2;box-shadow:var(--shadow-sm)}
-    .phase-card.current .phase-rail::after{background:var(--black);border-color:var(--black);box-shadow:0 0 0 4px rgba(0,0,0,.08)}
-    .phase-card.sync .phase-rail::after{background:var(--green);border-color:var(--green)}
-    .phase-card.milestone .phase-rail::after{background:var(--gold);border-color:var(--gold);width:20px;height:20px;top:12px;right:-10px;box-shadow:0 0 0 4px rgba(201,168,76,.18)}
-    .phase-num{font-family:'DM Serif Display',serif;font-size:36px;color:var(--gold);line-height:1;display:block;margin-bottom:8px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-    .phase-card.current .phase-num{color:var(--black)}
-    .phase-card.sync .phase-num{color:var(--green)}
-    .phase-card.milestone .phase-num{color:var(--gold-deep)}
-    .phase-duration{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);display:block;line-height:1.4}
-    .phase-body{padding-left:24px;border-left:1px solid var(--rule)}
-    .phase-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 11px;border-radius:2px;margin-bottom:14px}
-    .phase-tag.current{background:var(--black);color:var(--gold)}
-    .phase-tag.sync{background:var(--green);color:var(--white)}
-    .phase-tag.milestone{background:var(--gold);color:var(--black)}
-    .phase-tag.working{background:var(--gold-light);color:var(--gold-deep)}
-    .phase-title{font-family:'DM Serif Display',serif;font-size:28px;color:var(--black);margin-bottom:14px;line-height:1.18;font-weight:400;letter-spacing:-.01em}
-    .phase-desc{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:18px;max-width:680px}
-    .phase-acts{list-style:none;padding:0;margin:0}
-    .phase-acts li{font-size:13.5px;color:var(--dark);padding:9px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;line-height:1.55;align-items:flex-start}
-    .phase-acts li:last-child{border-bottom:none}
-    .phase-acts li::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;margin-top:8px;flex-shrink:0}
-    .phase-card.sync .phase-acts li::before{background:var(--green)}
-    .phase-card.milestone .phase-acts li::before{background:var(--gold-deep)}
-    .phase-acts li strong{color:var(--black);font-weight:600}
-    .phase-callout{margin-top:18px;padding:14px 18px;background:var(--cream);border-left:3px solid var(--gold);font-size:13px;color:var(--dark);line-height:1.65;border-radius:0 3px 3px 0}
-    .phase-callout strong{color:var(--gold-deep);font-weight:700}
-
-    /* ─────────────── DISCUSSION CARDS ─────────────── */
-    .d-card{border-radius:4px;overflow:hidden;border:1px solid var(--rule);margin-bottom:24px;box-shadow:var(--shadow-sm)}
-    .d-card-header{padding:22px 32px;display:flex;align-items:center;justify-content:space-between}
-    .d-card-header.green{background:var(--green)}
-    .d-card-header.gold{background:var(--gold-deep)}
-    .d-card-header.blue{background:var(--blue)}
-    .d-card-header.dark{background:var(--dark)}
-    .d-card-header.black{background:var(--black)}
-    .d-card-num{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:6px}
-    .d-card-session-title{font-family:'DM Serif Display',serif;font-size:22px;color:var(--white);font-weight:400;line-height:1.25}
-    .d-card-time-badge{background:rgba(255,255,255,.16);color:var(--white);font-size:12px;font-weight:600;padding:7px 16px;border-radius:20px;letter-spacing:.06em}
-    .d-card-body{background:var(--white);padding:36px 32px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
-    .d-card-body.full{grid-template-columns:1fr}
-    .d-section-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:14px}
-    .d-objectives{list-style:none}
-    .d-objectives li{font-size:14px;color:var(--dark);padding:9px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;line-height:1.55}
-    .d-objectives li:last-child{border-bottom:none}
-    .d-objectives li::before{content:'→';color:var(--gold);font-size:14px;margin-top:1px;flex-shrink:0;font-weight:700}
-    .d-questions{list-style:none}
-    .d-questions li{font-size:14px;color:var(--dark);padding:9px 0;border-bottom:1px solid var(--rule);line-height:1.55;font-style:italic;display:flex;gap:10px}
-    .d-questions li::before{content:'';display:block;width:3px;background:var(--gold);flex-shrink:0;margin:4px 0}
-    .d-questions li:last-child{border-bottom:none}
-
-    /* ─────────────── BRAND Q TABLE ─────────────── */
-    .brand-q-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--rule);margin-bottom:48px;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)}
-    .brand-q-card{background:var(--white);padding:32px 36px}
-    .brand-q-name{font-family:'DM Serif Display',serif;font-size:18px;color:var(--gold-deep);margin-bottom:14px;font-weight:400;letter-spacing:-.005em}
-    .brand-q-list{list-style:none}
-    .brand-q-list li{font-size:14px;color:var(--dark);padding:8px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;line-height:1.55;font-style:italic}
-    .brand-q-list li:last-child{border-bottom:none}
-    .brand-q-list li::before{content:'?';color:var(--gold);font-weight:700;font-style:normal;flex-shrink:0;width:18px;height:18px;background:var(--gold-light);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px}
-
-    /* ─────────────── STRATEGIC CHALLENGE (Pricing) ─────────────── */
-    .challenge{margin:48px 0;border:1px solid var(--rule);border-top:4px solid var(--red);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-md);background:var(--white)}
-    .challenge-head{padding:32px 36px 28px;border-bottom:1px solid var(--rule)}
-    .challenge-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);background:var(--red-light);padding:6px 12px;border-radius:2px;margin-bottom:16px}
-    .challenge-tag::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
-    .challenge-title{font-family:'DM Serif Display',serif;font-size:28px;color:var(--black);line-height:1.18;font-weight:400;letter-spacing:-.01em;margin-bottom:10px}
-    .challenge-sub{font-size:14px;color:var(--mid);line-height:1.65;max-width:680px}
-    .challenge-grid{display:grid;grid-template-columns:1fr 1fr;background:var(--rule);gap:1px}
-    .challenge-col{padding:30px 36px;background:var(--white)}
-    .challenge-col.path{background:var(--cream)}
-    .challenge-col-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-    .challenge-col.problem .challenge-col-label{color:var(--red)}
-    .challenge-col.path .challenge-col-label{color:var(--green)}
-    .challenge-col-label::before{content:'';width:18px;height:1px;background:currentColor}
-    .challenge-col p{font-size:14px;color:var(--dark);line-height:1.75;margin-bottom:12px}
-    .challenge-col p:last-child{margin-bottom:0}
-    .challenge-col strong{color:var(--black);font-weight:600}
-    .challenge-questions{padding:28px 36px;border-top:1px solid var(--rule)}
-    .challenge-decisions{padding:26px 36px;background:var(--black);display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-    .challenge-decisions::before{content:''}
-    .challenge-decision{display:flex;gap:12px;align-items:flex-start}
-    .challenge-decision::before{content:'';width:10px;height:10px;background:var(--gold);border-radius:50%;margin-top:6px;flex-shrink:0;box-shadow:0 0 0 3px rgba(201,168,76,.18)}
-    .challenge-decision h5{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-    .challenge-decision p{font-size:12.5px;color:rgba(255,255,255,.78);line-height:1.55}
-
-    /* ─────────────── DECISION TABLE ─────────────── */
-    .decision-table-wrap{overflow-x:auto;margin-bottom:64px;border-radius:4px;box-shadow:var(--shadow-sm)}
-    .decision-table{width:100%;border-collapse:collapse;font-size:14px;background:var(--white)}
-    .decision-table thead th{background:var(--black);color:var(--white);padding:16px 20px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-    .decision-table thead th:first-child{width:32%}
-    .decision-table tbody tr{transition:background .2s var(--ease)}
-    .decision-table tbody tr:nth-child(even){background:var(--cream)}
-    .decision-table tbody tr:hover{background:var(--gold-light)}
-    .decision-table tbody td{padding:16px 20px;border-bottom:1px solid var(--rule);color:var(--dark);line-height:1.55;vertical-align:middle}
-    .badge{display:inline-block;padding:4px 11px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-    .badge-green{background:var(--green-light);color:var(--green)}
-    .badge-gold{background:var(--gold-light);color:var(--gold-deep)}
-    .badge-red{background:var(--red-light);color:var(--red)}
-    .badge-blue{background:var(--blue-light);color:var(--blue)}
-
-    /* ─────────────── ACTION ITEMS ─────────────── */
-    .action-band{border-left:4px solid;padding:16px 24px;margin-bottom:2px;display:flex;align-items:center;gap:18px;border-radius:0 4px 4px 0}
-    .action-band.june{background:var(--gold-light);border-color:var(--gold)}
-    .action-band.aug{background:var(--green-light);border-color:var(--green)}
-    .action-band.dec{background:rgba(26,26,26,.06);border-color:var(--black)}
-    .action-band .band-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
-    .action-band .band-label.gold{color:var(--gold-deep)}
-    .action-band .band-label.green{color:var(--green)}
-    .action-band .band-label.black{color:var(--black)}
-    .action-band .band-note{font-size:13px;color:var(--dark);line-height:1.5}
-    .action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);margin-bottom:32px;border-radius:4px;overflow:hidden}
-    .action-card{background:var(--white);padding:36px}
-    .action-owner{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
-    .action-items{list-style:none}
-    .action-items li{font-size:14px;color:var(--dark);padding:10px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;line-height:1.55}
-    .action-items li:last-child{border-bottom:none}
-    .checkbox{display:inline-flex;width:16px;height:16px;border:1.5px solid var(--light);border-radius:2px;flex-shrink:0;margin-top:2px;transition:background .2s,border-color .2s}
-    .action-items li:hover .checkbox{border-color:var(--gold)}
-
     /* ─────────────── FOOTER ─────────────── */
     .site-footer{background:var(--black);padding:48px 80px;display:flex;align-items:center;justify-content:space-between}
     .footer-logo{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:10px}
     .footer-logo::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%}
     .footer-note{font-size:12px;color:rgba(255,255,255,.32)}
-
     /* ─────────────── RESPONSIVE ─────────────── */
 
     /* ═══════════ BRAND ARCHITECTURE TAB ═══════════ */
@@ -434,7 +231,6 @@
     .ba-hero-meta{display:flex;gap:56px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.12)}
     .ba-hero-meta div p:first-child{font-family:'DM Serif Display',serif;font-size:34px;color:var(--gold);line-height:1;margin-bottom:8px}
     .ba-hero-meta div p:last-child{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--light)}
-
     /* legend */
     .ba-legend{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:40px}
     .ba-legend-col{background:var(--white);padding:32px}
@@ -444,7 +240,6 @@
     .ba-legend-item:first-of-type{border-top:none}
     .ba-legend-item b{font-size:13px;font-weight:600;color:var(--black);min-width:150px;flex-shrink:0}
     .ba-legend-item span{font-size:13px;color:var(--mid);line-height:1.55}
-
     /* matrix */
     .matrix-wrap{margin-top:44px;overflow-x:auto;border:1px solid var(--rule);border-radius:4px;box-shadow:var(--shadow-sm);background:var(--white)}
     table.matrix{border-collapse:collapse;width:100%;min-width:820px;font-size:13px}
@@ -459,7 +254,6 @@
     .mk.n{background:transparent;color:var(--rule);box-shadow:inset 0 0 0 1px var(--rule)}
     .matrix-key{display:flex;gap:28px;flex-wrap:wrap;padding:16px 20px;background:var(--cream);border-top:1px solid var(--rule);font-size:12px;color:var(--mid);align-items:center}
     .matrix-key span{display:inline-flex;align-items:center;gap:9px}
-
     /* price ladder */
     .pl{margin-top:44px;background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:36px 40px;box-shadow:var(--shadow-sm)}
     .pl-row{display:grid;grid-template-columns:130px 1fr 132px;align-items:center;gap:20px;padding:11px 0;border-top:1px solid var(--rule)}
@@ -470,7 +264,6 @@
     .pl-val{font-size:12px;color:var(--mid);text-align:right;font-variant-numeric:tabular-nums}
     .pl-val b{color:var(--black);font-weight:600}
     .pl-scale{display:flex;justify-content:space-between;margin-top:14px;padding-left:150px;padding-right:152px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--light)}
-
     /* brand architecture panel */
     .arch{border:1px solid var(--rule);border-radius:4px;background:var(--white);box-shadow:var(--shadow-sm);margin-bottom:36px;overflow:hidden;transition:box-shadow .3s var(--ease)}
     .arch:hover{box-shadow:var(--shadow-md)}
@@ -485,24 +278,18 @@
     .arch-dna-lab{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px}
     .arch-dna{font-size:17px;font-weight:400;color:var(--black);line-height:1.55;margin-bottom:18px;max-width:640px}
     .arch-life{font-size:14px;color:var(--mid);line-height:1.75;max-width:680px}
-
     .arch-flag{margin:0;padding:22px 38px;background:var(--gold-light);border-bottom:1px solid var(--rule);border-left:3px solid var(--gold-deep)}
     .arch-flag p:first-child{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
     .arch-flag p:last-child{font-size:13.5px;color:var(--dark);line-height:1.7}
-
     .arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule)}
     .ab{background:var(--white);padding:26px 28px}
     .ab-lab{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:14px;display:flex;align-items:center;gap:8px}
     .ab-lab::before{content:'';width:14px;height:1px;background:var(--gold);flex-shrink:0}
     .ab p{font-size:13.5px;color:var(--mid);line-height:1.7}
     .ab-span2{grid-column:span 2}
-    .ab-span3{grid-column:span 3}
-
     .tags{display:flex;flex-wrap:wrap;gap:7px}
     .tag{font-size:12px;padding:5px 11px;border-radius:3px;background:var(--cream);color:var(--dark);border:1px solid var(--rule);line-height:1.4}
     .tag.opp{background:var(--green-light);border-color:#BDD6CC;color:var(--green)}
-    .tag-note{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:12px}
-
     .focus-list{display:flex;flex-direction:column;gap:7px}
     .focus-row{display:flex;align-items:center;gap:11px;font-size:13px}
     .focus-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
@@ -512,13 +299,11 @@
     .focus-row.p span{color:var(--black);font-weight:600}
     .focus-row.s span{color:var(--dark)}
     .focus-row.n span{color:var(--light);text-decoration:line-through;text-decoration-color:var(--rule)}
-
     .price-block{display:flex;gap:30px;flex-wrap:wrap;align-items:flex-start;align-content:flex-start;margin-bottom:14px}
     .price-block>div{flex:0 0 auto}
     .price-block div p:first-child{font-family:'DM Serif Display',serif;font-size:26px;color:var(--black);line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums}
     .price-block div p:first-child.keyprice{color:var(--gold-deep)}
     .price-block div p:last-child{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--light)}
-
     /* mood board */
     .mood{background:var(--cream);border-top:1px solid var(--rule);padding:32px 38px 36px}
     .mood-head{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:22px}
@@ -536,7 +321,6 @@
     .mood-key:hover{border-color:var(--gold);transform:translateY(-2px)}
     .mood-slots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:8px}
     .mood-slot{border:1px dashed var(--light);border-radius:3px;min-height:62px;display:flex;align-items:center;justify-content:center;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--light);text-align:center;padding:8px}
-
     .arch-foot{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border-top:1px solid var(--rule)}
     .guard{background:var(--red-light);padding:26px 28px}
     .guard .ab-lab{color:var(--red)}
@@ -545,13 +329,10 @@
     .askq{background:var(--white);padding:26px 28px}
     .askq .ab-lab{color:var(--gold-deep)}
     .askq p{font-size:14px;font-style:italic;color:var(--gold-deep);line-height:1.7}
-
     /* gaps section */
     .gap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:44px}
     .gap-card{background:var(--white);padding:30px 28px}
     .gap-card.have{background:var(--green-light)}
-    .gap-num{font-family:'DM Serif Display',serif;font-size:22px;color:var(--gold);line-height:1;margin-bottom:12px}
-    .gap-card.have .gap-num{color:var(--green)}
     .gap-title{font-size:15px;font-weight:600;color:var(--black);margin-bottom:9px;line-height:1.35}
     .gap-body{font-size:13.5px;color:var(--mid);line-height:1.7}
     .gap-card.have .gap-body{color:var(--green)}
@@ -561,71 +342,57 @@
     .run-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.12);border-radius:4px;overflow:hidden}
 
     @media (max-width:1100px){
-      .ba-hero{padding:72px 40px 64px}
-      .arch-top{grid-template-columns:1fr}
-      .arch-visual{min-height:200px}
-      .arch-grid{grid-template-columns:repeat(2,1fr)}
-      .ab-span3,.ab-span2{grid-column:span 2}
-      .mood-keys,.mood-slots{grid-template-columns:repeat(3,1fr)}
-      .gap-grid,.run-grid{grid-template-columns:repeat(2,1fr)}
-      .ba-legend{grid-template-columns:1fr}
-      .mood{padding:28px 26px 30px}
-      .arch-head{padding:28px 26px}
+    .ba-hero{padding:72px 40px 64px}
+    .arch-top{grid-template-columns:1fr}
+    .arch-visual{min-height:200px}
+    .arch-grid{grid-template-columns:repeat(2,1fr)}
+    .ab-span2{grid-column:span 2}
+    .mood-keys,.mood-slots{grid-template-columns:repeat(3,1fr)}
+    .gap-grid,.run-grid{grid-template-columns:repeat(2,1fr)}
+    .ba-legend{grid-template-columns:1fr}
+    .mood{padding:28px 26px 30px}
+    .arch-head{padding:28px 26px}
     }
     @media (max-width:640px){
-      .ba-hero{padding:56px 24px 48px}
-      .arch-grid,.arch-foot,.gap-grid,.run-grid{grid-template-columns:1fr}
-      .ab-span3,.ab-span2{grid-column:span 1}
-      .mood-keys,.mood-slots{grid-template-columns:repeat(2,1fr)}
-      .pl-row{grid-template-columns:100px 1fr;gap:12px}
-      .pl-val{grid-column:2;text-align:left}
-      .pl-scale{display:none}
-      .swatch{width:60px}
+    .ba-hero{padding:56px 24px 48px}
+    .arch-grid,.arch-foot,.gap-grid,.run-grid{grid-template-columns:1fr}
+    .ab-span2{grid-column:span 1}
+    .mood-keys,.mood-slots{grid-template-columns:repeat(2,1fr)}
+    .pl-row{grid-template-columns:100px 1fr;gap:12px}
+    .pl-val{grid-column:2;text-align:left}
+    .pl-scale{display:none}
+    .swatch{width:60px}
     }
     @media print{
-      .arch{page-break-inside:avoid;box-shadow:none}
-      .mood-slot{display:none}
+    .arch{page-break-inside:avoid;box-shadow:none}
+    .mood-slot{display:none}
     }
 
     @media (max-width:1100px){
-      .section,.section-sm{padding:72px 40px}
-      .meeting-hero{padding:72px 40px 56px}
-      .time-rail,.logo-row,.site-nav,.site-footer{padding-left:40px;padding-right:40px}
-      .hero-content{padding:0 40px 64px}
-      .stat-strip,.wallet-types,.data-grid,.brand-grid,.goals-grid{grid-template-columns:repeat(2,1fr)}
-      .agenda,.timeline-grid,.action-grid,.stat-row,.ref-grid{grid-template-columns:repeat(2,1fr)}
-      .timeline-grid::before{display:none}
-      .time-rail-marks{grid-template-columns:repeat(2,1fr);gap:24px}
-      .split{grid-template-columns:1fr}
-      .split-text{padding:64px 40px}
-      .d-card-body{grid-template-columns:1fr}
-      .brand-q-grid{grid-template-columns:1fr}
-      .ladder-row,.ladder-gift{grid-template-columns:1fr;gap:14px}
-      .ladder-count{text-align:left}
-      .ladder-slots{max-width:100%}
-      .phases::before{display:none}
-      .phase-card{grid-template-columns:1fr;gap:16px}
-      .phase-rail{text-align:left;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:12px}
-      .phase-rail::after{display:none}
-      .phase-body{padding-left:0;border-left:none}
-      .challenge-grid{grid-template-columns:1fr}
-      .challenge-decisions{grid-template-columns:1fr;gap:16px}
+    .section,.section-sm{padding:72px 40px}
+    .logo-row,.site-nav,.site-footer{padding-left:40px;padding-right:40px}
+    .hero-content{padding:0 40px 64px}
+    .stat-strip,.wallet-types,.data-grid,.brand-grid{grid-template-columns:repeat(2,1fr)}
+    .stat-row,.ref-grid{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr}
+    .split-text{padding:64px 40px}
+    .ladder-row,.ladder-gift{grid-template-columns:1fr;gap:14px}
+    .ladder-count{text-align:left}
+    .ladder-slots{max-width:100%}
     }
     @media (max-width:640px){
-      /* nav must fit three tabs on a phone */
+    /* nav must fit three tabs on a phone */
       .site-nav{padding:0 12px;height:auto;min-height:56px;flex-wrap:wrap;row-gap:0}
-      .nav-logo{font-size:9px;letter-spacing:.08em;gap:6px;order:1;flex:1 1 auto;min-width:0}
-      .nav-date{display:none}
-      .nav-tabs{order:3;flex:1 0 100%;justify-content:space-between;border-top:1px solid var(--rule)}
-      .nav-tab{flex:1 1 0;justify-content:center;padding:0 6px;height:46px;font-size:10px;letter-spacing:.02em;text-align:center;line-height:1.2}
-      .section,.section-sm{padding:56px 24px}
-      .meeting-hero{padding:56px 24px 48px}
-      .stat-cell{padding:32px 20px}
-      .stat-number{font-size:42px}
-      .hero-content{padding:0 24px 48px}
-      .stat-strip,.wallet-types,.data-grid,.brand-grid,.goals-grid,.agenda,.timeline-grid,.action-grid,.stat-row,.ref-grid{grid-template-columns:1fr}
+    .nav-logo{font-size:9px;letter-spacing:.08em;gap:6px;order:1;flex:1 1 auto;min-width:0}
+    .nav-date{display:none}
+    .nav-tabs{order:3;flex:1 0 100%;justify-content:space-between;border-top:1px solid var(--rule)}
+    .nav-tab{flex:1 1 0;justify-content:center;padding:0 6px;height:46px;font-size:10px;letter-spacing:.02em;text-align:center;line-height:1.2}
+    .section,.section-sm{padding:56px 24px}
+    .stat-cell{padding:32px 20px}
+    .stat-number{font-size:42px}
+    .hero-content{padding:0 24px 48px}
+    .stat-strip,.wallet-types,.data-grid,.brand-grid,.stat-row,.ref-grid{grid-template-columns:1fr}
     }
-
     /* ─────────────── PRINT ─────────────── */
     @media print{
       .site-nav,.hero-scroll,.site-footer{display:none}
@@ -652,11 +419,9 @@
   <div class="nav-tabs" role="tablist" aria-label="Main sections">
     <button class="nav-tab" role="tab" id="tab-btn-strategy" aria-controls="tab-strategy" aria-selected="true" onclick="showTab('strategy',this)">Strategy 2026</button>
     <button class="nav-tab" role="tab" id="tab-btn-brands" aria-controls="tab-brands" aria-selected="false" onclick="showTab('brands',this)">Brand Architecture</button>
-    <button class="nav-tab" role="tab" id="tab-btn-meeting" aria-controls="tab-meeting" aria-selected="false" onclick="showTab('meeting',this)">Meeting Guide</button>
   </div>
   <div class="nav-date">May 2026</div>
 </nav>
-
 
 <!-- ══════════════════════════════════════
      STRATEGY TAB
@@ -1194,7 +959,6 @@
 
 </div><!-- /strategy tab -->
 
-
 <!-- ══════════════════════════════════════
      BRAND ARCHITECTURE TAB
 ══════════════════════════════════════ -->
@@ -1211,7 +975,6 @@
       <div><p>$14&ndash;110</p><p>Price ladder, open to ceiling</p></div>
     </div>
   </section>
-
 
   <section class="section">
     <p class="section-eyebrow">How To Read This</p>
@@ -1584,643 +1347,6 @@
   </section>
 
 </div><!-- /brand architecture tab -->
-
-
-<!-- ══════════════════════════════════════
-     MEETING GUIDE TAB
-══════════════════════════════════════ -->
-<div id="tab-meeting" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-meeting">
-
-  <div class="meeting-hero">
-    <p class="meeting-eyebrow">Wallet Program Review · 60 Minutes · Facilitation Guide</p>
-    <h1 class="meeting-title">Wallet Strategy<br>Meeting Guide</h1>
-    <p class="meeting-sub">A focused 60-minute session to align on the five wallet categories, define which brands own which lanes, and leave with a clear plan — including owners for every H2 milestone.</p>
-  </div>
-
-  <!-- 60-MIN TIME RAIL -->
-  <div class="time-rail">
-    <p style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:10px">The 60-Minute Map</p>
-    <div class="time-rail-track"><div class="time-rail-fill"></div></div>
-    <div class="time-rail-marks">
-      <div class="time-rail-mark"><p class="time-rail-min">0–5 min</p><p class="time-rail-label">Goals + Timeline</p></div>
-      <div class="time-rail-mark"><p class="time-rail-min">5–20 min</p><p class="time-rail-label">Customer + 5 Categories</p></div>
-      <div class="time-rail-mark"><p class="time-rail-min">20–40 min</p><p class="time-rail-label">Brand × Category</p></div>
-      <div class="time-rail-mark"><p class="time-rail-min">40–50 min</p><p class="time-rail-label">Packaging + Display</p></div>
-      <div class="time-rail-mark"><p class="time-rail-min">50–60 min</p><p class="time-rail-label">Actions + Owners</p></div>
-    </div>
-  </div>
-
-  <!-- GOALS -->
-  <section class="section section-cream">
-    <p class="section-eyebrow">Why We're Here</p>
-    <h2 class="section-title">Three goals for this meeting.</h2>
-    <p class="section-subtitle" style="margin-bottom:36px">Before we get into product, we need to agree on what we're trying to achieve. These three goals frame every decision in this meeting.</p>
-    <div class="goals-grid">
-      <div class="goal-card reveal"><div class="goal-num">01</div><p class="goal-title">Put the customer at the center of every product decision.</p><p class="goal-desc">We're not designing wallets for their own sake. We're designing for five specific carry types — people with distinct habits, needs, and purchase triggers. Every SKU, every feature, every price point should connect back to one of those five people. If it doesn't, we shouldn't make it.</p></div>
-      <div class="goal-card reveal delay-1"><div class="goal-num">02</div><p class="goal-title">Define which categories each brand should own — and which they shouldn't.</p><p class="goal-desc">Not every brand needs to cover all five wallet categories. Some brands have a clear lane. Others need one assigned. The challenge we leave this room with: a brand-by-category matrix that gives designers a focused brief — not a blank canvas with eight brands and five categories.</p></div>
-      <div class="goal-card reveal delay-2"><div class="goal-num">03</div><p class="goal-title">Commit to a final product + packaging + display presentation by December.</p><p class="goal-desc">The December deliverable isn't a deck. It's something sales can hand to a buyer and say: here's the new program. That means finalized product samples, printed packaging prototypes, and physical display mockups. Today we set the plan that makes that possible.</p></div>
-    </div>
-  </section>
-
-  <!-- MILESTONE STRIP -->
-  <div class="stat-strip">
-    <div class="stat-cell"><div class="stat-number" style="font-size:36px;letter-spacing:-.02em"><span class="accent">June</span></div><div class="stat-label">Product design kickoff<br>— new SKUs briefed</div></div>
-    <div class="stat-cell"><div class="stat-number" style="font-size:32px;letter-spacing:-.02em"><span class="accent">Jun–Aug</span></div><div class="stat-label">Brand plans + packaging<br>&amp; display strategy built</div></div>
-    <div class="stat-cell"><div class="stat-number" style="font-size:30px;letter-spacing:-.02em"><span class="accent">Early Aug</span></div><div class="stat-label">Sales seed presentation<br>— plant the flag, get input</div></div>
-    <div class="stat-cell"><div class="stat-number" style="font-size:36px;letter-spacing:-.02em"><span class="accent">Dec</span></div><div class="stat-label">Final show presentation<br>— product, packaging, displays</div></div>
-  </div>
-
-  <section class="section">
-
-    <!-- AGENDA -->
-    <p class="section-eyebrow">Agenda</p>
-    <h2 class="section-title" style="margin-bottom:16px">60 Minutes — Five Conversations</h2>
-    <p style="font-size:16px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:36px">The goal isn't a perfect discussion — it's a clear set of decisions and an owner for every action. Move quickly through each block. If something needs deeper work, assign an owner and keep going.</p>
-    <div class="agenda">
-      <div class="agenda-block"><p class="agenda-time">0–5 min</p><p class="agenda-title">Goals + Timeline</p><p class="agenda-desc">State the three goals. Walk the H2 roadmap. Return to this at the end to confirm alignment.</p></div>
-      <div class="agenda-block"><p class="agenda-time">5–20 min</p><p class="agenda-title">The Customer &amp; Five Categories</p><p class="agenda-desc">Who are we designing for? Do we all agree on the five carry types? Where are the gaps in our current assortment?</p></div>
-      <div class="agenda-block"><p class="agenda-time">20–40 min</p><p class="agenda-title">Brand × Category Strategy</p><p class="agenda-desc">Which brands own which categories? Specific design questions per brand. Leave with a brand-by-category matrix.</p></div>
-      <div class="agenda-block"><p class="agenda-time">40–50 min</p><p class="agenda-title">Packaging &amp; Display Goals</p><p class="agenda-desc">What do we want to show in December? What needs to be built — in-store and online?</p></div>
-      <div class="agenda-block"><p class="agenda-time">50–60 min</p><p class="agenda-title">Actions + Owners</p><p class="agenda-desc">One owner per action. One date. Every item must have a name next to it before the meeting ends.</p></div>
-    </div>
-
-    <!-- TIMELINE -->
-    <p class="section-eyebrow" style="margin-top:16px">H2 2026 Roadmap</p>
-    <h2 class="section-title" style="margin-bottom:16px">Four milestones. Every decision maps back to one of them.</h2>
-    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:36px">Walk this at the start so every discussion has a deadline context. Return to it at the end of the meeting to confirm owners and dates before anyone leaves the room.</p>
-    <div class="timeline-grid">
-      <div class="timeline-card"><div class="timeline-dot gold"></div><p class="timeline-period gold">June — Now</p><p class="timeline-name">Product Design Kickoff</p><p class="timeline-desc">Brief vendors. Lock new SKU direction per brand and category. Start designs based on today's decisions.</p></div>
-      <div class="timeline-card"><div class="timeline-dot gold"></div><p class="timeline-period gold">June – August</p><p class="timeline-name">Build the Plan</p><p class="timeline-desc">Per-brand assortment plans. Overall wallet strategy documented. Packaging direction and display concepts drafted.</p></div>
-      <div class="timeline-card"><div class="timeline-dot green"></div><p class="timeline-period green">Early August</p><p class="timeline-name">Sales Seed Presentation</p><p class="timeline-desc">Plant the flag. Share strategy direction. Collect sales feedback on focus areas and potential pivots.</p></div>
-      <div class="timeline-card"><div class="timeline-dot black"></div><p class="timeline-period black">December</p><p class="timeline-name">Final Show Presentation</p><p class="timeline-desc">Finalized product samples. Printed packaging. Physical display mockups. Built to hand to a buyer — not just show on a screen.</p></div>
-    </div>
-
-    <!-- PHASES — Now → December -->
-    <p class="section-eyebrow" style="margin-top:48px">Now → December</p>
-    <h2 class="section-title" style="margin-bottom:16px">Seven phases. Two internal syncs. Two external moments.</h2>
-    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:28px">The H2 roadmap above shows the two moments we're externally accountable to — August preview and December show. This is the path between them, broken into the phases of work each one requires. We're staying away from week-by-week because brand development needs to stagger.</p>
-
-    <div class="phases-note">
-      <strong>The sampling clock dictates the calendar.</strong> Product and packaging take roughly <strong>6–8 weeks from design lock to sample in hand</strong>. With eight brands to develop, we can't lock every design at the same moment — work staggers across June and July so the first samples land in late July, in time for the August preview, while later brands' samples arrive through September.
-    </div>
-
-    <div class="phases">
-
-      <!-- PHASE 01 — NOW -->
-      <div class="phase-card current">
-        <div class="phase-rail">
-          <span class="phase-num">01</span>
-          <span class="phase-duration">Now →<br>Early June</span>
-        </div>
-        <div class="phase-body">
-          <span class="phase-tag current">You are here</span>
-          <h3 class="phase-title">Confirm Strategy + Brand &amp; Retailer Line Planning</h3>
-          <p class="phase-desc">Lock the architecture this meeting establishes — the five categories, the brand-by-category matrix, packaging and display direction. Then translate it into operational line plans: per brand, per retailer, what gets carried where.</p>
-          <ul class="phase-acts">
-            <li>Five wallet categories + brand × category matrix locked</li>
-            <li>Packaging direction agreed — RFID, capacity, slim profile, gift signal</li>
-            <li>Display direction agreed — carry-type organized fixtures</li>
-            <li><strong>Per-brand assortment plans drafted</strong> by retailer (what each account carries from each brand)</li>
-            <li>Vendor briefing packets prepared per brand</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- PHASE 02 — DESIGN -->
-      <div class="phase-card">
-        <div class="phase-rail">
-          <span class="phase-num">02</span>
-          <span class="phase-duration">June</span>
-        </div>
-        <div class="phase-body">
-          <span class="phase-tag working">Working Phase</span>
-          <h3 class="phase-title">Design Time — Staggered Across Eight Brands</h3>
-          <p class="phase-desc">All of June is design. Vendor briefs go out staggered, not on the same day — Columbia, Levi's, Haggar and Kenneth Cole likely first because they have the clearest lanes; others as their direction firms up. Each design lock starts a 6–8 week sampling clock for that brand.</p>
-          <ul class="phase-acts">
-            <li>Vendor briefs delivered (staggered start across the month)</li>
-            <li>Initial design rounds per brand · sketches → CADs</li>
-            <li><strong>Earliest brand designs locked</strong> — sampling clock starts on those</li>
-            <li>Packaging direction translated into per-brand mood boards</li>
-            <li>Display concept design begins in parallel</li>
-            <li><strong>Pricing proposal scoped</strong> — tiered framework draft begins; sales involvement timing locked</li>
-          </ul>
-          <div class="phase-callout">
-            <strong>Staggering note:</strong> Designs locked early-to-mid June arrive as physical samples by late July / early August — exactly what the preview needs. Later locks become September arrivals, which is fine — those brands get shown as designs at the preview and as samples by December.
-          </div>
-        </div>
-      </div>
-
-      <!-- PHASE 03 — PRE-AUGUST SYNC -->
-      <div class="phase-card sync">
-        <div class="phase-rail">
-          <span class="phase-num">03</span>
-          <span class="phase-duration">Mid-July</span>
-        </div>
-        <div class="phase-body">
-          <span class="phase-tag sync">★ Internal Sync</span>
-          <h3 class="phase-title">Design + Merch Pre-Preview Alignment</h3>
-          <p class="phase-desc">Before the August preview, design and merch meet to assess where every brand actually is. Some will have samples on the way; others will still be in design. We lock the preview narrative around that reality — not around what we wish were true.</p>
-          <ul class="phase-acts">
-            <li>Status check: which brands have samples coming, which are still in design</li>
-            <li>Decide what the August preview shows for each brand — sample, CAD, or concept</li>
-            <li>Align display concepts to what's most ready</li>
-            <li>Lock the seed presentation narrative + storyline</li>
-            <li><strong>Pricing framework status check</strong> — is the tiered proposal ready to show, or still in draft?</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- PHASE 04 — AUGUST PREVIEW -->
-      <div class="phase-card milestone">
-        <div class="phase-rail">
-          <span class="phase-num">04</span>
-          <span class="phase-duration">Early August</span>
-        </div>
-        <div class="phase-body">
-          <span class="phase-tag milestone">Milestone · External</span>
-          <h3 class="phase-title">Sales Preview — Plant the Flag</h3>
-          <p class="phase-desc">More than CADs. Sampling is already underway for product, so early-brand samples are in hand. Late-brand designs and concept work are presented alongside them. In-store display concepts are shown as renders and physical mock-ups where ready.</p>
-          <ul class="phase-acts">
-            <li><strong>Earliest product samples in hand</strong> (early-locked brands)</li>
-            <li>Designs + CADs for remaining brands</li>
-            <li>Packaging concepts — comp level, brand-by-brand</li>
-            <li>Display concepts to preview — render-level, with rough physical mock where possible</li>
-            <li>Sales feedback gathered and documented</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- PHASE 05 — BUILD & FINALIZE -->
-      <div class="phase-card">
-        <div class="phase-rail">
-          <span class="phase-num">05</span>
-          <span class="phase-duration">August →<br>Mid-November</span>
-        </div>
-        <div class="phase-body">
-          <span class="phase-tag working">Working Phase</span>
-          <h3 class="phase-title">Finalize Product, Packaging &amp; Display</h3>
-          <p class="phase-desc">The longest stretch — and the one that benefits most from the staggered start. Remaining product samples arrive brand by brand. Packaging moves from comps to printed prototypes. Display goes from renders to physical mockups. Sales feedback from August is woven in. Flexibility is built into this window because not every brand finishes on the same day.</p>
-          <ul class="phase-acts">
-            <li>Remaining product samples arrive (staggered, per brand)</li>
-            <li>Packaging proofs → printed prototypes (gift-ready per brand)</li>
-            <li>Physical display mockups built — mass, dept store, specialty scenarios</li>
-            <li>Pricing, margin, MOQ locked across the full new line</li>
-            <li>Per-account sell-in decks drafted — tailored to each buyer</li>
-            <li>August sales feedback incorporated</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- PHASE 06 — PRE-DECEMBER SYNC -->
-      <div class="phase-card sync">
-        <div class="phase-rail">
-          <span class="phase-num">06</span>
-          <span class="phase-duration">Late November</span>
-        </div>
-        <div class="phase-body">
-          <span class="phase-tag sync">★ Internal Sync</span>
-          <h3 class="phase-title">Design + Merch Pre-Show Alignment</h3>
-          <p class="phase-desc">Mirror of the July sync. Before the December show, design and merch meet to confirm what's physically ready, what's in transit, and what the per-buyer story is. Anything still soft gets a final-week plan or gets cut from the show.</p>
-          <ul class="phase-acts">
-            <li>Status check: samples, packaging, displays — all three, all eight brands</li>
-            <li>Decide per-buyer presentation strategy: which brands lead, which round out</li>
-            <li>Final rehearsal of the show with sales</li>
-            <li>Buffer plan for anything still arriving</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- PHASE 07 — DECEMBER SHOW -->
-      <div class="phase-card milestone">
-        <div class="phase-rail">
-          <span class="phase-num">07</span>
-          <span class="phase-duration">Early December</span>
-        </div>
-        <div class="phase-body">
-          <span class="phase-tag milestone">Milestone · External</span>
-          <h3 class="phase-title">Final Show — Hand-Off to Buyers</h3>
-          <p class="phase-desc">Finalized samples, printed packaging, physical display mockups. Built so a sales rep can pick it up and hand it to a buyer — not just present it on a screen. This is the deliverable everything else has been building toward.</p>
-          <ul class="phase-acts">
-            <li>Finalized product samples across all 8 brands</li>
-            <li>Printed packaging prototypes — gift-ready, per brand</li>
-            <li>Physical display mockups for mass, dept store, specialty</li>
-            <li>Per-account sell-in materials in-hand</li>
-            <li>Post-show: document buyer reactions, path to confirmed orders</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- DISCUSSION CARDS -->
-    <p class="section-eyebrow" style="margin-top:48px">Discussion Blocks</p>
-    <h2 class="section-title" style="margin-bottom:16px">Five focused conversations.</h2>
-    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:36px">Each card has objectives and key questions. The facilitator's job is to drive toward a decision — not a perfect discussion.</p>
-
-    <div class="d-card">
-      <div class="d-card-header green">
-        <div><p class="d-card-num">Block 01 · 0–5 min</p><p class="d-card-session-title">Goals, Timeline &amp; Why This Matters Now</p></div>
-        <span class="d-card-time-badge">5 min</span>
-      </div>
-      <div class="d-card-body">
-        <div>
-          <p class="d-section-label">Objectives</p>
-          <ul class="d-objectives">
-            <li>Confirm all three meeting goals — product, brand, and December deliverable</li>
-            <li>Walk the four H2 milestones — make the urgency concrete</li>
-            <li>Establish that the customer drives every decision in this room</li>
-          </ul>
-        </div>
-        <div>
-          <p class="d-section-label">Key Questions</p>
-          <ul class="d-questions">
-            <li>"Do we all agree on the three goals for today? Is anything missing?"</li>
-            <li>"Is June realistic as a product design start — what's the blocker if not?"</li>
-            <li>"Who in this room is closest to the end customer? What are they telling us?"</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="d-card">
-      <div class="d-card-header gold">
-        <div><p class="d-card-num">Block 02 · 5–20 min</p><p class="d-card-session-title">The Customer &amp; The Five Wallet Categories</p></div>
-        <span class="d-card-time-badge">15 min</span>
-      </div>
-      <div class="d-card-body">
-        <div>
-          <p class="d-section-label">Objectives</p>
-          <ul class="d-objectives">
-            <li>Confirm the five wallet categories as the shared architecture for all decisions</li>
-            <li>Discuss which categories are underserved or missing in our current assortment</li>
-            <li>Connect each category back to a real customer — not just a product type</li>
-            <li>Identify where we're losing customers to DTC brands like Ridge and Bellroy</li>
-          </ul>
-        </div>
-        <div>
-          <p class="d-section-label">Key Questions</p>
-          <ul class="d-questions">
-            <li>"Which of the five categories are we best at today? Which are we worst at?"</li>
-            <li>"What drives someone to choose a wallet at a gift occasion vs. for themselves? Are we serving both?"</li>
-            <li>"Where are we genuinely competitive with DTC slim wallet brands — and where are we not?"</li>
-            <li>"Do our current designs reflect these five distinct customer needs, or are they variations of each other?"</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="d-card">
-      <div class="d-card-header blue">
-        <div><p class="d-card-num">Block 03 · 20–40 min</p><p class="d-card-session-title">Brand × Category Strategy — Which Brand Owns What?</p></div>
-        <span class="d-card-time-badge">20 min</span>
-      </div>
-      <div class="d-card-body full">
-        <div>
-          <p class="d-section-label">The Core Challenge</p>
-          <p style="font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:20px">Not every brand should cover every category. Some brands have natural credibility in a lane — Columbia in technical/travel carry, Cole Haan in premium leather, Kenneth Cole in urban/phone-companion. Others need a clear lane assigned. The goal of this block: leave with a brand-by-category matrix that guides design briefs.</p>
-          <p class="d-section-label" style="margin-top:20px">Specific Brand Questions to Answer</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="brand-q-grid">
-      <div class="brand-q-card">
-        <p class="brand-q-name">Levi's</p>
-        <ul class="brand-q-list">
-          <li>Are we satisfied with the current Levi's wallet design direction?</li>
-          <li>Does the wallet line reflect the same design energy as the belt update?</li>
-          <li>Should Levi's focus on New Classic and Extra Capacity — or go broader?</li>
-        </ul>
-      </div>
-      <div class="brand-q-card">
-        <p class="brand-q-name">Columbia</p>
-        <ul class="brand-q-list">
-          <li>Should Columbia wallets follow the belt design update to align the full accessories line?</li>
-          <li>Is Columbia the right brand to own Front Pocket and technical carry?</li>
-          <li>What does a cohesive Columbia accessories story — belts + wallets — look like?</li>
-        </ul>
-      </div>
-      <div class="brand-q-card">
-        <p class="brand-q-name">Tommy Hilfiger</p>
-        <ul class="brand-q-list">
-          <li>Does Tommy have legacy wallet styles that are long overdue for a significant redesign?</li>
-          <li>What's the priority — update existing styles or introduce new categories?</li>
-          <li>Should navy be the anchor color story for Tommy's wallet line?</li>
-        </ul>
-      </div>
-      <div class="brand-q-card">
-        <p class="brand-q-name">Haggar</p>
-        <ul class="brand-q-list">
-          <li>Should Haggar align with the belt strategy — a dress premium line plus a Haggar Sport line?</li>
-          <li>How does that two-track approach change the wallet design direction?</li>
-          <li>Is Haggar the right brand to anchor the value/volume tier in Extra Capacity?</li>
-        </ul>
-      </div>
-      <div class="brand-q-card">
-        <p class="brand-q-name">Kenneth Cole</p>
-        <ul class="brand-q-list">
-          <li>Should KC be the brand that leads the Phone Companion / MagSafe category?</li>
-          <li>Does the NYC urban positioning make it the right flag to plant in the phone-first segment?</li>
-        </ul>
-      </div>
-      <div class="brand-q-card">
-        <p class="brand-q-name">Cole Haan / CK / Tommy Bahama</p>
-        <ul class="brand-q-list">
-          <li>Is Cole Haan fully leveraging the premium leather authority position it owns?</li>
-          <li>Should Calvin Klein own the slim and front-pocket categories more aggressively?</li>
-          <li>Is Tommy Bahama differentiated enough from Tommy Hilfiger — where does it win distinctly?</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="d-card">
-      <div class="d-card-header dark">
-        <div><p class="d-card-num">Block 04 · 40–50 min</p><p class="d-card-session-title">Packaging &amp; Display Goals — What Do We Build by December?</p></div>
-        <span class="d-card-time-badge">10 min</span>
-      </div>
-      <div class="d-card-body">
-        <div>
-          <p class="d-section-label">Objectives</p>
-          <ul class="d-objectives">
-            <li>Agree on what packaging needs to communicate: RFID, capacity, profile, material, gift signal</li>
-            <li>Define the display concept for December — organized by carry type, not brand</li>
-            <li>Confirm the eComm story aligns with in-store: same language, same five category names</li>
-            <li>Identify which retailers get which display treatment first</li>
-          </ul>
-        </div>
-        <div>
-          <p class="d-section-label">Key Questions</p>
-          <ul class="d-questions">
-            <li>"If we could change one thing on our packaging tomorrow, what would have the biggest impact?"</li>
-            <li>"Which retailer is most ready for a carry-type organized display — and most likely to say yes?"</li>
-            <li>"What does 'gift ready' packaging actually mean for each brand? Is it the same across all eight?"</li>
-            <li>"How do we tell the same story online that we're building in-store?"</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="d-card">
-      <div class="d-card-header black">
-        <div><p class="d-card-num">Block 05 · 50–60 min</p><p class="d-card-session-title">Actions, Owners &amp; Timeline Confirmation</p></div>
-        <span class="d-card-time-badge">10 min</span>
-      </div>
-      <div class="d-card-body full">
-        <div>
-          <p class="d-section-label">How to Run This Block</p>
-          <p style="font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:16px">Go through every action item in the table below. For each one, assign a name. If an item doesn't have an owner before the meeting ends, it doesn't get done. Return to the H2 timeline: does today's output give everyone what they need to hit the June product kickoff? Confirm the next check-in date before anyone leaves.</p>
-          <ul class="d-objectives">
-            <li>Assign an owner to every action — use the table below</li>
-            <li>Close with: "What do we now agree on that we didn't before?"</li>
-            <li>Close with: "What's the one thing we can move on in the next two weeks?"</li>
-            <li>Confirm next check-in date before leaving the room</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- STRATEGIC CHALLENGE: PRICING -->
-    <section class="challenge" aria-labelledby="challenge-pricing-title">
-      <div class="challenge-head">
-        <span class="challenge-tag">Strategic Challenge · Open</span>
-        <h2 class="challenge-title" id="challenge-pricing-title">Pricing — One Price Per Brand No Longer Works</h2>
-        <p class="challenge-sub">A topic this meeting should launch, not finish. Touched on during Block 05 — owner and sales-involvement timing decided before anyone leaves the room.</p>
-      </div>
-
-      <div class="challenge-grid">
-        <div class="challenge-col problem">
-          <p class="challenge-col-label">The challenge today</p>
-          <p>We use a <strong>single price per brand/retailer</strong>. So a small card case sells for the same price as a much bigger extra-capacity wallet. To a customer, that reads as "way less product for the same money."</p>
-          <p>In effect, the larger wallets subsidize the smaller ones — and customers comparing on the shelf walk away feeling like the smaller piece is overpriced. We lose the sale either way.</p>
-          <p>We've hesitated to move to tiered pricing because of operational complexity and retailer push-back. That hesitation is starting to cost us at point of sale and in margin mix.</p>
-        </div>
-        <div class="challenge-col path">
-          <p class="challenge-col-label">The path forward</p>
-          <p>Propose <strong>tiered pricing by brand and retailer</strong> — different price points across Extra Capacity, New Classic, Front Pocket, Phone Companion, and Gift. Each tier reflects what's actually in the box.</p>
-          <p>Not a decision the whole room makes today. The job today is simpler: agree this is worth solving, pick an owner, and decide when sales joins the conversation.</p>
-          <p>One option to consider: a tiered framework drafted by August so the seed presentation includes a real proposal — not just the idea.</p>
-        </div>
-      </div>
-
-      <div class="challenge-questions">
-        <p class="d-section-label">Questions for the room</p>
-        <ul class="d-questions">
-          <li>"Who owns drafting the pricing proposal — merch, finance, or a small cross-functional team?"</li>
-          <li>"When does sales join the conversation — now for early input, mid-June, or with a draft proposal in August?"</li>
-          <li>"Do we want a tiered framework ready for the August preview, or only by the December show?"</li>
-          <li>"Are there 1–2 brand/retailer combinations we can pilot first before going broad?"</li>
-        </ul>
-      </div>
-
-      <div class="challenge-decisions">
-        <div class="challenge-decision">
-          <div>
-            <h5>Owner</h5>
-            <p>One name accountable for drafting the pricing proposal</p>
-          </div>
-        </div>
-        <div class="challenge-decision">
-          <div>
-            <h5>Sales Touchpoint</h5>
-            <p>Early input session before August, or proposal review in August?</p>
-          </div>
-        </div>
-        <div class="challenge-decision">
-          <div>
-            <h5>Target Deliverable</h5>
-            <p>Tiered framework ready by August, or by December show?</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- OWNER TABLE -->
-    <p class="section-eyebrow" style="margin-top:64px">Who Does What</p>
-    <h2 class="section-title" style="margin-bottom:16px">Five responsibilities. One owner each. Decided before the meeting ends.</h2>
-    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:36px">Keep it simple. Each bucket covers a meaningful area of work. Assign one owner per row — they're accountable for driving that workstream to the milestone.</p>
-
-    <div class="decision-table-wrap">
-      <table class="decision-table">
-        <thead>
-          <tr>
-            <th style="width:30%">Responsibility</th>
-            <th>What It Covers</th>
-            <th>Milestone</th>
-            <th style="min-width:160px">Owner</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Category + Brand Strategy</strong></td>
-            <td style="font-size:13px;color:var(--mid)">Connect key wallet categories to the right brands. Decide which brands expand, which get focused, and what gets dropped or consolidated.</td>
-            <td><span class="badge badge-green">June</span></td>
-            <td style="color:var(--light);font-style:italic">Assign name →</td>
-          </tr>
-          <tr>
-            <td><strong>Current Line Review</strong></td>
-            <td style="font-size:13px;color:var(--mid)">Audit the existing wallet assortment across all brands. Identify what to drop, what to keep, and what to platform or expand into new categories.</td>
-            <td><span class="badge badge-green">June</span></td>
-            <td style="color:var(--light);font-style:italic">Assign name →</td>
-          </tr>
-          <tr>
-            <td><strong>Packaging &amp; Display Concepts</strong></td>
-            <td style="font-size:13px;color:var(--mid)">Work with the packaging team on new packaging direction and in-store display concepts. Deliver comps for the August presentation and physical prototypes by December.</td>
-            <td><span class="badge badge-blue">August</span> <span class="badge badge-gold">December</span></td>
-            <td style="color:var(--light);font-style:italic">Assign name →</td>
-          </tr>
-          <tr>
-            <td><strong>August Sales Kickoff</strong></td>
-            <td style="font-size:13px;color:var(--mid)">Organize and lead the seed presentation with key sales team members. Build the presentation, schedule the meeting, collect feedback, and feed input back into the December plan.</td>
-            <td><span class="badge badge-blue">August</span></td>
-            <td style="color:var(--light);font-style:italic">Assign name →</td>
-          </tr>
-          <tr>
-            <td><strong>December Rollout Meeting</strong></td>
-            <td style="font-size:13px;color:var(--mid)">Organize the final show presentation. Coordinate finalized product samples, printed packaging prototypes, and physical display mockups. Built to hand to a buyer — not just present on a screen.</td>
-            <td><span class="badge badge-gold">December</span></td>
-            <td style="color:var(--light);font-style:italic">Assign name →</td>
-          </tr>
-          <tr>
-            <td><strong>Pricing Strategy Proposal</strong></td>
-            <td style="font-size:13px;color:var(--mid)">Draft a tiered pricing framework by brand and retailer — moving away from a single price per brand. Decide when sales joins the conversation. Target a real proposal (not just the idea) for the August preview.</td>
-            <td><span class="badge badge-red">Aug draft</span></td>
-            <td style="color:var(--light);font-style:italic">Assign name →</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- ACTION ITEMS -->
-    <p class="section-eyebrow" style="margin-top:64px">Post-Meeting Action Items</p>
-    <h2 class="section-title" style="margin-bottom:16px">Organized by milestone. One owner. One date.</h2>
-    <p style="font-size:15px;color:var(--mid);line-height:1.7;max-width:680px;margin-bottom:36px">Fill in owner names during Block 05. June items are non-negotiable starting points — without them, everything downstream slips.</p>
-
-    <div class="action-band june"><span class="band-label gold">Due in June — Start Now</span><span class="band-note">Foundation for the August presentation. Must be in motion immediately.</span></div>
-    <div class="action-grid">
-      <div class="action-card">
-        <p class="action-owner">Product — Due June</p>
-        <ul class="action-items">
-          <li><span class="checkbox"></span>Lock brand × category matrix — which brands cover which of the 5 categories</li>
-          <li><span class="checkbox"></span>Brief vendors: slim bifold direction, target profiles, price points, brands</li>
-          <li><span class="checkbox"></span>Audit existing line: which SKUs can be slimmed vs. need new development</li>
-          <li><span class="checkbox"></span>Confirm RFID status across full line — list what has it and what doesn't</li>
-          <li><span class="checkbox"></span>Columbia wallet brief: align with belt design update direction</li>
-          <li><span class="checkbox"></span>Tommy Hilfiger legacy audit: identify styles due for major redesign</li>
-        </ul>
-      </div>
-      <div class="action-card">
-        <p class="action-owner">Marketing / Brand — Due June</p>
-        <ul class="action-items">
-          <li><span class="checkbox"></span>Write packaging brief: RFID badge, capacity callout, slim profile, gift positioning</li>
-          <li><span class="checkbox"></span>Draft one-line positioning for each of the 5 wallet categories</li>
-          <li><span class="checkbox"></span>Draft one-line brand story for each brand in their primary category lane</li>
-          <li><span class="checkbox"></span><strong>Scope the pricing proposal</strong> — frame the tiered approach by brand × retailer; identify who else needs to be at the table</li>
-          <li><span class="checkbox"></span>Source slim vs. thick bifold comparison photo for strategy deck</li>
-          <li><span class="checkbox"></span>Source MagSafe wallet in-use lifestyle photo</li>
-        </ul>
-      </div>
-      <div class="action-card">
-        <p class="action-owner">Sales — Due June</p>
-        <ul class="action-items">
-          <li><span class="checkbox"></span>Identify key sales team members to brief on the strategy before August</li>
-          <li><span class="checkbox"></span>Confirm August seed presentation date and attendee list</li>
-          <li><span class="checkbox"></span><strong>Confirm pricing-conversation timing</strong> — early input session in June/July, or proposal review in August?</li>
-          <li><span class="checkbox"></span>Review planogram constraints at key accounts — display flexibility?</li>
-          <li><span class="checkbox"></span>Pull POS data: slim vs. traditional trend by account, last 24 months</li>
-          <li><span class="checkbox"></span>Collect current buyer feedback on wallet gaps or requests</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="action-band aug" style="margin-top:8px"><span class="band-label green">Due by Early August — Sales Seed Presentation</span><span class="band-note">Direction locked, early samples in hand, presentation built and rehearsed.</span></div>
-    <div class="action-grid">
-      <div class="action-card">
-        <p class="action-owner">Product — Due August</p>
-        <ul class="action-items">
-          <li><span class="checkbox"></span>2–3 early design samples or line drawings per brand for seed presentation</li>
-          <li><span class="checkbox"></span>Per-brand assortment plans: new SKUs, categories, colors, price tiers</li>
-          <li><span class="checkbox"></span>Haggar dual-track plan confirmed: dress premium + Haggar Sport direction</li>
-          <li><span class="checkbox"></span>Phone Companion category lead brand confirmed (Kenneth Cole?)</li>
-        </ul>
-      </div>
-      <div class="action-card">
-        <p class="action-owner">Marketing / Brand — Due August</p>
-        <ul class="action-items">
-          <li><span class="checkbox"></span>Packaging concept comps — one direction per brand, mood board level</li>
-          <li><span class="checkbox"></span>Display concept renders — 2–3 retail scenarios, carry-type organized</li>
-          <li><span class="checkbox"></span>Sales presentation deck: strategy + product direction + packaging + display</li>
-          <li><span class="checkbox"></span><strong>Tiered pricing framework ready for seed</strong> — proposal-level by brand × retailer, not idea-level</li>
-          <li><span class="checkbox"></span>Side-by-side: current program vs. new program direction</li>
-        </ul>
-      </div>
-      <div class="action-card">
-        <p class="action-owner">Sales — Due August</p>
-        <ul class="action-items">
-          <li><span class="checkbox"></span>Host seed presentation with key sales team members — plant the flag, gauge excitement</li>
-          <li><span class="checkbox"></span>Document reactions: what resonates, what concerns, what to pivot</li>
-          <li><span class="checkbox"></span><strong>Capture sales reaction to tiered pricing framework</strong> — and identify 1–2 pilot brand/retailer combos</li>
-          <li><span class="checkbox"></span>Identify which accounts are best for display and packaging pilots</li>
-          <li><span class="checkbox"></span>Feed sales input back into December plan before September</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="action-band dec" style="margin-top:8px"><span class="band-label black">Due by December — Final Show Presentation</span><span class="band-note">Finalized product, printed packaging, physical displays. Built to hand to a buyer.</span></div>
-    <div class="action-grid" style="margin-bottom:40px">
-      <div class="action-card">
-        <p class="action-owner">Product — Due December</p>
-        <ul class="action-items">
-          <li><span class="checkbox"></span>Finalized samples — all new SKUs across all 8 brands</li>
-          <li><span class="checkbox"></span>Pricing, margin, MOQ locked on every new item</li>
-          <li><span class="checkbox"></span>Current vs. new program comparison ready for presentation</li>
-          <li><span class="checkbox"></span>MagSafe/Phone Companion product finalized with samples</li>
-        </ul>
-      </div>
-      <div class="action-card">
-        <p class="action-owner">Marketing / Brand — Due December</p>
-        <ul class="action-items">
-          <li><span class="checkbox"></span>Printed packaging prototypes — at least one per brand, gift-ready</li>
-          <li><span class="checkbox"></span>Physical display mockups — mass, dept store, specialty scenarios</li>
-          <li><span class="checkbox"></span>Per-account sell-in decks — tailored, not templated</li>
-          <li><span class="checkbox"></span>Full brand story per brand: product + packaging + display narrative</li>
-        </ul>
-      </div>
-      <div class="action-card">
-        <p class="action-owner">Sales — Due December</p>
-        <ul class="action-items">
-          <li><span class="checkbox"></span>Schedule December buyer meetings at key accounts</li>
-          <li><span class="checkbox"></span>Confirm retailer-specific display requirements that affect mockup builds</li>
-          <li><span class="checkbox"></span>Provide account-prioritized list: which brands/products to lead with per buyer</li>
-          <li><span class="checkbox"></span>Post-December: document buyer reactions and path to confirmed orders</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- FACILITATOR NOTES -->
-    <div style="background:var(--cream);border:1px solid var(--rule);padding:48px;border-radius:4px;margin-bottom:40px;box-shadow:var(--shadow-sm)">
-      <p style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:24px;display:inline-flex;align-items:center;gap:10px"><span style="width:24px;height:1px;background:var(--gold-deep);display:inline-block"></span>Facilitator Notes</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
-        <div>
-          <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.3">Keep the customer in the room</p>
-          <p style="font-size:14px;color:var(--mid);line-height:1.75">Every time the conversation moves to SKU counts or vendor timelines, bring it back: "Which of the five customers does this serve? What does that person need?" Product decisions that can't answer that question shouldn't get made.</p>
-        </div>
-        <div>
-          <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.3">June is the real deadline</p>
-          <p style="font-size:14px;color:var(--mid);line-height:1.75">The chain: product starts in June → samples exist by August → December has something to show. If product doesn't kick off in June, December is a deck — not a demonstration. Keep returning to: "What needs to happen this month?"</p>
-        </div>
-        <div>
-          <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.3">August is a listening session</p>
-          <p style="font-size:14px;color:var(--mid);line-height:1.75">The August presentation to sales is not a finished reveal — it's a seed and a feedback loop. Build in explicit time for sales to react. Their input between August and December is what makes December land with buyers.</p>
-        </div>
-        <div>
-          <p style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--black);margin-bottom:10px;line-height:1.3">December must be physical</p>
-          <p style="font-size:14px;color:var(--mid);line-height:1.75">Slides don't close orders. If a sales rep can't pick it up and hand it to a buyer, it isn't done. Budget for physical packaging prototypes and display mockups now — not as a nice-to-have at the end of the project.</p>
-        </div>
-      </div>
-    </div>
-
-  </section>
-</div><!-- /meeting tab -->
 
 <footer class="site-footer">
   <div class="footer-logo">RAA Accessories · Wallet Program Strategy · 2026</div>
