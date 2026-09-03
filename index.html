@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wallet Strategy 2026 — RAA Accessories</title>
-  <meta name="description" content="RAA Accessories wallet category strategy for 2026 — five carry types, eight brands, packaging and display direction.">
+  <meta name="description" content="RAA Accessories wallet strategy — five carry types, nine-brand Fall 2027 brand architecture, packaging and display direction.">
   <meta name="theme-color" content="#1A1A1A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +24,7 @@
       --shadow-lg:0 16px 40px rgba(0,0,0,.10),0 4px 12px rgba(0,0,0,.05);
       --ease:cubic-bezier(.22,.61,.36,1);
     }
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
     body{font-family:'Inter',sans-serif;background:var(--white);color:var(--black);line-height:1.6;font-size:16px;overflow-x:hidden}
     img{max-width:100%;display:block}
@@ -421,6 +422,171 @@
     .footer-note{font-size:12px;color:rgba(255,255,255,.32)}
 
     /* ─────────────── RESPONSIVE ─────────────── */
+
+    /* ═══════════ BRAND ARCHITECTURE TAB ═══════════ */
+    .ba-hero{background:var(--black);padding:96px 80px 88px;position:relative;overflow:hidden}
+    .ba-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold) 70%,transparent)}
+    .ba-hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:inline-flex;align-items:center;gap:10px}
+    .ba-hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+    .ba-hero-title{font-family:'DM Serif Display',serif;font-size:clamp(38px,4.6vw,66px);line-height:1.06;color:var(--white);max-width:900px;margin-bottom:26px;letter-spacing:-.01em}
+    .ba-hero-title em{font-style:italic;color:var(--gold-light)}
+    .ba-hero-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,.72);max-width:660px;line-height:1.75}
+    .ba-hero-meta{display:flex;gap:56px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.12)}
+    .ba-hero-meta div p:first-child{font-family:'DM Serif Display',serif;font-size:34px;color:var(--gold);line-height:1;margin-bottom:8px}
+    .ba-hero-meta div p:last-child{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--light)}
+
+    /* legend */
+    .ba-legend{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:40px}
+    .ba-legend-col{background:var(--white);padding:32px}
+    .ba-legend-h{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px}
+    .ba-legend-note{font-size:13px;color:var(--mid);line-height:1.65;margin-bottom:20px}
+    .ba-legend-item{display:flex;gap:14px;padding:11px 0;border-top:1px solid var(--rule);align-items:baseline}
+    .ba-legend-item:first-of-type{border-top:none}
+    .ba-legend-item b{font-size:13px;font-weight:600;color:var(--black);min-width:150px;flex-shrink:0}
+    .ba-legend-item span{font-size:13px;color:var(--mid);line-height:1.55}
+
+    /* matrix */
+    .matrix-wrap{margin-top:44px;overflow-x:auto;border:1px solid var(--rule);border-radius:4px;box-shadow:var(--shadow-sm);background:var(--white)}
+    table.matrix{border-collapse:collapse;width:100%;min-width:820px;font-size:13px}
+    table.matrix th,table.matrix td{padding:14px 12px;text-align:center;border-bottom:1px solid var(--rule)}
+    table.matrix thead th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);background:var(--cream);border-bottom:2px solid var(--rule);line-height:1.4;vertical-align:bottom}
+    table.matrix tbody th{text-align:left;font-size:14px;font-weight:600;color:var(--black);white-space:nowrap;padding-left:20px;background:var(--white);position:sticky;left:0;box-shadow:1px 0 0 var(--rule)}
+    table.matrix tbody tr:hover td{background:var(--cream)}
+    table.matrix tbody tr:hover th{background:var(--cream)}
+    .mk{display:inline-block;width:22px;height:22px;border-radius:50%;line-height:22px;font-size:11px;font-weight:700}
+    .mk.p{background:var(--black);color:var(--white)}
+    .mk.s{background:var(--gold-light);color:var(--gold-deep);box-shadow:inset 0 0 0 1px var(--gold)}
+    .mk.n{background:transparent;color:var(--rule);box-shadow:inset 0 0 0 1px var(--rule)}
+    .matrix-key{display:flex;gap:28px;flex-wrap:wrap;padding:16px 20px;background:var(--cream);border-top:1px solid var(--rule);font-size:12px;color:var(--mid);align-items:center}
+    .matrix-key span{display:inline-flex;align-items:center;gap:9px}
+
+    /* price ladder */
+    .pl{margin-top:44px;background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:36px 40px;box-shadow:var(--shadow-sm)}
+    .pl-row{display:grid;grid-template-columns:130px 1fr 132px;align-items:center;gap:20px;padding:11px 0;border-top:1px solid var(--rule)}
+    .pl-row:first-of-type{border-top:none}
+    .pl-name{font-size:14px;font-weight:600;color:var(--black)}
+    .pl-track{position:relative;height:10px;background:var(--cream);border-radius:5px;overflow:hidden}
+    .pl-bar{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,var(--gold),var(--gold-deep));border-radius:5px}
+    .pl-val{font-size:12px;color:var(--mid);text-align:right;font-variant-numeric:tabular-nums}
+    .pl-val b{color:var(--black);font-weight:600}
+    .pl-scale{display:flex;justify-content:space-between;margin-top:14px;padding-left:150px;padding-right:152px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--light)}
+
+    /* brand architecture panel */
+    .arch{border:1px solid var(--rule);border-radius:4px;background:var(--white);box-shadow:var(--shadow-sm);margin-bottom:36px;overflow:hidden;transition:box-shadow .3s var(--ease)}
+    .arch:hover{box-shadow:var(--shadow-md)}
+    .arch-top{display:grid;grid-template-columns:340px 1fr;gap:0;border-bottom:1px solid var(--rule)}
+    .arch-visual{position:relative;background:var(--cream);min-height:230px;overflow:hidden}
+    .arch-visual img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+    .arch-visual-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:repeating-linear-gradient(45deg,var(--cream),var(--cream) 10px,#F2EEE6 10px,#F2EEE6 20px);text-align:center;padding:24px}
+    .arch-visual-ph p{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--light);line-height:1.7}
+    .arch-num{position:absolute;top:0;left:0;z-index:2;background:var(--black);color:var(--white);font-size:11px;font-weight:700;letter-spacing:.12em;padding:9px 15px}
+    .arch-head{padding:34px 38px}
+    .arch-name{font-family:'DM Serif Display',serif;font-size:34px;color:var(--black);line-height:1.1;margin-bottom:6px;letter-spacing:-.01em}
+    .arch-dna-lab{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px}
+    .arch-dna{font-size:17px;font-weight:400;color:var(--black);line-height:1.55;margin-bottom:18px;max-width:640px}
+    .arch-life{font-size:14px;color:var(--mid);line-height:1.75;max-width:680px}
+
+    .arch-flag{margin:0;padding:22px 38px;background:var(--gold-light);border-bottom:1px solid var(--rule);border-left:3px solid var(--gold-deep)}
+    .arch-flag p:first-child{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
+    .arch-flag p:last-child{font-size:13.5px;color:var(--dark);line-height:1.7}
+
+    .arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule)}
+    .ab{background:var(--white);padding:26px 28px}
+    .ab-lab{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .ab-lab::before{content:'';width:14px;height:1px;background:var(--gold);flex-shrink:0}
+    .ab p{font-size:13.5px;color:var(--mid);line-height:1.7}
+    .ab-span2{grid-column:span 2}
+    .ab-span3{grid-column:span 3}
+
+    .tags{display:flex;flex-wrap:wrap;gap:7px}
+    .tag{font-size:12px;padding:5px 11px;border-radius:3px;background:var(--cream);color:var(--dark);border:1px solid var(--rule);line-height:1.4}
+    .tag.opp{background:var(--green-light);border-color:#BDD6CC;color:var(--green)}
+    .tag-note{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:12px}
+
+    .focus-list{display:flex;flex-direction:column;gap:7px}
+    .focus-row{display:flex;align-items:center;gap:11px;font-size:13px}
+    .focus-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+    .focus-dot.p{background:var(--black)}
+    .focus-dot.s{background:var(--gold)}
+    .focus-dot.n{background:transparent;box-shadow:inset 0 0 0 1px var(--rule)}
+    .focus-row.p span{color:var(--black);font-weight:600}
+    .focus-row.s span{color:var(--dark)}
+    .focus-row.n span{color:var(--light);text-decoration:line-through;text-decoration-color:var(--rule)}
+
+    .price-block{display:flex;gap:30px;flex-wrap:wrap;align-items:flex-start;align-content:flex-start;margin-bottom:14px}
+    .price-block>div{flex:0 0 auto}
+    .price-block div p:first-child{font-family:'DM Serif Display',serif;font-size:26px;color:var(--black);line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums}
+    .price-block div p:first-child.keyprice{color:var(--gold-deep)}
+    .price-block div p:last-child{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--light)}
+
+    /* mood board */
+    .mood{background:var(--cream);border-top:1px solid var(--rule);padding:32px 38px 36px}
+    .mood-head{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:22px}
+    .mood-lab{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
+    .mood-name{font-family:'DM Serif Display',serif;font-size:26px;color:var(--black);line-height:1.15;margin-bottom:10px}
+    .mood-desc{font-size:13.5px;color:var(--mid);line-height:1.7;max-width:560px}
+    .swatches{display:flex;gap:0;border-radius:3px;overflow:hidden;box-shadow:var(--shadow-sm);flex-shrink:0}
+    .swatch{width:74px}
+    .swatch-chip{height:56px}
+    .swatch-txt{background:var(--white);padding:8px 6px;text-align:center;border-top:1px solid var(--rule)}
+    .swatch-txt b{display:block;font-size:9.5px;font-weight:600;color:var(--black);line-height:1.3;margin-bottom:2px}
+    .swatch-txt span{font-size:8.5px;color:var(--light);font-variant-numeric:tabular-nums;letter-spacing:.03em}
+    .mood-keys{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+    .mood-key{background:var(--white);border:1px solid var(--rule);border-radius:3px;padding:16px 13px;font-size:12px;color:var(--dark);line-height:1.5;min-height:76px;display:flex;align-items:flex-end;transition:border-color .2s,transform .2s var(--ease)}
+    .mood-key:hover{border-color:var(--gold);transform:translateY(-2px)}
+    .mood-slots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:8px}
+    .mood-slot{border:1px dashed var(--light);border-radius:3px;min-height:62px;display:flex;align-items:center;justify-content:center;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--light);text-align:center;padding:8px}
+
+    .arch-foot{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border-top:1px solid var(--rule)}
+    .guard{background:var(--red-light);padding:26px 28px}
+    .guard .ab-lab{color:var(--red)}
+    .guard .ab-lab::before{background:var(--red)}
+    .guard p{font-size:13.5px;color:#7A2B21;line-height:1.7}
+    .askq{background:var(--white);padding:26px 28px}
+    .askq .ab-lab{color:var(--gold-deep)}
+    .askq p{font-size:14px;font-style:italic;color:var(--gold-deep);line-height:1.7}
+
+    /* gaps section */
+    .gap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:44px}
+    .gap-card{background:var(--white);padding:30px 28px}
+    .gap-card.have{background:var(--green-light)}
+    .gap-num{font-family:'DM Serif Display',serif;font-size:22px;color:var(--gold);line-height:1;margin-bottom:12px}
+    .gap-card.have .gap-num{color:var(--green)}
+    .gap-title{font-size:15px;font-weight:600;color:var(--black);margin-bottom:9px;line-height:1.35}
+    .gap-body{font-size:13.5px;color:var(--mid);line-height:1.7}
+    .gap-card.have .gap-body{color:var(--green)}
+    .gap-tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-bottom:12px}
+    .gap-tag.in{background:var(--green);color:var(--white)}
+    .gap-tag.out{background:var(--gold-light);color:var(--gold-deep)}
+    .run-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.12);border-radius:4px;overflow:hidden}
+
+    @media (max-width:1100px){
+      .ba-hero{padding:72px 40px 64px}
+      .arch-top{grid-template-columns:1fr}
+      .arch-visual{min-height:200px}
+      .arch-grid{grid-template-columns:repeat(2,1fr)}
+      .ab-span3,.ab-span2{grid-column:span 2}
+      .mood-keys,.mood-slots{grid-template-columns:repeat(3,1fr)}
+      .gap-grid,.run-grid{grid-template-columns:repeat(2,1fr)}
+      .ba-legend{grid-template-columns:1fr}
+      .mood{padding:28px 26px 30px}
+      .arch-head{padding:28px 26px}
+    }
+    @media (max-width:640px){
+      .ba-hero{padding:56px 24px 48px}
+      .arch-grid,.arch-foot,.gap-grid,.run-grid{grid-template-columns:1fr}
+      .ab-span3,.ab-span2{grid-column:span 1}
+      .mood-keys,.mood-slots{grid-template-columns:repeat(2,1fr)}
+      .pl-row{grid-template-columns:100px 1fr;gap:12px}
+      .pl-val{grid-column:2;text-align:left}
+      .pl-scale{display:none}
+      .swatch{width:60px}
+    }
+    @media print{
+      .arch{page-break-inside:avoid;box-shadow:none}
+      .mood-slot{display:none}
+    }
+
     @media (max-width:1100px){
       .section,.section-sm{padding:72px 40px}
       .meeting-hero{padding:72px 40px 56px}
@@ -446,6 +612,12 @@
       .challenge-decisions{grid-template-columns:1fr;gap:16px}
     }
     @media (max-width:640px){
+      /* nav must fit three tabs on a phone */
+      .site-nav{padding:0 12px;height:auto;min-height:56px;flex-wrap:wrap;row-gap:0}
+      .nav-logo{font-size:9px;letter-spacing:.08em;gap:6px;order:1;flex:1 1 auto;min-width:0}
+      .nav-date{display:none}
+      .nav-tabs{order:3;flex:1 0 100%;justify-content:space-between;border-top:1px solid var(--rule)}
+      .nav-tab{flex:1 1 0;justify-content:center;padding:0 6px;height:46px;font-size:10px;letter-spacing:.02em;text-align:center;line-height:1.2}
       .section,.section-sm{padding:56px 24px}
       .meeting-hero{padding:56px 24px 48px}
       .stat-cell{padding:32px 20px}
@@ -479,6 +651,7 @@
   <div class="nav-logo">RAA Accessories · Wallet Strategy</div>
   <div class="nav-tabs" role="tablist" aria-label="Main sections">
     <button class="nav-tab" role="tab" id="tab-btn-strategy" aria-controls="tab-strategy" aria-selected="true" onclick="showTab('strategy',this)">Strategy 2026</button>
+    <button class="nav-tab" role="tab" id="tab-btn-brands" aria-controls="tab-brands" aria-selected="false" onclick="showTab('brands',this)">Brand Architecture</button>
     <button class="nav-tab" role="tab" id="tab-btn-meeting" aria-controls="tab-meeting" aria-selected="false" onclick="showTab('meeting',this)">Meeting Guide</button>
   </div>
   <div class="nav-date">May 2026</div>
@@ -905,8 +1078,8 @@
   <!-- BRAND PORTFOLIO -->
   <section class="section">
     <p class="section-eyebrow">Brand Portfolio</p>
-    <h2 class="section-title">Eight brands. The right category for each one.</h2>
-    <p class="section-subtitle">Not every brand needs to cover all five wallet categories. The question for each brand is: where do you have the most credibility, the clearest customer, and the biggest opportunity?</p>
+    <h2 class="section-title">Nine brands. The right category for each one.</h2>
+    <p class="section-subtitle">Not every brand needs to cover all five wallet categories. The question for each brand is: where do you have the most credibility, the clearest customer, and the biggest opportunity? <a href="#" onclick="showTab('brands',document.getElementById('tab-btn-brands'));return false;" style="color:var(--gold-deep);text-decoration:none;border-bottom:1px solid var(--gold)">See the full Fall 2027 brand architecture &rarr;</a></p>
     <div class="brand-grid">
 
       <div class="brand-card reveal">
@@ -1020,6 +1193,397 @@
   </div>
 
 </div><!-- /strategy tab -->
+
+
+<!-- ══════════════════════════════════════
+     BRAND ARCHITECTURE TAB
+══════════════════════════════════════ -->
+<div id="tab-brands" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-brands">
+
+  <section class="ba-hero">
+    <p class="ba-hero-eyebrow">Fall 2027 Development</p>
+    <h1 class="ba-hero-title">Nine brands. Nine jobs.<br><em>One wall that makes sense.</em></h1>
+    <p class="ba-hero-sub">A brand architecture is not a description of each brand — it is a set of decisions about what each brand is allowed to be, so that nine wallets on one fixture read as nine choices instead of nine versions of the same thing. Everything below is a draft position written to be argued with in the room.</p>
+    <div class="ba-hero-meta">
+      <div><p>9</p><p>Brands in the portfolio</p></div>
+      <div><p>5</p><p>Wear occasions</p></div>
+      <div><p>4</p><p>Construction types</p></div>
+      <div><p>$14&ndash;110</p><p>Price ladder, open to ceiling</p></div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <p class="section-eyebrow">How To Read This</p>
+    <h2 class="section-title">Two axes. Every brand gets placed on both.</h2>
+    <p class="section-subtitle">Occasion answers <em>when he wears it</em>. Construction answers <em>what it physically is</em>. A brand can own an occasion without owning every construction inside it — and most of our overlap problems come from confusing the two.</p>
+    <div class="ba-legend reveal">
+      <div class="ba-legend-col">
+        <p class="ba-legend-h">Axis One &mdash; Wear Occasion</p>
+        <p class="ba-legend-note">The life the wallet is dressed for. This drives material, color and finish.</p>
+        <div class="ba-legend-item"><b>Dress</b><span>Suit, tie, boardroom, wedding. Polished leather, slim profile, restrained hardware.</span></div>
+        <div class="ba-legend-item"><b>Refined Casual</b><span>The largest occasion in men's today. Sport coat and denim, office-optional, dinner out.</span></div>
+        <div class="ba-legend-item"><b>Workwear</b><span>Job site, trade, service. Durability is the claim. Heavy leather, reinforced stitch.</span></div>
+        <div class="ba-legend-item"><b>Casual</b><span>Weekend, errands, everyday. The default carry — highest unit volume, lowest AUR.</span></div>
+        <div class="ba-legend-item"><b>Outdoor / Active</b><span>Trail, water, travel, field. Synthetic and technical, function claims required.</span></div>
+      </div>
+      <div class="ba-legend-col">
+        <p class="ba-legend-h">Axis Two &mdash; Construction</p>
+        <p class="ba-legend-note">The physical object. This drives capacity, price and where it hangs on the wall.</p>
+        <div class="ba-legend-item"><b>Classic Bifold + Trifold</b><span>The heritage core. 6&ndash;9 cards, full bill compartment. Still the volume of the category.</span></div>
+        <div class="ba-legend-item"><b>Extra Capacity</b><span>10+ cards, ID window, coin or zip. For the man who carries everything and refuses to edit.</span></div>
+        <div class="ba-legend-item"><b>Slim / Front Pocket</b><span>4&ndash;6 cards, money clip or cash pocket. The fastest-growing construction in the category.</span></div>
+        <div class="ba-legend-item"><b>MagSafe Phone Companion</b><span>Magnetically mounts to the iPhone. Phone-first carry &mdash; a different customer, not a smaller wallet.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <p class="section-eyebrow">Portfolio Map</p>
+    <h2 class="section-title">Where every brand is allowed to play.</h2>
+    <p class="section-subtitle">Read this down the columns, not across the rows. If two brands are both Primary in the same box, one of them has to win it — or they have to be visibly different in material and price. Read it across the rows and you can see whether a brand has a focused job or is trying to be everything.</p>
+<div class="matrix-wrap reveal"><table class="matrix"><caption class="sr-only">Brand by wear occasion</caption><thead><tr><th style="text-align:left;padding-left:20px">Brand</th><th>Dress</th><th>Refined Casual</th><th>Workwear</th><th>Casual</th><th>Outdoor<br>/ Active</th></tr></thead><tbody><tr><th scope="row">Levi's</th><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td></tr><tr><th scope="row">Tommy Hilfiger</th><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr><tr><th scope="row">Columbia</th><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td></tr><tr><th scope="row">Tommy Bahama</th><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr><tr><th scope="row">Haggar</th><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr><tr><th scope="row">Dockers</th><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr><tr><th scope="row">Calvin Klein</th><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr><tr><th scope="row">Kenneth Cole</th><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr><tr><th scope="row">Cole Haan</th><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr></tbody></table><div class="matrix-key"><span><span class="mk p">&#9679;</span> Primary &mdash; the brand leads here</span><span><span class="mk s">&#9679;</span> Secondary &mdash; supports, does not lead</span><span><span class="mk n">&ndash;</span> White space &mdash; deliberately not competing</span><span style="color:var(--light)">Scroll horizontally on smaller screens</span></div></div>
+    <div style="height:52px"></div>
+    <h2 class="section-title" style="font-size:clamp(26px,2.4vw,34px);margin-bottom:16px">And what each one actually builds.</h2>
+    <p class="section-subtitle" style="margin-bottom:32px">Note the MagSafe column. Four brands are credible there and only two should lead it &mdash; that is a decision to make in the room, not a box to fill.</p>
+<div class="matrix-wrap reveal"><table class="matrix"><caption class="sr-only">Brand by construction type</caption><thead><tr><th style="text-align:left;padding-left:20px">Brand</th><th>Classic Bifold<br>+ Trifold</th><th>Extra Capacity</th><th>Slim<br>/ Front Pocket</th><th>MagSafe Phone Companion</th></tr></thead><tbody><tr><th scope="row">Levi's</th><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr><tr><th scope="row">Tommy Hilfiger</th><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td></tr><tr><th scope="row">Columbia</th><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td></tr><tr><th scope="row">Tommy Bahama</th><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr><tr><th scope="row">Haggar</th><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr><tr><th scope="row">Dockers</th><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr><tr><th scope="row">Calvin Klein</th><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td></tr><tr><th scope="row">Kenneth Cole</th><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td></tr><tr><th scope="row">Cole Haan</th><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk s" title="Secondary" aria-label="Secondary">&#9679;</span></td><td><span class="mk p" title="Primary" aria-label="Primary">&#9679;</span></td><td><span class="mk n" title="White space" aria-label="White space">&ndash;</span></td></tr></tbody></table><div class="matrix-key"><span><span class="mk p">&#9679;</span> Primary &mdash; the brand leads here</span><span><span class="mk s">&#9679;</span> Secondary &mdash; supports, does not lead</span><span><span class="mk n">&ndash;</span> White space &mdash; deliberately not competing</span><span style="color:var(--light)">Scroll horizontally on smaller screens</span></div></div>
+  </section>
+  <section class="section">
+    <p class="section-eyebrow">Price Architecture</p>
+    <h2 class="section-title">The ladder only works if every rung is different.</h2>
+    <p class="section-subtitle">Opening price point to top of line, by brand. The gaps matter as much as the positions: where two brands sit on top of each other, a buyer will drop one. Where there is a hole, a private label will fill it.</p>
+    <div class="pl reveal">
+      <div class="pl-row"><p class="pl-name">Haggar</p><div class="pl-track"><div class="pl-bar" style="left:12.7%;width:12.7%"></div></div><p class="pl-val"><b>$14</b> open &nbsp;&rarr;&nbsp; <b>$28</b> top</p></div>
+      <div class="pl-row"><p class="pl-name">Dockers</p><div class="pl-track"><div class="pl-bar" style="left:14.5%;width:14.5%"></div></div><p class="pl-val"><b>$16</b> open &nbsp;&rarr;&nbsp; <b>$32</b> top</p></div>
+      <div class="pl-row"><p class="pl-name">Columbia</p><div class="pl-track"><div class="pl-bar" style="left:16.4%;width:18.2%"></div></div><p class="pl-val"><b>$18</b> open &nbsp;&rarr;&nbsp; <b>$38</b> top</p></div>
+      <div class="pl-row"><p class="pl-name">Levi's</p><div class="pl-track"><div class="pl-bar" style="left:20.0%;width:16.4%"></div></div><p class="pl-val"><b>$22</b> open &nbsp;&rarr;&nbsp; <b>$40</b> top</p></div>
+      <div class="pl-row"><p class="pl-name">Kenneth Cole</p><div class="pl-track"><div class="pl-bar" style="left:21.8%;width:23.6%"></div></div><p class="pl-val"><b>$24</b> open &nbsp;&rarr;&nbsp; <b>$50</b> top</p></div>
+      <div class="pl-row"><p class="pl-name">Tommy Hilfiger</p><div class="pl-track"><div class="pl-bar" style="left:23.6%;width:26.4%"></div></div><p class="pl-val"><b>$26</b> open &nbsp;&rarr;&nbsp; <b>$55</b> top</p></div>
+      <div class="pl-row"><p class="pl-name">Calvin Klein</p><div class="pl-track"><div class="pl-bar" style="left:27.3%;width:31.8%"></div></div><p class="pl-val"><b>$30</b> open &nbsp;&rarr;&nbsp; <b>$65</b> top</p></div>
+      <div class="pl-row"><p class="pl-name">Tommy Bahama</p><div class="pl-track"><div class="pl-bar" style="left:34.5%;width:33.6%"></div></div><p class="pl-val"><b>$38</b> open &nbsp;&rarr;&nbsp; <b>$75</b> top</p></div>
+      <div class="pl-row"><p class="pl-name">Cole Haan</p><div class="pl-track"><div class="pl-bar" style="left:40.9%;width:59.1%"></div></div><p class="pl-val"><b>$45</b> open &nbsp;&rarr;&nbsp; <b>$110</b> top</p></div>
+      <div class="pl-scale"><span>$0</span><span>$30</span><span>$60</span><span>$90</span><span>$110</span></div>
+    </div>
+    <p style="font-size:13.5px;color:var(--mid);line-height:1.75;max-width:720px;margin-top:26px;padding-left:2px;border-left:2px solid var(--gold);padding-left:18px">Two things to notice. <strong style="color:var(--black)">Dockers fills the one real hole in the ladder</strong> &mdash; the $16&ndash;32 band between Haggar value and Levi&rsquo;s core, which we currently cede. And <strong style="color:var(--black)">Kenneth Cole and Tommy Hilfiger overlap almost completely</strong> at $24&ndash;55; they survive on the same wall only because one sells function and the other sells gift.</p>
+  </section>
+  <section class="section section-cream">
+    <p class="section-eyebrow">Brand Architecture</p>
+    <h2 class="section-title">Nine positions, written to be argued with.</h2>
+    <p class="section-subtitle">Each brand below carries a DNA line, its lifestyle, its doors now and next, its occasion and construction focus, price, materials, consumer, a Fall 2027 mood direction, an explicit set of guardrails, and one open question for the room. Nothing here is decided.</p>
+    <article class="arch reveal" id="brand-levis">
+      <div class="arch-top">
+        <div class="arch-visual"><span class="arch-num">01</span>
+          <img src="images/levis-lifestyle.jpg" alt="Levi's lifestyle" loading="lazy" decoding="async">
+        </div>
+        <div class="arch-head">
+          <h3 class="arch-name">Levi's</h3>
+          <p class="arch-dna-lab">Brand DNA</p>
+          <p class="arch-dna">The original American workwear icon. Denim-born, unpretentious, built to be worn in rather than kept nice.</p>
+          <p class="arch-life">He is 18–40. Music, vintage, denim culture. He buys the brand because it means something, not because it is new. The wallet lives in a back pocket and earns its patina. Western revival is running hard through the brand right now and accessories have not caught up.</p>
+        </div>
+      </div>
+      <div class="arch-grid">
+        <div class="ab"><p class="ab-lab">Where the brand is now</p><div class="tags"><span class="tag">Kohl's</span><span class="tag">Macy's</span><span class="tag">JCPenney</span><span class="tag">Amazon</span><span class="tag">Levi.com</span><span class="tag">Off-Price (TJX / Ross)</span></div></div>
+        <div class="ab ab-span2"><p class="ab-lab">Doors to go after</p><div class="tags"><span class="tag opp">Boot Barn — western revival is the single biggest open door</span><span class="tag opp">Buckle</span><span class="tag opp">Scheels</span><span class="tag opp">Urban Outfitters / PacSun (youth)</span><span class="tag opp">Nordstrom (Premium capsule only)</span></div></div>
+        <div class="ab"><p class="ab-lab">Wear occasion focus</p><div class="focus-list"><div class="focus-row n"><span class="focus-dot n"></span><span>Dress</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Refined Casual</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Workwear</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Casual</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Outdoor / Active</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Construction focus</p><div class="focus-list"><div class="focus-row p"><span class="focus-dot p"></span><span>Classic Bifold + Trifold</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Extra Capacity</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Slim / Front Pocket</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>MagSafe Phone Companion</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Price tier</p><div class="price-block"><div><p>$22</p><p>Opening</p></div><div><p class="keyprice">$28–32</p><p>Key item</p></div><div><p>$40</p><p>Top of line</p></div></div><p>Core volume tier. Levi's sets the mid-floor of the portfolio — everything below it is value, everything above is elevated.</p></div>
+        <div class="ab ab-span2"><p class="ab-lab">Materials, hardware &amp; construction</p><p>Vegetable-tanned and pull-up leathers that mark and darken with use. Visible grain, never corrected. Heavy tonal denim-weight stitch. Copper and antique brass rivets pulled from the jean. Jacquard label tape, red tab callout, canvas and denim mixed media. Raw or lightly waxed edge — not a slick painted edge.</p></div>
+        <div class="ab"><p class="ab-lab">Consumer &amp; gifting</p><p>Self-purchase first, gift second — the inverse of most of the portfolio. High replacement rate because the product is used hard. Gift moment is holiday and graduation, and the box should feel like a shop, not a jewelry counter.</p></div>
+      </div>
+      <div class="mood">
+        <div class="mood-head"><div><p class="mood-lab">Fall 2027 Mood Direction</p><p class="mood-name">New West</p><p class="mood-desc">Western revival read through a denim lens — not costume western, but the hardware, the tooling language and the worn indigo that the apparel line is already selling. FW27's move toward warm neutrals and visible-fiber texture lands naturally here.</p></div><div class="swatches"><div class="swatch"><div class="swatch-chip" style="background:#2B3A55"></div><div class="swatch-txt"><b>Worn Indigo</b><span>#2B3A55</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#1A1A1A"></div><div class="swatch-txt"><b>Rinse Black</b><span>#1A1A1A</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#A46B3C"></div><div class="swatch-txt"><b>Saddle Tan</b><span>#A46B3C</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#9C4A2F"></div><div class="swatch-txt"><b>Russet</b><span>#9C4A2F</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#E8E0D2"></div><div class="swatch-txt"><b>Bone</b><span>#E8E0D2</span></div></div></div></div>
+        <div class="mood-keys"><div class="mood-key">Worn indigo + selvedge edge</div><div class="mood-key">Copper rivet + burr hardware</div><div class="mood-key">Tooled / embossed leather detail</div><div class="mood-key">Rodeo and ranch photography</div><div class="mood-key">Suede and roughout texture</div><div class="mood-key">Sun-faded bone and dust tan</div></div>
+        <div class="mood-slots"><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div></div>
+      </div>
+      <div class="arch-foot">
+        <div class="guard"><p class="ab-lab">Guardrails &mdash; what this brand must not do</p><p>Do not make Levi's dressy. No polished calf, no gold hardware, no saffiano. Do not build a minimal slim card case here — that reads Calvin Klein. If the product does not look better after a year of use, it is off-brand.</p></div>
+        <div class="askq"><p class="ab-lab">Open question for the room</p><p>Are we happy with the current Levi's wallet direction, and does it carry the same energy as the belt update? Should western be an explicit F27 capsule or a tone across the whole line?</p></div>
+      </div>
+    </article>
+    <article class="arch reveal" id="brand-tommyh">
+      <div class="arch-top">
+        <div class="arch-visual"><span class="arch-num">02</span>
+          <img src="images/tommy-h-lifestyle.jpg" alt="Tommy Hilfiger lifestyle" loading="lazy" decoding="async">
+        </div>
+        <div class="arch-head">
+          <h3 class="arch-name">Tommy Hilfiger</h3>
+          <p class="arch-dna-lab">Brand DNA</p>
+          <p class="arch-dna">American prep, reinvented. Flag-forward, collegiate, clean — accessible designer with the widest gift reach in the portfolio.</p>
+          <p class="arch-life">He is 25–45. Suburban or urban prep, dresses up on weekends, wears the brand as a signal of taste that does not cost designer money. He is also, critically, the man someone else is buying for — Tommy is bought as a gift more than any other brand we carry.</p>
+        </div>
+      </div>
+      <div class="arch-grid">
+        <div class="ab"><p class="ab-lab">Where the brand is now</p><div class="tags"><span class="tag">Macy's (anchor)</span><span class="tag">Amazon</span><span class="tag">Tommy.com</span><span class="tag">Belk</span><span class="tag">Dillard's</span><span class="tag">Off-Price</span><span class="tag">International Duty Free</span></div></div>
+        <div class="ab ab-span2"><p class="ab-lab">Doors to go after</p><div class="tags"><span class="tag opp">Nordstrom full-line</span><span class="tag opp">Von Maur</span><span class="tag opp">Airport travel retail (Hudson / Duty Free Americas)</span><span class="tag opp">Scheels</span><span class="tag opp">Costco holiday gift program</span></div></div>
+        <div class="ab"><p class="ab-lab">Wear occasion focus</p><div class="focus-list"><div class="focus-row s"><span class="focus-dot s"></span><span>Dress</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Refined Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Workwear</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Outdoor / Active</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Construction focus</p><div class="focus-list"><div class="focus-row p"><span class="focus-dot p"></span><span>Classic Bifold + Trifold</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Extra Capacity</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Slim / Front Pocket</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>MagSafe Phone Companion</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Price tier</p><div class="price-block"><div><p>$26</p><p>Opening</p></div><div><p class="keyprice">$34–42</p><p>Key item</p></div><div><p>$55</p><p>Top of line</p></div></div><p>Sits above Levi's, below Cole Haan. The gift-set price point — $45–55 boxed — is where the volume actually is.</p></div>
+        <div class="ab ab-span2"><p class="ab-lab">Materials, hardware &amp; construction</p><p>Smooth and pebble corrected-grain for the core, saffiano cross-hatch for the dress tier. Flag-tape webbing pull as the ownable detail. Gunmetal and bright silver hardware. Striped grosgrain lining that shows when the wallet opens — the interior is the brand moment. Debossed rather than metal logo on the elevated tier.</p></div>
+        <div class="ab"><p class="ab-lab">Consumer &amp; gifting</p><p>The number one gift driver in the portfolio. Boxed sets — wallet plus card case, wallet plus belt — carry Q4. Purchased by a spouse, a mother, a girlfriend. The box does the selling before the leather ever gets touched.</p></div>
+      </div>
+      <div class="mood">
+        <div class="mood-head"><div><p class="mood-lab">Fall 2027 Mood Direction</p><p class="mood-name">Ivy Reset</p><p class="mood-desc">Prep rebuilt with FW27's softer, matte, textured hand — brushed wool over shine, collegiate references without the costume. The flag stays, but it works harder as a tape and a lining than as a badge.</p></div><div class="swatches"><div class="swatch"><div class="swatch-chip" style="background:#0A2352"></div><div class="swatch-txt"><b>Tommy Navy</b><span>#0A2352</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#C8102E"></div><div class="swatch-txt"><b>True Red</b><span>#C8102E</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#EFE9DD"></div><div class="swatch-txt"><b>Ecru</b><span>#EFE9DD</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#8B5A2B"></div><div class="swatch-txt"><b>Cognac</b><span>#8B5A2B</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#9AA0A6"></div><div class="swatch-txt"><b>Heather Grey</b><span>#9AA0A6</span></div></div></div></div>
+        <div class="mood-keys"><div class="mood-key">Rugby stripe + grosgrain</div><div class="mood-key">Varsity and crest embroidery</div><div class="mood-key">Brushed wool and felted surface</div><div class="mood-key">Matte navy, no gloss</div><div class="mood-key">Nautical rope and webbing</div><div class="mood-key">Ecru + red as the accent, not the field</div></div>
+        <div class="mood-slots"><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div></div>
+      </div>
+      <div class="arch-foot">
+        <div class="guard"><p class="ab-lab">Guardrails &mdash; what this brand must not do</p><p>Do not go western or outdoor — that is Levi's and Columbia. Do not chase Tommy Bahama's woven, resort, warm-tone language; the two Tommys must be visibly different on the same wall. Do not price below Levi's.</p></div>
+        <div class="askq"><p class="ab-lab">Open question for the room</p><p>Which Tommy Hilfiger legacy styles are overdue for a real redesign rather than a color update? And should the gift set — not the single wallet — be the hero we build the F27 line around?</p></div>
+      </div>
+    </article>
+    <article class="arch reveal" id="brand-columbia">
+      <div class="arch-top">
+        <div class="arch-visual"><span class="arch-num">03</span>
+          <img src="images/columbia-lifestyle.jpg" alt="Columbia lifestyle" loading="lazy" decoding="async">
+        </div>
+        <div class="arch-head">
+          <h3 class="arch-name">Columbia</h3>
+          <p class="arch-dna-lab">Brand DNA</p>
+          <p class="arch-dna">Tested tough. Pacific Northwest outdoor utility — function first, honest value, no fashion posturing.</p>
+          <p class="arch-life">He is 30–55. Hikes, fishes, tailgates, takes the family camping. He buys for durability and a stated function, and he is suspicious of anything decorative. He is also the easiest customer in the portfolio to sell an RFID or a water-resistant claim to.</p>
+        </div>
+      </div>
+      <div class="arch-grid">
+        <div class="ab"><p class="ab-lab">Where the brand is now</p><div class="tags"><span class="tag">Dick's Sporting Goods</span><span class="tag">Academy Sports</span><span class="tag">Scheels</span><span class="tag">Amazon</span><span class="tag">Columbia.com</span><span class="tag">Kohl's</span><span class="tag">Bass Pro / Cabela's</span><span class="tag">Sportsman's Warehouse</span></div></div>
+        <div class="ab ab-span2"><p class="ab-lab">Doors to go after</p><div class="tags"><span class="tag opp">REI — the credibility door we do not have</span><span class="tag opp">Field & Stream</span><span class="tag opp">Camping World</span><span class="tag opp">Airport / travel retail (travel organizer adjacency)</span><span class="tag opp">Costco outdoor gift sets</span></div></div>
+        <div class="ab"><p class="ab-lab">Wear occasion focus</p><div class="focus-list"><div class="focus-row n"><span class="focus-dot n"></span><span>Dress</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Refined Casual</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Workwear</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Casual</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Outdoor / Active</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Construction focus</p><div class="focus-list"><div class="focus-row s"><span class="focus-dot s"></span><span>Classic Bifold + Trifold</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Extra Capacity</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Slim / Front Pocket</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>MagSafe Phone Companion</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Price tier</p><div class="price-block"><div><p>$18</p><p>Opening</p></div><div><p class="keyprice">$24–28</p><p>Key item</p></div><div><p>$38</p><p>Top of line</p></div></div><p>Value-technical. Columbia wins on claim-per-dollar, not on leather quality. The travel organizer at $38 is the ceiling and the halo.</p></div>
+        <div class="ab ab-span2"><p class="ab-lab">Materials, hardware &amp; construction</p><p>Ripstop nylon, coated canvas, recycled polyester webbing. Bartack stitching at stress points — visible, because it is proof. Welded and taped seams (directly on FW27's performance-fashion crossover). Elastic retention bands, hypalon pulls, RFID lining as standard, water-resistant claim where we can substantiate it.</p></div>
+        <div class="ab"><p class="ab-lab">Consumer &amp; gifting</p><p>Father's Day and holiday gift driver, and a natural set with belt, glove and beanie. Also the strongest self-purchase in the technical tier because the function is the reason to buy.</p></div>
+      </div>
+      <div class="mood">
+        <div class="mood-head"><div><p class="mood-lab">Fall 2027 Mood Direction</p><p class="mood-name">Trail Utility</p><p class="mood-desc">Technical carry with FW27's warm-neutral shift folded in — moss green and elk brown replacing the flat greys the category defaults to. Every material choice should be legible as a function, not a finish.</p></div><div class="swatches"><div class="swatch"><div class="swatch-chip" style="background:#1A1A1A"></div><div class="swatch-txt"><b>Black</b><span>#1A1A1A</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#3C4348"></div><div class="swatch-txt"><b>Slate</b><span>#3C4348</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#4A5D3A"></div><div class="swatch-txt"><b>Moss Green</b><span>#4A5D3A</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#6B5642"></div><div class="swatch-txt"><b>Elk Brown</b><span>#6B5642</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#E8630A"></div><div class="swatch-txt"><b>Signal Orange</b><span>#E8630A</span></div></div></div></div>
+        <div class="mood-keys"><div class="mood-key">Webbing, bartack and hypalon</div><div class="mood-key">Topographic and map graphics</div><div class="mood-key">Welded seam / taped edge</div><div class="mood-key">Moss + slate + elk brown</div><div class="mood-key">Carabiner and clip hardware</div><div class="mood-key">Packable, compressible, weightless</div></div>
+        <div class="mood-slots"><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div></div>
+      </div>
+      <div class="arch-foot">
+        <div class="guard"><p class="ab-lab">Guardrails &mdash; what this brand must not do</p><p>No leather-look dress product — Columbia has no permission there. Do not chase fashion color. Every SKU carries a stated function or it does not ship. If it could sit next to Cole Haan without looking wrong, we have made a mistake.</p></div>
+        <div class="askq"><p class="ab-lab">Open question for the room</p><p>Should Columbia wallets follow the belt design update so the full accessories line reads as one system? And is Columbia — not Kenneth Cole — actually the right brand to lead MagSafe, given how phone-first the outdoor customer already is?</p></div>
+      </div>
+    </article>
+    <article class="arch reveal" id="brand-tommyb">
+      <div class="arch-top">
+        <div class="arch-visual"><span class="arch-num">04</span>
+          <img src="images/tommy-b-lifestyle.jpg" alt="Tommy Bahama lifestyle" loading="lazy" decoding="async">
+        </div>
+        <div class="arch-head">
+          <h3 class="arch-name">Tommy Bahama</h3>
+          <p class="arch-dna-lab">Brand DNA</p>
+          <p class="arch-dna">Island luxury for the man who has earned his leisure. Warm, tactile, quietly expensive — quality without logos.</p>
+          <p class="arch-life">He is 45–65 with real disposable income. Coastal or sunbelt, golf on Saturday, dinner out, two resort trips a year. He does not want to be branded, he wants to be complimented on the material. He carries more, not less — cards, cash, a club membership.</p>
+        </div>
+      </div>
+      <div class="arch-grid">
+        <div class="ab"><p class="ab-lab">Where the brand is now</p><div class="tags"><span class="tag">Tommy Bahama retail and restaurants</span><span class="tag">Nordstrom</span><span class="tag">Dillard's</span><span class="tag">Belk</span><span class="tag">Von Maur</span><span class="tag">Amazon</span><span class="tag">Resort and hotel shops</span></div></div>
+        <div class="ab ab-span2"><p class="ab-lab">Doors to go after</p><div class="tags"><span class="tag opp">Golf channel — PGA Tour Superstore, pro shops</span><span class="tag opp">Cruise line onboard retail</span><span class="tag opp">Airport travel retail in FL / HI / AZ / TX</span><span class="tag opp">Specialty men's independents</span><span class="tag opp">Costco premium holiday gift</span></div></div>
+        <div class="ab"><p class="ab-lab">Wear occasion focus</p><div class="focus-list"><div class="focus-row s"><span class="focus-dot s"></span><span>Dress</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Refined Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Workwear</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Outdoor / Active</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Construction focus</p><div class="focus-list"><div class="focus-row p"><span class="focus-dot p"></span><span>Classic Bifold + Trifold</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Extra Capacity</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Slim / Front Pocket</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>MagSafe Phone Companion</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Price tier</p><div class="price-block"><div><p>$38</p><p>Opening</p></div><div><p class="keyprice">$48–58</p><p>Key item</p></div><div><p>$75</p><p>Top of line</p></div></div><p>Premium tier alongside Cole Haan, reached through material and hand-finish rather than through logo. Highest gift AUR in the portfolio.</p></div>
+        <div class="ab ab-span2"><p class="ab-lab">Materials, hardware &amp; construction</p><p>Full-grain, washed and tumbled leather with a soft, broken-in hand. Hand-burnished edges. Woven and basketweave leather inlay as the ownable signature. Palm, marlin or compass blind emboss. Tropical print contrast lining — the surprise when it opens. Aged brass, never bright. Visible hand-stitch on the hero.</p></div>
+        <div class="ab"><p class="ab-lab">Consumer &amp; gifting</p><p>The highest-AUR gift in the portfolio, and often bought by a wife or daughter at a resort store with no price sensitivity. Packaging is not packaging here — it is part of the product. If the box is not giftable as-is, we have left money on the table.</p></div>
+      </div>
+      <div class="mood">
+        <div class="mood-head"><div><p class="mood-lab">Fall 2027 Mood Direction</p><p class="mood-name">Warm Coast</p><p class="mood-desc">FW27's ‘living matter’ idea taken literally — the material is the design. Burnished, woven, hand-touched surfaces in warm neutrals with one deep saturated coastal accent.</p></div><div class="swatches"><div class="swatch"><div class="swatch-chip" style="background:#8B5A2B"></div><div class="swatch-txt"><b>Cognac</b><span>#8B5A2B</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#4A3524"></div><div class="swatch-txt"><b>Espresso</b><span>#4A3524</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#D9C7A7"></div><div class="swatch-txt"><b>Sand</b><span>#D9C7A7</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#1F5C58"></div><div class="swatch-txt"><b>Deep Teal</b><span>#1F5C58</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#3E5F41"></div><div class="swatch-txt"><b>Palm</b><span>#3E5F41</span></div></div></div></div>
+        <div class="mood-keys"><div class="mood-key">Burnished and tumbled full-grain</div><div class="mood-key">Woven leather / raffia texture</div><div class="mood-key">Teak, rattan, natural fibre</div><div class="mood-key">Sunset amber and sand</div><div class="mood-key">Palm shadow and print lining</div><div class="mood-key">Aged brass, hand-stitch, patina</div></div>
+        <div class="mood-slots"><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div></div>
+      </div>
+      <div class="arch-foot">
+        <div class="guard"><p class="ab-lab">Guardrails &mdash; what this brand must not do</p><p>Never a plastic hand — the customer buys with his fingers. No slim minimal card case; wrong customer entirely. Do not borrow Tommy Hilfiger's navy-and-red preppy language — the two brands must not read as siblings on a wall.</p></div>
+        <div class="askq"><p class="ab-lab">Open question for the room</p><p>Is Tommy Bahama differentiated enough from Tommy Hilfiger in wallets today, and if not, is the fix material and finish or is it price? Should the box be the F27 lead item?</p></div>
+      </div>
+    </article>
+    <article class="arch reveal" id="brand-haggar">
+      <div class="arch-top">
+        <div class="arch-visual"><span class="arch-num">05</span>
+          <img src="images/haggar-lifestyle.jpg" alt="Haggar lifestyle" loading="lazy" decoding="async">
+        </div>
+        <div class="arch-head">
+          <h3 class="arch-name">Haggar</h3>
+          <p class="arch-dna-lab">Brand DNA</p>
+          <p class="arch-dna">Dependable American work-to-weekend. The original slacks brand — comfort, fit, value, no fuss.</p>
+          <p class="arch-life">He is 40–65, value-conscious and practical. Works in an office or on his feet. He replaces a wallet when the old one falls apart, he does not collect them. He notices price and he notices whether it feels cheap — in that order.</p>
+        </div>
+      </div>
+      <div class="arch-grid">
+        <div class="ab"><p class="ab-lab">Where the brand is now</p><div class="tags"><span class="tag">JCPenney (anchor)</span><span class="tag">Kohl's</span><span class="tag">Amazon</span><span class="tag">Walmart</span><span class="tag">Bealls</span><span class="tag">Haggar.com</span><span class="tag">Off-Price</span></div></div>
+        <div class="ab ab-span2"><p class="ab-lab">Doors to go after</p><div class="tags"><span class="tag opp">Target</span><span class="tag opp">Costco / Sam's Club multipack and gift set</span><span class="tag opp">Meijer</span><span class="tag opp">Boscov's</span><span class="tag opp">Burlington and Ross program business</span><span class="tag opp">Workwear and uniform channel</span></div></div>
+        <div class="ab"><p class="ab-lab">Wear occasion focus</p><div class="focus-list"><div class="focus-row p"><span class="focus-dot p"></span><span>Dress</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Refined Casual</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Workwear</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Outdoor / Active</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Construction focus</p><div class="focus-list"><div class="focus-row p"><span class="focus-dot p"></span><span>Classic Bifold + Trifold</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Extra Capacity</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Slim / Front Pocket</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>MagSafe Phone Companion</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Price tier</p><div class="price-block"><div><p>$14</p><p>Opening</p></div><div><p class="keyprice">$18–22</p><p>Key item</p></div><div><p>$28</p><p>Top of line</p></div></div><p>The opening price point of the portfolio. Haggar protects the entry wall — it is what keeps a buyer from filling that slot with a private label.</p></div>
+        <div class="ab ab-span2"><p class="ab-lab">Materials, hardware &amp; construction</p><p>Corrected-grain and topped leathers, chosen for consistency and cost, finished cleanly. Straight machine stitch, no decorative excess. Nickel hardware. RFID as a stated value claim — it is a real reason-to-believe at this price. Moisture-resistant lining. Simple blind deboss, no metal plate.</p></div>
+        <div class="ab"><p class="ab-lab">Consumer &amp; gifting</p><p>Bought by a spouse and bought for Father's Day. Value gift sets — wallet with belt — are the volume play. He does not want a story, he wants it to hold his cards and last three years.</p></div>
+      </div>
+      <div class="mood">
+        <div class="mood-head"><div><p class="mood-lab">Fall 2027 Mood Direction</p><p class="mood-name">Everyday Standard</p><p class="mood-desc">No trend costume. FW27 shows up here as matte over shine and warmer browns replacing cool greys — a quiet, honest update the customer will feel rather than name.</p></div><div class="swatches"><div class="swatch"><div class="swatch-chip" style="background:#1A1A1A"></div><div class="swatch-txt"><b>Black</b><span>#1A1A1A</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#4A3728"></div><div class="swatch-txt"><b>Brown</b><span>#4A3728</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#6B2C2C"></div><div class="swatch-txt"><b>Cordovan</b><span>#6B2C2C</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#6B6B6B"></div><div class="swatch-txt"><b>Grey</b><span>#6B6B6B</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#B8A88A"></div><div class="swatch-txt"><b>Khaki</b><span>#B8A88A</span></div></div></div></div>
+        <div class="mood-keys"><div class="mood-key">Matte finish, zero gloss</div><div class="mood-key">Brushed nickel hardware</div><div class="mood-key">Warm brown replacing cool grey</div><div class="mood-key">Clean grid, honest proportion</div><div class="mood-key">Khaki and twill reference</div><div class="mood-key">Function labels: RFID, capacity</div></div>
+        <div class="mood-slots"><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div></div>
+      </div>
+      <div class="arch-foot">
+        <div class="guard"><p class="ab-lab">Guardrails &mdash; what this brand must not do</p><p>Do not chase fashion. Do not premiumize past $30 — that is Kenneth Cole's floor and the overlap costs us both. Run the Dress and Sport tracks only if the fixture can visually separate them; two tracks on one crowded peg wall reads as clutter, not choice.</p></div>
+        <div class="askq"><p class="ab-lab">Open question for the room</p><p>Do the two tracks — Premium Dress and Sport Slim — create clarity or confusion at retail? And does the Haggar wallet line align with what we are doing in Haggar belts, or are they drifting apart?</p></div>
+      </div>
+    </article>
+    <article class="arch reveal" id="brand-dockers">
+      <div class="arch-top">
+        <div class="arch-visual"><span class="arch-num">06</span>
+          <div class="arch-visual-ph"><p>Lifestyle image<br>to be sourced</p></div>
+        </div>
+        <div class="arch-head">
+          <h3 class="arch-name">Dockers</h3>
+          <p class="arch-dna-lab">Brand DNA</p>
+          <p class="arch-dna">The khaki. The brand that invented casual Friday — now under new ownership and actively rebuilding its partner roster.</p>
+          <p class="arch-life">He is 35–60 today, and the new owner is trying to pull that younger. Casual Friday, weekend errands, comfortable and unfussy. He is the Haggar customer with slightly more style intent and slightly more money — which is exactly the gap between our entry tier and Levi's.</p>
+        </div>
+      </div>
+      <div class="arch-flag"><p>Ownership changed in 2026</p><p>Levi Strauss &amp; Co. completed the sale of Dockers to Authentic Brands Group in March 2026. Authentic has said the priorities are an e-commerce revamp, a push into denim beyond khaki, and building out global licensing partners. That last one is the opening — a licensing-model owner actively recruiting category partners is a very different conversation than negotiating with a vertical brand. Verify the current accessories license status before F27 line planning.</p></div>
+      <div class="arch-grid">
+        <div class="ab"><p class="ab-lab">Where the brand is now</p><div class="tags"><span class="tag">Kohl's</span><span class="tag">JCPenney</span><span class="tag">Macy's</span><span class="tag">Amazon</span><span class="tag">Walmart</span><span class="tag">Dockers.com</span><span class="tag">Off-Price</span></div></div>
+        <div class="ab ab-span2"><p class="ab-lab">Doors to go after</p><div class="tags"><span class="tag opp">This is the whitespace brand of the portfolio. Authentic runs a licensing model and is openly building category partners — an accessories conversation started now is worth more than the same conversation in 2028.</span><span class="tag opp">Target</span><span class="tag opp">Costco / club</span><span class="tag opp">International licensing markets</span><span class="tag opp">Denim-adjacent doors as the brand pushes beyond khaki</span></div></div>
+        <div class="ab"><p class="ab-lab">Wear occasion focus</p><div class="focus-list"><div class="focus-row s"><span class="focus-dot s"></span><span>Dress</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Refined Casual</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Workwear</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Outdoor / Active</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Construction focus</p><div class="focus-list"><div class="focus-row p"><span class="focus-dot p"></span><span>Classic Bifold + Trifold</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Extra Capacity</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Slim / Front Pocket</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>MagSafe Phone Companion</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Price tier</p><div class="price-block"><div><p>$16</p><p>Opening</p></div><div><p class="keyprice">$20–26</p><p>Key item</p></div><div><p>$32</p><p>Top of line</p></div></div><p>Slots deliberately between Haggar and Levi's — it fills the one real gap in our price ladder without cannibalizing either.</p></div>
+        <div class="ab ab-span2"><p class="ab-lab">Materials, hardware &amp; construction</p><p>Soft milled and tumbled leather with a relaxed hand. Tonal contrast stitch. Matte gunmetal hardware. Canvas and cotton twill mixed media referencing the khaki itself — this is the ownable material story and nobody else in the portfolio can use it. Herringbone cotton lining.</p></div>
+        <div class="ab"><p class="ab-lab">Consumer &amp; gifting</p><p>A door-count play more than an AUR play. Mid-level gift driver, strong Father's Day. The brand has enormous unaided awareness with the 40-plus male and almost no accessories presence — that asymmetry is the opportunity.</p></div>
+      </div>
+      <div class="mood">
+        <div class="mood-head"><div><p class="mood-lab">Fall 2027 Mood Direction</p><p class="mood-name">Modern Khaki</p><p class="mood-desc">Twill as a material idea, not a color. FW27's warm-neutral shift and matte, brushed surfaces suit a khaki-led palette better than any other brand in the portfolio — this is a season Dockers should win.</p></div><div class="swatches"><div class="swatch"><div class="swatch-chip" style="background:#B8996B"></div><div class="swatch-txt"><b>Khaki</b><span>#B8996B</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#1A1A1A"></div><div class="swatch-txt"><b>Black</b><span>#1A1A1A</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#4A3728"></div><div class="swatch-txt"><b>Dark Brown</b><span>#4A3728</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#5A5F3E"></div><div class="swatch-txt"><b>Olive Drab</b><span>#5A5F3E</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#22304A"></div><div class="swatch-txt"><b>Navy</b><span>#22304A</span></div></div></div></div>
+        <div class="mood-keys"><div class="mood-key">Cotton twill and chino weave</div><div class="mood-key">Olive drab and British tan</div><div class="mood-key">Soft-structured, unlined feel</div><div class="mood-key">Casual Friday, reset</div><div class="mood-key">Matte gunmetal, no shine</div><div class="mood-key">Canvas + leather mixed media</div></div>
+        <div class="mood-slots"><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div></div>
+      </div>
+      <div class="arch-foot">
+        <div class="guard"><p class="ab-lab">Guardrails &mdash; what this brand must not do</p><p>Do not collide with Levi's — Dockers is khaki-and-twill, not denim-and-rivet. No copper, no rivets, no selvedge references. Do not premiumize past $32. And confirm the licensing path before committing SKU depth: the brand changed hands this year.</p></div>
+        <div class="askq"><p class="ab-lab">Open question for the room</p><p>Do we have, or can we get, an accessories license under the new ownership — and who owns that conversation? Assuming yes, is Dockers a full nine-SKU brand for F27 or a focused four-SKU test?</p></div>
+      </div>
+    </article>
+    <article class="arch reveal" id="brand-ck">
+      <div class="arch-top">
+        <div class="arch-visual"><span class="arch-num">07</span>
+          <img src="images/ck-lifestyle.jpg" alt="Calvin Klein lifestyle" loading="lazy" decoding="async">
+        </div>
+        <div class="arch-head">
+          <h3 class="arch-name">Calvin Klein</h3>
+          <p class="arch-dna-lab">Brand DNA</p>
+          <p class="arch-dna">Minimal, modern, reductive. Designer language at an accessible price — the logo is the product.</p>
+          <p class="arch-life">He is 22–38. Urban, style-aware, shops on his phone, and buys the brand as a signal. He carries less than his father did on purpose. He is the single most likely customer in the portfolio to convert to a card case or a phone-mounted wallet.</p>
+        </div>
+      </div>
+      <div class="arch-grid">
+        <div class="ab"><p class="ab-lab">Where the brand is now</p><div class="tags"><span class="tag">Macy's (anchor)</span><span class="tag">Amazon</span><span class="tag">CalvinKlein.com</span><span class="tag">Nordstrom Rack</span><span class="tag">Belk</span><span class="tag">Dillard's</span><span class="tag">Off-Price</span><span class="tag">International Duty Free</span></div></div>
+        <div class="ab ab-span2"><p class="ab-lab">Doors to go after</p><div class="tags"><span class="tag opp">Nordstrom full-line</span><span class="tag opp">Bloomingdale's</span><span class="tag opp">Urban Outfitters</span><span class="tag opp">Airport travel retail</span><span class="tag opp">DTC gifting and bundles</span></div></div>
+        <div class="ab"><p class="ab-lab">Wear occasion focus</p><div class="focus-list"><div class="focus-row p"><span class="focus-dot p"></span><span>Dress</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Refined Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Workwear</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Outdoor / Active</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Construction focus</p><div class="focus-list"><div class="focus-row s"><span class="focus-dot s"></span><span>Classic Bifold + Trifold</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Extra Capacity</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Slim / Front Pocket</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>MagSafe Phone Companion</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Price tier</p><div class="price-block"><div><p>$30</p><p>Opening</p></div><div><p class="keyprice">$38–48</p><p>Key item</p></div><div><p>$65</p><p>Top of line</p></div></div><p>Designer-accessible. The price is part of the brand promise — discounting CK hard damages the signal we are selling.</p></div>
+        <div class="ab ab-span2"><p class="ab-lab">Materials, hardware &amp; construction</p><p>Smooth calf-look and saffiano cross-hatch. Black on black on black. Laser-etched or tonal debossed logo — never a bright metal plate. Minimal, machine-precise edge paint. Black nickel and matte silver hardware. Monogram jacquard lining as the interior story. Nothing should look touched by hand.</p></div>
+        <div class="ab"><p class="ab-lab">Consumer &amp; gifting</p><p>A major holiday gift brand for the 20s and 30s male — he receives CK and he buys CK for himself. Boxed and giftable is not optional; the packaging carries the designer signal that justifies the price on a crowded Macy's table.</p></div>
+      </div>
+      <div class="mood">
+        <div class="mood-head"><div><p class="mood-lab">Fall 2027 Mood Direction</p><p class="mood-name">Reductive</p><p class="mood-desc">Against a season moving warm and textural, CK holds the line on cold minimalism — and that contrast is exactly what makes it read as designer on the wall. Matte black, negative space, precision.</p></div><div class="swatches"><div class="swatch"><div class="swatch-chip" style="background:#000000"></div><div class="swatch-txt"><b>True Black</b><span>#000000</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#1A1A1A"></div><div class="swatch-txt"><b>Soft Black</b><span>#1A1A1A</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#E6E2D9"></div><div class="swatch-txt"><b>Bone</b><span>#E6E2D9</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#6E7479"></div><div class="swatch-txt"><b>Slate</b><span>#6E7479</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#1B2436"></div><div class="swatch-txt"><b>Deep Navy</b><span>#1B2436</span></div></div></div></div>
+        <div class="mood-keys"><div class="mood-key">Matte black monochrome</div><div class="mood-key">Negative space and editorial grid</div><div class="mood-key">Concrete, chrome, glass</div><div class="mood-key">Tonal monogram jacquard</div><div class="mood-key">Laser etch, no hardware</div><div class="mood-key">Bone as the only relief</div></div>
+        <div class="mood-slots"><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div></div>
+      </div>
+      <div class="arch-foot">
+        <div class="guard"><p class="ab-lab">Guardrails &mdash; what this brand must not do</p><p>Never warm or rustic. No pull-up leather, no antique brass, no contrast stitching, no burnishing. If it looks handcrafted it is off-brand. Do not let CK and Kenneth Cole converge — CK is minimal, KC is functional.</p></div>
+        <div class="askq"><p class="ab-lab">Open question for the room</p><p>Should Calvin Klein and Kenneth Cole split the phone-companion category by customer — CK on design, KC on function — or should one brand own it outright for F27?</p></div>
+      </div>
+    </article>
+    <article class="arch reveal" id="brand-kc">
+      <div class="arch-top">
+        <div class="arch-visual"><span class="arch-num">08</span>
+          <img src="images/kc-lifestyle.jpg" alt="Kenneth Cole lifestyle" loading="lazy" decoding="async">
+        </div>
+        <div class="arch-head">
+          <h3 class="arch-name">Kenneth Cole</h3>
+          <p class="arch-dna-lab">Brand DNA</p>
+          <p class="arch-dna">New York, quick-witted, urban professional. Style with a point of view and a function behind it, at a fair price.</p>
+          <p class="arch-life">He is 28–45. Commutes, lives in an apartment, goes from work to drinks without going home, and travels for business four times a year. His carry is a system — phone, cards, keys, AirTag — and he will pay for something that organizes it.</p>
+        </div>
+      </div>
+      <div class="arch-grid">
+        <div class="ab"><p class="ab-lab">Where the brand is now</p><div class="tags"><span class="tag">Macy's</span><span class="tag">Amazon</span><span class="tag">Kohl's</span><span class="tag">KennethCole.com</span><span class="tag">Boscov's</span><span class="tag">Off-Price (heavy)</span></div></div>
+        <div class="ab ab-span2"><p class="ab-lab">Doors to go after</p><div class="tags"><span class="tag opp">Nordstrom Rack at scale</span><span class="tag opp">Airport and travel retail</span><span class="tag opp">Corporate and incentive gifting</span><span class="tag opp">Zappos</span><span class="tag opp">Costco travel sets</span></div></div>
+        <div class="ab"><p class="ab-lab">Wear occasion focus</p><div class="focus-list"><div class="focus-row p"><span class="focus-dot p"></span><span>Dress</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Refined Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Workwear</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Outdoor / Active</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Construction focus</p><div class="focus-list"><div class="focus-row s"><span class="focus-dot s"></span><span>Classic Bifold + Trifold</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Extra Capacity</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Slim / Front Pocket</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>MagSafe Phone Companion</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Price tier</p><div class="price-block"><div><p>$24</p><p>Opening</p></div><div><p class="keyprice">$30–38</p><p>Key item</p></div><div><p>$50</p><p>Top of line</p></div></div><p>Between Tommy Hilfiger and Calvin Klein. The tech-carry set at $45–50 is the differentiated price point nobody else in the portfolio is holding.</p></div>
+        <div class="ab ab-span2"><p class="ab-lab">Materials, hardware &amp; construction</p><p>Smooth and pebble grain with a clean, urban finish. RFID standard, not upcharged. Genuinely engineered details — magnet array for MagSafe, an AirTag pocket, a pull-tab card lift, a quick-access transit slot. Matte gunmetal. One unexpected interior accent color. Function you can demonstrate in three seconds on a sales floor.</p></div>
+        <div class="ab"><p class="ab-lab">Consumer &amp; gifting</p><p>Split evenly between self-purchase and gift, which is rare and valuable. The tech-carry gift set — wallet, tracker holder, cable case — is a differentiated holiday idea no other brand in the portfolio can credibly make.</p></div>
+      </div>
+      <div class="mood">
+        <div class="mood-head"><div><p class="mood-lab">Fall 2027 Mood Direction</p><p class="mood-name">Commuter Tech</p><p class="mood-desc">The city carry system. FW27's performance-fashion crossover — bonded, taped, engineered — applied to a dress-adjacent urban product rather than an outdoor one.</p></div><div class="swatches"><div class="swatch"><div class="swatch-chip" style="background:#111418"></div><div class="swatch-txt"><b>Black</b><span>#111418</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#6B2C2C"></div><div class="swatch-txt"><b>Cordovan</b><span>#6B2C2C</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#3C4348"></div><div class="swatch-txt"><b>Slate</b><span>#3C4348</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#1E2A44"></div><div class="swatch-txt"><b>Midnight Navy</b><span>#1E2A44</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#C0662B"></div><div class="swatch-txt"><b>Accent Amber</b><span>#C0662B</span></div></div></div></div>
+        <div class="mood-keys"><div class="mood-key">Magnet array and phone mount</div><div class="mood-key">Matte gunmetal, engineered detail</div><div class="mood-key">Subway, turnstile, city grid</div><div class="mood-key">Midnight navy and slate</div><div class="mood-key">Interior accent color pop</div><div class="mood-key">Tracker, cable, transit organization</div></div>
+        <div class="mood-slots"><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div></div>
+      </div>
+      <div class="arch-foot">
+        <div class="guard"><p class="ab-lab">Guardrails &mdash; what this brand must not do</p><p>Do not become a cheaper Calvin Klein — that is a losing position and it is where the brand drifts if nobody is watching. Kenneth Cole's edge is demonstrable function, not restraint. No heritage, no rustic, no patina.</p></div>
+        <div class="askq"><p class="ab-lab">Open question for the room</p><p>Should Kenneth Cole be the flag we plant on MagSafe for the portfolio? And is the tech-carry set worth building as a real F27 program rather than a one-off gift item?</p></div>
+      </div>
+    </article>
+    <article class="arch reveal" id="brand-colehaan">
+      <div class="arch-top">
+        <div class="arch-visual"><span class="arch-num">09</span>
+          <img src="images/cole-haan-lifestyle.jpg" alt="Cole Haan lifestyle" loading="lazy" decoding="async">
+        </div>
+        <div class="arch-head">
+          <h3 class="arch-name">Cole Haan</h3>
+          <p class="arch-dna-lab">Brand DNA</p>
+          <p class="arch-dna">American craft meets modern engineering. Real leather authority — the halo brand that sets the quality ceiling for everything else we make.</p>
+          <p class="arch-life">He is 30–55, professional, quality-literate. He already owns Cole Haan shoes and he knows what full-grain feels like versus corrected. He is not price-shopping, he is material-shopping, and he will notice a fabric lining immediately.</p>
+        </div>
+      </div>
+      <div class="arch-grid">
+        <div class="ab"><p class="ab-lab">Where the brand is now</p><div class="tags"><span class="tag">Nordstrom</span><span class="tag">Macy's</span><span class="tag">Dillard's</span><span class="tag">Bloomingdale's</span><span class="tag">Amazon</span><span class="tag">ColeHaan.com and outlets</span><span class="tag">DSW</span></div></div>
+        <div class="ab ab-span2"><p class="ab-lab">Doors to go after</p><div class="tags"><span class="tag opp">Nordstrom full-line expansion</span><span class="tag opp">Saks Off 5th</span><span class="tag opp">Corporate and executive gifting</span><span class="tag opp">Golf channel</span><span class="tag opp">Airport travel retail</span><span class="tag opp">Specialty men's independents</span></div></div>
+        <div class="ab"><p class="ab-lab">Wear occasion focus</p><div class="focus-list"><div class="focus-row p"><span class="focus-dot p"></span><span>Dress</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Refined Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Workwear</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Casual</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>Outdoor / Active</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Construction focus</p><div class="focus-list"><div class="focus-row p"><span class="focus-dot p"></span><span>Classic Bifold + Trifold</span></div><div class="focus-row s"><span class="focus-dot s"></span><span>Extra Capacity</span></div><div class="focus-row p"><span class="focus-dot p"></span><span>Slim / Front Pocket</span></div><div class="focus-row n"><span class="focus-dot n"></span><span>MagSafe Phone Companion</span></div></div></div>
+        <div class="ab"><p class="ab-lab">Price tier</p><div class="price-block"><div><p>$45</p><p>Opening</p></div><div><p class="keyprice">$55–75</p><p>Key item</p></div><div><p>$110</p><p>Top of line</p></div></div><p>The portfolio ceiling and the halo. Cole Haan's job is partly to make everything below it look like a reasonable value — that only works if the quality gap is visible.</p></div>
+        <div class="ab ab-span2"><p class="ab-lab">Materials, hardware &amp; construction</p><p>Full-grain and genuine pebble grain, never corrected, never bonded. Hand-burnished edge paint in multiple passes. Leather-lined interior — this is the non-negotiable that separates the tier. Blind deboss only. Sculptural, weighted hardware. A finish that develops patina rather than wearing out.</p></div>
+        <div class="ab"><p class="ab-lab">Consumer &amp; gifting</p><p>The highest-AUR gift in the portfolio and the natural corporate and milestone gift — promotion, graduation, retirement. The box must be rigid with a magnetic closure. A folding carton on a $75 wallet reads as a mistake to this customer.</p></div>
+      </div>
+      <div class="mood">
+        <div class="mood-head"><div><p class="mood-lab">Fall 2027 Mood Direction</p><p class="mood-name">Refined Craft</p><p class="mood-desc">FW27's ‘material as the idea’ read at the top of the market — visible grain, hand-finish, warm neutrals with depth. The season is moving toward Cole Haan's natural language, which makes this the right year to push it.</p></div><div class="swatches"><div class="swatch"><div class="swatch-chip" style="background:#1A1A1A"></div><div class="swatch-txt"><b>Black</b><span>#1A1A1A</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#9A6B3F"></div><div class="swatch-txt"><b>British Tan</b><span>#9A6B3F</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#7A4A2A"></div><div class="swatch-txt"><b>Chestnut</b><span>#7A4A2A</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#1E2A44"></div><div class="swatch-txt"><b>Navy</b><span>#1E2A44</span></div></div><div class="swatch"><div class="swatch-chip" style="background:#5C1F24"></div><div class="swatch-txt"><b>Oxblood</b><span>#5C1F24</span></div></div></div></div>
+        <div class="mood-keys"><div class="mood-key">Full-grain, visible pore structure</div><div class="mood-key">Hand-burnished edge, multiple passes</div><div class="mood-key">Leather-lined interior</div><div class="mood-key">Oxblood, chestnut, British tan</div><div class="mood-key">Workshop, last, hand-tool</div><div class="mood-key">Patina over polish</div></div>
+        <div class="mood-slots"><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div><div class="mood-slot">Drop image</div></div>
+      </div>
+      <div class="arch-foot">
+        <div class="guard"><p class="ab-lab">Guardrails &mdash; what this brand must not do</p><p>Never corrected-grain or bonded leather at any price. Never a fabric-lined interior on the core. No deep promotional pricing — a $75 wallet at $29.99 destroys the halo and drags the whole portfolio's perceived value with it. Do not chase MagSafe; let Kenneth Cole and CK have it.</p></div>
+        <div class="askq"><p class="ab-lab">Open question for the room</p><p>Cole Haan anchors the premium tier — are we actually leveraging that in how the wall is merchandised and priced, or is it just sitting at the end of the peg? What would a genuine $110 hero item look like?</p></div>
+      </div>
+    </article>
+  </section>
+  <section class="section">
+    <p class="section-eyebrow">Completeness Check</p>
+    <h2 class="section-title">What a strong brand architecture needs &mdash; and what is still missing.</h2>
+    <p class="section-subtitle">The four blocks in green are covered on every brand card above. The eight in gold are the gaps. None of them are things Claude can invent &mdash; they are inputs the team has to bring, which makes them the right pre-work to assign at the end of the meeting.</p>
+    <div class="gap-grid reveal">
+      <div class="gap-card have"><span class="gap-tag in">Covered</span><p class="gap-title">Price tier &amp; key item</p><p class="gap-body">Opening price point, hero price and top of line, per brand, on one ladder. Without it merchandising cannot build a wall and sales cannot answer a buyer&rsquo;s first question.</p></div>
+      <div class="gap-card have"><span class="gap-tag in">Covered</span><p class="gap-title">Materials &amp; construction</p><p class="gap-body">Leather type, lining, hardware finish, edge treatment. This is what actually stops two brands from looking alike at three feet.</p></div>
+      <div class="gap-card have"><span class="gap-tag in">Covered</span><p class="gap-title">Consumer &amp; gifting occasion</p><p class="gap-body">Who he is, and whether the brand is a self-purchase or a gift. Drives packaging spend and the Q4 plan.</p></div>
+      <div class="gap-card have"><span class="gap-tag in">Covered</span><p class="gap-title">Color story &amp; guardrails</p><p class="gap-body">A five-color seasonal palette plus an explicit list of what the brand must not do. The guardrail is the half people skip and the half that prevents overlap.</p></div>
+      <div class="gap-card"><span class="gap-tag out">Still needed</span><p class="gap-title">SKU count and door count per brand</p><p class="gap-body">How many styles each brand earns, and at how many doors. A brand architecture without a line-plan ceiling turns into every brand asking for twelve SKUs. Suggest carrying a target SKU range on each card before the meeting.</p></div>
+      <div class="gap-card"><span class="gap-tag out">Still needed</span><p class="gap-title">Licensor approval rules and royalty rate</p><p class="gap-body">Eight of these nine are licensed. What each licensor will and will not approve &mdash; logo use, materials, price floors, channel restrictions &mdash; and what the royalty does to margin at each price point. This kills more F27 ideas late than anything else on this list.</p></div>
+      <div class="gap-card"><span class="gap-tag out">Still needed</span><p class="gap-title">F25 / F26 actual sell-through by brand</p><p class="gap-body">You cannot plan F27 credibly without last season&rsquo;s numbers. Units, AUR, sell-through and returns per brand, ideally per door. Merchandising should bring this to the meeting.</p></div>
+      <div class="gap-card"><span class="gap-tag out">Still needed</span><p class="gap-title">Competitive set on the wall</p><p class="gap-body">For each brand, who it loses to at its own doors &mdash; the other licensed brands, the retailer&rsquo;s private label, and the direct-to-consumer slim-wallet players. Positioning only means something relative to something.</p></div>
+      <div class="gap-card"><span class="gap-tag out">Still needed</span><p class="gap-title">Packaging and display expression per brand</p><p class="gap-body">The strategy tab already argues packaging is a revenue decision. That argument needs a per-brand answer: which brands get a rigid box, which get a hangtag, which get a fixture of their own.</p></div>
+      <div class="gap-card"><span class="gap-tag out">Still needed</span><p class="gap-title">Replenishment versus seasonal split</p><p class="gap-body">Which SKUs per brand are carried year-round core and which are seasonal or gift-only. This changes the design brief and the inventory conversation completely.</p></div>
+      <div class="gap-card"><span class="gap-tag out">Still needed</span><p class="gap-title">Ownership and licensing changes</p><p class="gap-body">Dockers moved to Authentic Brands Group in March 2026. Any brand&rsquo;s owner changing mid-cycle changes the approval path, the royalty and the channel strategy. Worth a standing line on every brand card.</p></div>
+      <div class="gap-card"><span class="gap-tag out">Still needed</span><p class="gap-title">Sustainability and materials compliance</p><p class="gap-body">Recycled content, chrome-free tanning, and state-level chemical regulations. Several of these licensors now require a materials disclosure &mdash; better to know before the design brief than after the sample.</p></div>
+    </div>
+  </section>
+
+  <section class="section-sm section-black">
+    <p class="section-eyebrow">Using This In The Room</p>
+    <h2 class="section-title white" style="max-width:840px;margin-bottom:16px">Do not read the nine cards out loud. Run the two matrices and let the room fight.</h2>
+    <p class="section-subtitle white" style="max-width:720px;margin-bottom:40px">The brand cards are reference material &mdash; send them before the meeting. The live conversation should happen on the portfolio map, where the conflicts are visible.</p>
+    <div class="run-grid">
+      <div style="background:#232323;padding:30px 26px"><p style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--gold);line-height:1;margin-bottom:14px">01</p><p style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:9px;line-height:1.35">Find the collisions</p><p style="font-size:13.5px;color:var(--light);line-height:1.7">Put the occasion matrix up and look only for boxes with two Primaries. Tommy Hilfiger and Tommy Bahama in Refined Casual. Calvin Klein, Kenneth Cole and Cole Haan in Dress. Resolve each one before anything else.</p></div>
+      <div style="background:#232323;padding:30px 26px"><p style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--gold);line-height:1;margin-bottom:14px">02</p><p style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:9px;line-height:1.35">Plant the MagSafe flag</p><p style="font-size:13.5px;color:var(--light);line-height:1.7">Four brands are credible in phone companion. Pick one to lead and one to follow, and make the other seven white space. Spreading it across the portfolio is how the category dies in test.</p></div>
+      <div style="background:#232323;padding:30px 26px"><p style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--gold);line-height:1;margin-bottom:14px">03</p><p style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:9px;line-height:1.35">Settle Dockers</p><p style="font-size:13.5px;color:var(--light);line-height:1.7">It is the only brand on this list where the question is not design, it is whether we have a license under the new owner. Assign that answer to one person with a date before the meeting ends.</p></div>
+      <div style="background:#232323;padding:30px 26px"><p style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--gold);line-height:1;margin-bottom:14px">04</p><p style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:9px;line-height:1.35">Assign the eight gaps</p><p style="font-size:13.5px;color:var(--light);line-height:1.7">Sell-through data to merchandising. Licensor rules to sales and legal. Competitive audit to whoever walks the doors. The architecture is not finished until those eight come back.</p></div>
+    </div>
+  </section>
+
+</div><!-- /brand architecture tab -->
 
 
 <!-- ══════════════════════════════════════
