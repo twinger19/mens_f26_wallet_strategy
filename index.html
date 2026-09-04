@@ -159,14 +159,6 @@
     .image-break-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,.55));display:flex;align-items:center;justify-content:center}
     .image-break-quote{font-family:'DM Serif Display',serif;font-size:clamp(24px,3.2vw,44px);color:var(--white);text-align:center;max-width:820px;padding:0 40px;line-height:1.25;letter-spacing:-.005em}
     .image-break-quote::before,.image-break-quote::after{content:'"';color:var(--gold);font-style:italic}
-    /* ─────────────── DATA GRID ─────────────── */
-    .data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)}
-    .data-card{background:var(--white);padding:48px 40px;transition:background .3s var(--ease)}
-    .data-card:hover{background:#fcfaf6}
-    .data-number{font-family:'DM Serif Display',serif;font-size:64px;line-height:1;color:var(--black);margin-bottom:14px;letter-spacing:-.02em}
-    .data-number .accent{color:var(--gold)}
-    .data-desc{font-size:15px;color:var(--dark);line-height:1.65;margin-bottom:10px}
-    .data-source{font-size:11px;color:var(--light);letter-spacing:.08em}
     /* ─────────────── COMPARE ITEMS ─────────────── */
     .compare-items{list-style:none;margin-top:12px}
     .compare-items li{font-size:14px;color:var(--dark);padding:11px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;line-height:1.55;align-items:flex-start}
@@ -316,7 +308,6 @@
     .ref-fig img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
     .ref-fig figcaption{padding:20px 22px;font-size:13px;color:var(--mid);line-height:1.65}
     .ref-fig figcaption b{color:var(--black);font-weight:600}
-
     .tier-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:8px}
     .tier{background:var(--white);padding:30px 26px;display:flex;flex-direction:column}
     .tier-band{font-family:'DM Serif Display',serif;font-size:24px;color:var(--gold-deep);line-height:1;margin-bottom:16px;font-variant-numeric:tabular-nums}
@@ -373,7 +364,7 @@
     .section,.section-sm{padding:72px 40px}
     .site-nav,.site-footer{padding-left:40px;padding-right:40px}
     .hero-content{padding:0 40px 64px}
-    .stat-strip,.wallet-types,.data-grid{grid-template-columns:repeat(2,1fr)}
+    .stat-strip,.wallet-types{grid-template-columns:repeat(2,1fr)}
     .stat-row{grid-template-columns:repeat(2,1fr)}
     .split{grid-template-columns:1fr}
     .split-text{padding:64px 40px}
@@ -392,7 +383,7 @@
     .stat-cell{padding:32px 20px}
     .stat-number{font-size:42px}
     .hero-content{padding:0 24px 48px}
-    .stat-strip,.wallet-types,.data-grid,.stat-row{grid-template-columns:1fr}
+    .stat-strip,.wallet-types,.stat-row{grid-template-columns:1fr}
     }
     /* ─────────────── PRINT ─────────────── */
     @media print{
@@ -707,18 +698,6 @@
     </div>
   </div>
 
-  <!-- WHERE WE STAND -->
-  <section class="section section-cream">
-    <p class="section-eyebrow">Where We Actually Stand</p>
-    <h2 class="section-title">The honest read on the market.</h2>
-    <p class="section-subtitle">Two things worth knowing before we plan. The published market-size numbers for this category are not trustworthy. And the one audited number that does exist is not comfortable.</p>
-    <div class="data-grid">
-      <div class="data-card reveal"><div class="data-number"><span class="accent">&minus;38%</span></div><div class="data-desc"><strong>Fossil Group&rsquo;s leather goods segment, FY2025</strong> &mdash; $69.3M, down 38% year over year. It fell harder than their watches (&minus;7%) or jewellery (&minus;22%). The closest audited public comparable to our business.</div><div class="data-source">Fossil Group SEC filing &middot; March 2026</div></div>
-      <div class="data-card reveal"><div class="data-number"><span class="accent">3.6&times;</span></div><div class="data-desc"><strong>The spread between published estimates</strong> of the global wallet market &mdash; $6.8B to $24.8B for the same category and roughly the same year. No one credible knows the size of this market.</div><div class="data-source">Five market-research firms compared &middot; 2026</div></div>
-    </div>
-    <p style="font-size:14.5px;color:var(--mid);line-height:1.8;max-width:840px;margin-top:34px;border-left:2px solid var(--gold);padding-left:20px">A note on the numbers. The previous version of this deck cited a $1.5B slim-wallet market growing 7% against a flat 1% category, sourced to Grand View Research. That report covers belts and wallets combined, contains no slim-wallet segment, and puts wallets at 6.1% growth &mdash; it does not say what we said it said. It has been removed, along with five other figures that could not be traced to a real study. Where the evidence is thin, this deck now says so.</p>
-  </section>
-
   <!-- THE COMPETITIVE SET -->
   <section class="section">
     <p class="section-eyebrow">Who We Are Actually Competing With</p>
@@ -730,7 +709,7 @@
         <p class="tier-band">$46 &ndash; $185</p>
         <p class="tier-name">The same wall</p>
         <p class="tier-sub">Other licensed brands</p>
-        <p class="tier-body"><strong>Fossil</strong> is the only true like-for-like &mdash; $46&ndash;55 core, same doors, a deeper named-family assortment, and it put &ldquo;reinvigorate our Jewelry and Leather categories&rdquo; in its Q2 2026 investor remarks. Also here: <strong>Michael Kors</strong> $79.50&ndash;129.50, <strong>Bosca</strong> $90&ndash;185, <strong>Johnston &amp; Murphy</strong> $55&ndash;70, <strong>Original Penguin</strong> $48.</p>
+        <p class="tier-body"><strong>Fossil</strong> is the only true like-for-like &mdash; $46&ndash;55 core, same doors, a deeper named-family assortment. Its leather segment fell <strong>38% in FY2025 to $69.3M</strong>, harder than its watches (&minus;7%) or jewellery (&minus;22%) &mdash; and it has now told investors it will &ldquo;reinvigorate&rdquo; the category. Also here: <strong>Michael Kors</strong> $79.50&ndash;129.50, <strong>Bosca</strong> $90&ndash;185, <strong>Johnston &amp; Murphy</strong> $55&ndash;70, <strong>Original Penguin</strong> $48.</p>
         <p class="tier-take">Fossil puts RFID in the product name, not on the hangtag. It reads from three feet away and survives into every search result.</p>
       </div>
 
