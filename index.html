@@ -316,6 +316,30 @@
     .ref-fig img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
     .ref-fig figcaption{padding:20px 22px;font-size:13px;color:var(--mid);line-height:1.65}
     .ref-fig figcaption b{color:var(--black);font-weight:600}
+
+    .tier-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:8px}
+    .tier{background:var(--white);padding:30px 26px;display:flex;flex-direction:column}
+    .tier-band{font-family:'DM Serif Display',serif;font-size:24px;color:var(--gold-deep);line-height:1;margin-bottom:16px;font-variant-numeric:tabular-nums}
+    .tier-name{font-size:17px;font-weight:600;color:var(--black);line-height:1.25;margin-bottom:4px}
+    .tier-sub{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin-bottom:16px}
+    .tier-body{font-size:13.5px;color:var(--mid);line-height:1.7;margin-bottom:16px;flex:1}
+    .tier-body strong{color:var(--black);font-weight:600}
+    .tier-take{font-size:13px;font-style:italic;color:var(--gold-deep);line-height:1.6;border-top:1px solid var(--rule);padding-top:14px}
+    .myth{margin-top:2px;background:var(--blue-light);border-left:3px solid var(--blue);padding:26px 30px}
+    .myth-lab{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+    .myth-body{font-size:14.5px;color:var(--dark);line-height:1.75}
+    .ways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:8px}
+    .way{background:var(--white);padding:32px 28px}
+    .way-num{font-family:'DM Serif Display',serif;font-size:22px;color:var(--gold);line-height:1;margin-bottom:14px}
+    .way-name{font-size:18px;font-weight:600;color:var(--black);margin-bottom:12px}
+    .way-body{font-size:14px;color:var(--mid);line-height:1.75}
+    .ship-note{margin-top:32px;background:var(--white);border:1px solid var(--rule);border-left:3px solid var(--gold);border-radius:4px;padding:28px 32px;box-shadow:var(--shadow-sm)}
+    .ship-lab{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px}
+    .ship-body{font-size:14.5px;color:var(--mid);line-height:1.78;max-width:900px}
+    .ship-body strong{color:var(--black)}
+    @media (max-width:1100px){.tier-grid{grid-template-columns:repeat(2,1fr)}.ways-grid{grid-template-columns:1fr}}
+    @media (max-width:640px){.tier-grid{grid-template-columns:1fr}}
+
     @media (max-width:1100px){.ref-strip{grid-template-columns:1fr}}
 
     @media (max-width:1100px){.cal-grid{grid-template-columns:repeat(2,1fr)}}
@@ -690,11 +714,87 @@
     <p class="section-subtitle">Two things worth knowing before we plan. The published market-size numbers for this category are not trustworthy. And the one audited number that does exist is not comfortable.</p>
     <div class="data-grid">
       <div class="data-card reveal"><div class="data-number"><span class="accent">&minus;38%</span></div><div class="data-desc"><strong>Fossil Group&rsquo;s leather goods segment, FY2025</strong> &mdash; $69.3M, down 38% year over year. It fell harder than their watches (&minus;7%) or jewellery (&minus;22%). The closest audited public comparable to our business.</div><div class="data-source">Fossil Group SEC filing &middot; March 2026</div></div>
-      <div class="data-card reveal delay-1"><div class="data-number"><span class="accent">$100M+</span></div><div class="data-desc"><strong>Ridge&rsquo;s stated revenue</strong> as of early 2024, with mid-double-digit growth claimed since. Built on slim carry, and now expanding well beyond wallets.</div><div class="data-source">Ridge CEO, public statement &middot; 2024</div></div>
-      <div class="data-card reveal delay-2"><div class="data-number"><span class="accent">3</span></div><div class="data-desc"><strong>Nordstrom, Best Buy and Amazon.</strong> Where Ridge already sells. The slim-wallet insurgent is not outside the wholesale channel waiting to get in &mdash; it has been on the department store shelf since 2019.</div><div class="data-source">Company channel history</div></div>
       <div class="data-card reveal"><div class="data-number"><span class="accent">3.6&times;</span></div><div class="data-desc"><strong>The spread between published estimates</strong> of the global wallet market &mdash; $6.8B to $24.8B for the same category and roughly the same year. No one credible knows the size of this market.</div><div class="data-source">Five market-research firms compared &middot; 2026</div></div>
     </div>
     <p style="font-size:14.5px;color:var(--mid);line-height:1.8;max-width:840px;margin-top:34px;border-left:2px solid var(--gold);padding-left:20px">A note on the numbers. The previous version of this deck cited a $1.5B slim-wallet market growing 7% against a flat 1% category, sourced to Grand View Research. That report covers belts and wallets combined, contains no slim-wallet segment, and puts wallets at 6.1% growth &mdash; it does not say what we said it said. It has been removed, along with five other figures that could not be traced to a real study. Where the evidence is thin, this deck now says so.</p>
+  </section>
+
+  <!-- THE COMPETITIVE SET -->
+  <section class="section">
+    <p class="section-eyebrow">Who We Are Actually Competing With</p>
+    <h2 class="section-title">Four different fights, and only one of them is on our fixture.</h2>
+    <p class="section-subtitle">Prices below are live MSRP, checked September 2026 at the retailer or brand site. The four tiers do not meet each other &mdash; which is exactly the problem, because three of them are reaching our customer somewhere we are not.</p>
+
+    <div class="tier-grid">
+      <div class="tier reveal">
+        <p class="tier-band">$46 &ndash; $185</p>
+        <p class="tier-name">The same wall</p>
+        <p class="tier-sub">Other licensed brands</p>
+        <p class="tier-body"><strong>Fossil</strong> is the only true like-for-like &mdash; $46&ndash;55 core, same doors, a deeper named-family assortment, and it put &ldquo;reinvigorate our Jewelry and Leather categories&rdquo; in its Q2 2026 investor remarks. Also here: <strong>Michael Kors</strong> $79.50&ndash;129.50, <strong>Bosca</strong> $90&ndash;185, <strong>Johnston &amp; Murphy</strong> $55&ndash;70, <strong>Original Penguin</strong> $48.</p>
+        <p class="tier-take">Fossil puts RFID in the product name, not on the hangtag. It reads from three feet away and survives into every search result.</p>
+      </div>
+
+      <div class="tier reveal delay-1">
+        <p class="tier-band">$18 &ndash; $50</p>
+        <p class="tier-name">The retailer&rsquo;s own label</p>
+        <p class="tier-sub">Private label</p>
+        <p class="tier-body"><strong>Goodfellow</strong> $18&ndash;20 at Target. <strong>Sonoma</strong> $30 flat at Kohl&rsquo;s &mdash; but in PU and split leather, so it is beating us on spec, not on cost. Then the one that matters: <strong>Roundtree &amp; Yorke $50 in soft nappa leather</strong>, a Dillard&rsquo;s exclusive.</p>
+        <p class="tier-take">The $30 undercut is survivable, because the material gap is arguable in front of a buyer. A $50 nappa exclusive that beats our mid band on price <em>and</em> material is not.</p>
+      </div>
+
+      <div class="tier reveal delay-2">
+        <p class="tier-band">$65 &ndash; $195</p>
+        <p class="tier-name">The slim specialists</p>
+        <p class="tier-sub">DTC brands, now wholesale</p>
+        <p class="tier-body"><strong>Ridge</strong> $95&ndash;195, and no longer DTC in any meaningful sense &mdash; Nordstrom, Scheels, Buckle, Best Buy, 1,000+ doors. <strong>Bellroy</strong> runs nine SKUs at Nordstrom from $65 to $169. <strong>Ekster</strong> has one Nordstrom pop-up, not distribution. <strong>Secrid</strong> is Europe-led.</p>
+        <p class="tier-take">Bellroy&rsquo;s $85&ndash;95 core lands exactly on our premium band, at Nordstrom, with a lifetime warranty printed on the box.</p>
+      </div>
+
+      <div class="tier reveal delay-3">
+        <p class="tier-band">$11 &ndash; $150</p>
+        <p class="tier-name">The phone aisle</p>
+        <p class="tier-sub">MagSafe &mdash; where we just landed</p>
+        <p class="tier-body"><strong>Apple FineWoven $59</strong> sets the anchor. <strong>MOFT</strong> $30&ndash;60, <strong>Peak Design</strong> $49.95, <strong>Mous</strong> $49.99, <strong>Journey</strong> $70&ndash;130, <strong>Ridge MagSafe</strong> $75&ndash;150, <strong>Michael Kors</strong> $79.50. Opening price is $11&ndash;20; the volume zone is $30&ndash;60.</p>
+        <p class="tier-take">Every one of these is merchandised as a phone accessory, not a wallet. A $59 wallet next to a $39 charger reads normal. Next to a $30 bifold it reads absurd. The aisle sets the reference price.</p>
+      </div>
+    </div>
+
+    <div class="myth reveal">
+      <p class="myth-lab">Correct this one before it comes up in the room</p>
+      <p class="myth-body"><strong>Apple did not discontinue its MagSafe wallet.</strong> It killed FineWoven <em>cases</em> in 2024 and all leather accessories in 2023 &mdash; the wallet survived both, and was refreshed in September 2025 in five colours at $59 with Find&nbsp;My, RFID shielding and iPhone&nbsp;12-through-17 compatibility. Apple also sells MOFT&rsquo;s competing wallet on its own store at $49.95. It is a competitor and a channel at the same time.</p>
+    </div>
+
+    <p style="font-size:16px;color:var(--mid);line-height:1.8;max-width:820px;margin-top:36px;border-left:2px solid var(--gold);padding-left:20px">The squeeze is from three sides at once. Private label takes the floor at $30 <em>and</em> matches us at $50. The slim specialists take the ceiling at $95&ndash;195 with lifetime warranties. And the fastest-growing part of the category is in an aisle where leather-goods brands have almost no shelf presence. <strong style="color:var(--black)">The licensed mid-band at $42&ndash;48 is the pressure point</strong> &mdash; and the MagSafe shipper is the only thing in the pipeline that puts us where the growth is.</p>
+
+    <p style="font-size:14.5px;color:var(--mid);line-height:1.8;max-width:820px;margin-top:26px">One spec note for the shipper. <strong style="color:var(--black)">Find&nbsp;My tracking has become table stakes above roughly $50</strong> &mdash; Apple, MOFT, Journey, Nomad, Ekster and Secrid all carry it. A MagSafe wallet over $50 without tracking now looks under-specified. Peak Design is the exception that proves it: at $49.95 it drops both tracking and RFID and sells on capacity and a lifetime warranty instead.</p>
+  </section>
+
+  <!-- THREE WAYS WE SELL -->
+  <section class="section section-cream">
+    <p class="section-eyebrow">How The Business Is Built</p>
+    <h2 class="section-title">Three ways we sell. Only one of them is on the brand tab.</h2>
+    <p class="section-subtitle">The portfolio is wider than nine logos, and the two additions are the ones with room to grow. Being on both sides of private label is an advantage if we plan it that way &mdash; and an awkward conversation if we do not.</p>
+    <div class="ways-grid">
+      <div class="way reveal">
+        <p class="way-num">01</p>
+        <p class="way-name">Licensed</p>
+        <p class="way-body">Nine brands, $42&ndash;95, the core of the business and the whole of the Brand Architecture tab. Royalty and licensor approval sit on every decision, and the mid-band is where the squeeze is hardest.</p>
+      </div>
+      <div class="way reveal delay-1">
+        <p class="way-num">02</p>
+        <p class="way-name">Private label</p>
+        <p class="way-body">On the same fixture, private label competes directly with our licensed brands &mdash; and we manufacture some of it. That is a real hedge: when a buyer asks what a logo adds at $48 against their own $50 nappa exclusive, we would rather be on both sides of the answer than lose the linear foot entirely.</p>
+      </div>
+      <div class="way reveal delay-2">
+        <p class="way-num">03</p>
+        <p class="way-name">Non-branded</p>
+        <p class="way-body">The newest and least defined. The MagSafe shipper is the first real test &mdash; three wallets, its own fixture, and packaging carrying materially more feature callouts than our standard wallet boxes. No licensor approval, no royalty, and it lands in the aisle where the category is actually growing.</p>
+      </div>
+    </div>
+    <div class="ship-note reveal">
+      <p class="ship-lab">What the MagSafe shipper already proved</p>
+      <p class="ship-body">We put more information on that packaging than we put on any licensed wallet box &mdash; because in the phone aisle, that is the standard. MOFT sells on magnet strength in newtons and tracking range in metres. Apple leads with Find&nbsp;My and RFID. Nobody in the wallet aisle quantifies anything. <strong>The shipper was not a one-off; it is the packaging standard the rest of the line should be held to.</strong></p>
+    </div>
   </section>
 
   <!-- GIFTING -->
@@ -819,7 +919,7 @@
       <div class="stat-row-card reveal delay-2"><div class="stat-row-num">72%</div><div class="stat-row-label">of US adults say packaging design often influences their purchase decisions.</div><div class="stat-row-src">Ipsos, 2018 &middot; n=2,002 &middot; commissioned by the Paper &amp; Packaging Board</div></div>
       <div class="stat-row-card reveal delay-3"><div class="stat-row-num">Touch</div><div class="stat-row-label">Simply handling a product raises perceived ownership and willingness to pay. The argument for one open wallet per tier &mdash; and for leather good enough to reward the touch.</div><div class="stat-row-src">Peck &amp; Shu, Journal of Consumer Research</div></div>
     </div>
-    <p style="font-size:14.5px;color:rgba(255,255,255,.55);line-height:1.8;max-width:820px;margin-top:32px">Removed from this section: a &ldquo;540% sales lift from good display&rdquo; figure that traces to no real study, a NielsenIQ attribution that NielsenIQ never published, and two packaging statistics that misquoted their own sources. The case for packaging is strong enough without them.</p>
+    
   </section>
 
   <!-- PACKAGING DIRECTION -->
@@ -871,8 +971,8 @@
 
   <section class="ba-hero">
     <p class="ba-hero-eyebrow">Fall 2027 Development</p>
-    <h1 class="ba-hero-title">Nine brands. Nine jobs.<br><em>One wall that makes sense.</em></h1>
-    <p class="ba-hero-sub">A brand architecture is not a description of each brand &mdash; it is a set of decisions about what each brand is allowed to be, so that nine wallets on one fixture read as nine choices instead of nine versions of the same thing. Everything below is a draft position written to be argued with.</p>
+    <h1 class="ba-hero-title">Different doors.<br><em>Different fights.</em></h1>
+    <p class="ba-hero-sub">These nine brands do not all sit in the same store, and they do not all compete with each other. Each faces a different set of rivals at a different door &mdash; other licensed brands on the same fixture, the retailer&rsquo;s own private label, and increasingly product with no logo on it at all. A brand architecture is the set of decisions about what each brand is allowed to be, so that where they <em>do</em> meet, they read as different choices rather than versions of the same thing.</p>
     <div class="ba-hero-meta">
       <div><p>9</p><p>Brands in the portfolio</p></div>
       <div><p>5</p><p>Wear occasions</p></div>
