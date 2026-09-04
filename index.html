@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wallet Strategy 2026 — RAA Accessories</title>
-  <meta name="description" content="RAA Accessories wallet strategy — five carry types, nine-brand Fall 2027 brand architecture, packaging and display direction.">
+  <title>Wallet Strategy 2027 — RAA Accessories</title>
+  <meta name="description" content="RAA Accessories wallet strategy 2027 — carry and payment behaviour, five carry types, gifting calendar, packaging and display, and a nine-brand Fall 2027 brand architecture.">
   <meta name="theme-color" content="#1A1A1A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -195,23 +195,6 @@
     .stat-row-num{font-family:'DM Serif Display',serif;font-size:54px;color:var(--black);line-height:1;margin-bottom:10px;letter-spacing:-.02em}
     .stat-row-label{font-size:13px;color:var(--dark);line-height:1.55}
     .stat-row-src{font-size:10px;color:var(--mid);margin-top:8px;letter-spacing:.06em}
-    /* ─────────────── BRAND GRID ─────────────── */
-    .brand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);margin-top:48px;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm)}
-    .brand-card{background:var(--white);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-    .brand-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);z-index:1}
-    .brand-card-img-wrap{position:relative;overflow:hidden;aspect-ratio:16/10}
-    .brand-card-img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
-    .brand-card:hover .brand-card-img{transform:scale(1.05)}
-    .brand-lane{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.95);color:var(--gold-deep);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;border-radius:2px;backdrop-filter:blur(6px);box-shadow:var(--shadow-sm)}
-    .brand-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
-    .brand-card-name{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;color:var(--black);margin-bottom:8px;letter-spacing:-.005em}
-    .brand-card-pos{font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:14px;flex:1}
-    .brand-card-pos strong{color:var(--black);font-weight:600}
-    .brand-card-q{font-size:12px;font-style:italic;color:var(--gold-deep);line-height:1.55;border-top:1px solid var(--rule);padding-top:14px}
-    /* ─────────────── LOGO ROW ─────────────── */
-    .logo-row{display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;padding:64px 80px;background:var(--cream);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-    .logo-row img{height:30px;width:auto;opacity:.5;filter:grayscale(100%);transition:opacity .25s,filter .25s}
-    .logo-row img:hover{opacity:1;filter:grayscale(0)}
     /* ─────────────── FOOTER ─────────────── */
     .site-footer{background:var(--black);padding:48px 80px;display:flex;align-items:center;justify-content:space-between}
     .footer-logo{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:10px}
@@ -321,13 +304,29 @@
     .ver.ok{background:var(--green-light);color:var(--green)}
     .ver.no{background:var(--red-light);color:var(--red)}
     .msrp-src{font-size:11px!important;color:var(--light)!important;margin:8px 0 10px;letter-spacing:.02em}
+    .stat-row-card.light{background:var(--white);border:1px solid var(--rule);box-shadow:var(--shadow-sm)}
+    .stat-row-card.light .stat-row-num{color:var(--gold-deep)}
+    .stat-row-card.light .stat-row-label{color:var(--mid)}
+    .stat-row-card.light .stat-row-src{color:var(--light)}
+    .cal-wrap{margin-top:48px;background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:36px 38px;box-shadow:var(--shadow-sm)}
+    .cal-head{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:26px;display:inline-flex;align-items:center;gap:10px}
+    .cal-head::before{content:'';width:24px;height:1px;background:var(--gold-deep)}
+    .cal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--rule);border-radius:3px;overflow:hidden}
+    .cal-step{background:var(--white);padding:24px 20px;position:relative}
+    .cal-step::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+    .cal-step:nth-child(2)::before,.cal-step:nth-child(3)::before,.cal-step:nth-child(4)::before{background:var(--gold-deep)}
+    .cal-step:nth-child(5)::before{background:var(--green)}
+    .cal-when{font-size:13px;font-weight:700;color:var(--black);margin-bottom:10px;letter-spacing:.01em}
+    .cal-what{font-size:13px;color:var(--mid);line-height:1.7}
+    @media (max-width:1100px){.cal-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.cal-grid{grid-template-columns:1fr}.cal-wrap{padding:26px 22px}}
 
     @media (max-width:1100px){
     .ba-hero{padding:72px 40px 64px}
     .arch-top{grid-template-columns:1fr}
     .arch-visual{min-height:200px}
     .arch-grid{grid-template-columns:repeat(2,1fr)}
-      .ab-span2,.ab-span3{grid-column:span 2}
+    .ab-span2,.ab-span3{grid-column:span 2}
     .mood-keys,.mood-slots{grid-template-columns:repeat(3,1fr)}
     .gap-grid,.run-grid{grid-template-columns:repeat(2,1fr)}
     .ba-legend{grid-template-columns:1fr}
@@ -337,7 +336,7 @@
     @media (max-width:640px){
     .ba-hero{padding:56px 24px 48px}
     .arch-grid,.arch-foot,.gap-grid,.run-grid{grid-template-columns:1fr}
-      .ab-span2,.ab-span3{grid-column:span 1}
+    .ab-span2,.ab-span3{grid-column:span 1}
     .mood-keys,.mood-slots{grid-template-columns:repeat(2,1fr)}
     .swatch{width:60px}
     }
@@ -348,9 +347,9 @@
 
     @media (max-width:1100px){
     .section,.section-sm{padding:72px 40px}
-    .logo-row,.site-nav,.site-footer{padding-left:40px;padding-right:40px}
+    .site-nav,.site-footer{padding-left:40px;padding-right:40px}
     .hero-content{padding:0 40px 64px}
-    .stat-strip,.wallet-types,.data-grid,.brand-grid{grid-template-columns:repeat(2,1fr)}
+    .stat-strip,.wallet-types,.data-grid{grid-template-columns:repeat(2,1fr)}
     .stat-row,.ref-grid{grid-template-columns:repeat(2,1fr)}
     .split{grid-template-columns:1fr}
     .split-text{padding:64px 40px}
@@ -369,7 +368,7 @@
     .stat-cell{padding:32px 20px}
     .stat-number{font-size:42px}
     .hero-content{padding:0 24px 48px}
-    .stat-strip,.wallet-types,.data-grid,.brand-grid,.stat-row,.ref-grid{grid-template-columns:1fr}
+    .stat-strip,.wallet-types,.data-grid,.stat-row,.ref-grid{grid-template-columns:1fr}
     }
     /* ─────────────── PRINT ─────────────── */
     @media print{
@@ -383,7 +382,7 @@
       .hero-content{padding:24px 24px 0;color:var(--black)}
       .hero-headline{color:var(--black);font-size:32px}
       .hero-sub{color:var(--black)}
-      .image-break,.logo-row{display:none}
+      .image-break{display:none}
       .reveal{opacity:1;transform:none}
       .stat-strip,.section-black{background:var(--black);-webkit-print-color-adjust:exact;print-color-adjust:exact}
       *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -395,10 +394,10 @@
 <nav class="site-nav" role="navigation" aria-label="Primary">
   <div class="nav-logo">RAA Accessories · Wallet Strategy</div>
   <div class="nav-tabs" role="tablist" aria-label="Main sections">
-    <button class="nav-tab" role="tab" id="tab-btn-strategy" aria-controls="tab-strategy" aria-selected="true" onclick="showTab('strategy',this)">Strategy 2026</button>
+    <button class="nav-tab" role="tab" id="tab-btn-strategy" aria-controls="tab-strategy" aria-selected="true" onclick="showTab('strategy',this)">Strategy 2027</button>
     <button class="nav-tab" role="tab" id="tab-btn-brands" aria-controls="tab-brands" aria-selected="false" onclick="showTab('brands',this)">Brand Architecture</button>
   </div>
-  <div class="nav-date">May 2026</div>
+  <div class="nav-date">September 2026</div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -411,54 +410,66 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-rule"></div>
-      <p class="hero-eyebrow">RAA Accessories · Wallet Category · 2026</p>
-      <h1 class="hero-headline">The Wallet Is Evolving.<br><em>So Is Our Strategy.</em></h1>
-      <p class="hero-sub">How people pay has fundamentally changed. Our wallet program needs to reflect that shift — with a clear category architecture, stronger storytelling, and a retail presence that actually sells.</p>
+      <p class="hero-eyebrow">RAA Accessories &middot; Wallet Category &middot; 2027</p>
+      <h1 class="hero-headline">The Wallet Isn&rsquo;t Disappearing.<br><em>It&rsquo;s Getting Smaller.</em></h1>
+      <p class="hero-sub">Every 2027 decision rests on one question: what will a man still need to carry? Less than he carries today &mdash; but more than his phone can hold. Here is where the category is actually going, and what we do about it.</p>
     </div>
-    <div class="hero-scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="hero-scroll-line"></div>
-    </div>
+    <div class="hero-scroll"><span>Scroll</span><span class="hero-scroll-line"></span></div>
   </section>
 
   <div class="stat-strip">
     <div class="stat-cell reveal">
       <div class="stat-number"><span class="accent">14</span>%</div>
-      <div class="stat-label">of transactions<br>still use cash</div>
+      <div class="stat-label">cash share of payments<br>&mdash; flat two years running</div>
     </div>
     <div class="stat-cell reveal delay-1">
-      <div class="stat-number"><span class="accent">65</span>%</div>
-      <div class="stat-label">of consumers use<br>digital wallets regularly</div>
+      <div class="stat-number"><span class="accent">14</span>%</div>
+      <div class="stat-label">of in-person payments<br>are made with a phone</div>
     </div>
     <div class="stat-cell reveal delay-2">
-      <div class="stat-number"><span class="accent">3–4</span></div>
-      <div class="stat-label">cards carried daily<br>— down from 6–8</div>
+      <div class="stat-number"><span class="accent">0</span></div>
+      <div class="stat-label">states where a digital ID<br>replaces the plastic card</div>
     </div>
     <div class="stat-cell reveal delay-3">
-      <div class="stat-number"><span class="accent">7</span>%</div>
-      <div class="stat-label">CAGR in slim wallet<br>category growth</div>
+      <div class="stat-number"><span class="accent">$27.9</span>B</div>
+      <div class="stat-label">Father&rsquo;s Day spending<br>&mdash; an all-time record</div>
     </div>
   </div>
 
-  <!-- WHY NOW -->
+  <!-- THE SHIFT -->
   <div class="split">
     <div class="split-img"><img src="images/phone-vs-wallet.jpg" alt="Payment shift" loading="lazy" decoding="async"></div>
     <div class="split-text">
       <p class="section-eyebrow">The Shift</p>
-      <h2 class="section-title">Changing payment habits require a changing wallet strategy.</h2>
+      <h2 class="section-title">The wallet is not emptying. It is thinning.</h2>
       <div class="divider"></div>
-      <p style="font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:20px;">When Apple Pay launched in 2014, it was a novelty. Today, 65% of consumers use a digital wallet regularly, cash represents just 14% of transactions, and the average person carries 3–4 cards — down from 6–8 a decade ago. These aren't trends. They're permanent behavioral shifts.</p>
-      <p style="font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:20px;">This doesn't mean wallets are going away. It means the <em>kind</em> of wallet people want has changed. The slim front-pocket and phone-companion categories are growing at 6–8% annually. But the extra-capacity and classic wallet still serve a real customer who isn't ready to carry less — they just want to carry smarter.</p>
-      <div class="insight-box"><p>The market isn't shrinking. It's splitting. And our assortment needs to reflect all five lanes it's splitting into.</p></div>
+      <p style="font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:20px;">The story everyone tells is that the phone killed the wallet. The Federal Reserve&rsquo;s numbers do not support it. Cash has held at <strong style="color:var(--black)">14% of payments for two consecutive years</strong>, 76% of Americans still carried cash on them in 2025, and five of every six cash payments are under $25. Cash stopped falling.</p>
+      <p style="font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:20px;">Tap-to-pay is now roughly <strong style="color:var(--black)">70% of face-to-face Visa transactions</strong> &mdash; but the overwhelming majority of those taps are a plastic card, not a phone. Phones are still only <strong style="color:var(--black)">14% of in-person payments</strong>. What changed is where the card gets tapped, not whether it exists.</p>
+      <p style="font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:20px;">Ask people directly and the picture is the same. Only <strong style="color:var(--black)">18% of mobile wallet users expect to stop carrying a physical wallet within five years</strong>; 64% expect they still will. Among Gen Z it is 25% &mdash; higher, but still a minority.</p>
+      <div class="insight-box"><p>We are not competing with the phone. We are competing with thickness. The man who wants five card slots instead of twelve is still our customer &mdash; if we build what he now wants.</p></div>
     </div>
   </div>
+
+  <!-- THE REAL CLOCK: DIGITAL ID -->
+  <section class="section section-black">
+    <p class="section-eyebrow">The Real Clock</p>
+    <h2 class="section-title white" style="max-width:900px">The threat isn&rsquo;t Apple Pay. It&rsquo;s the driver&rsquo;s license.</h2>
+    <p class="section-subtitle white" style="max-width:760px">A wallet exists as long as it holds something a phone cannot. Payment has largely moved. ID is the last thing holding the object together &mdash; so the only question that matters for long-range planning is how fast ID is moving. The answer is: far slower than the headlines.</p>
+    <div class="stat-row" style="margin-top:8px">
+      <div class="stat-row-card reveal"><div class="stat-row-num">21</div><div class="stat-row-label">states plus Puerto Rico now issue a mobile driver&rsquo;s licence. About 45% of Americans live in one &mdash; but Texas, Florida and most of the Northeast are not among them.</div><div class="stat-row-src">AAMVA, August 2026</div></div>
+      <div class="stat-row-card reveal delay-1"><div class="stat-row-num">0</div><div class="stat-row-label">states let you legally leave the plastic card at home. Every US mobile ID is a supplement, not a substitute. Georgia&rsquo;s own statute says to keep carrying the physical licence &mdash; because it is the law.</div><div class="stat-row-src">State mDL statutes, 2026</div></div>
+      <div class="stat-row-card reveal delay-2"><div class="stat-row-num">7%</div><div class="stat-row-label">of eligible drivers have actually enrolled. Arizona leads at 23%. Louisiana, running the longest programme in the country since 2018, sits at 1.6%.</div><div class="stat-row-src">Government Technology / AAMVA, 2025</div></div>
+      <div class="stat-row-card reveal delay-3"><div class="stat-row-num">250+</div><div class="stat-row-label">TSA checkpoints accept a digital ID &mdash; and TSA still instructs every traveller to carry a physical one. Apple says the same about its digital passport.</div><div class="stat-row-src">TSA.gov, 2026</div></div>
+    </div>
+    <p style="font-size:15px;color:rgba(255,255,255,.72);line-height:1.8;max-width:820px;margin-top:36px;border-left:2px solid var(--gold);padding-left:20px">Watch two triggers, not the state count. <strong style="color:var(--gold-light)">First</strong>, the first state to make a mobile ID legally sufficient at a traffic stop without the plastic card &mdash; Georgia&rsquo;s law enforcement reader mandate lands <strong style="color:var(--gold-light)">July 2027</strong>, inside our planning horizon. <strong style="color:var(--gold-light)">Second</strong>, biometric e-gates at airports moving beyond today&rsquo;s PreCheck pilots. Either one is a genuine step change. Another state adding Apple Wallet support is not.</p>
+    <p style="font-size:15px;color:rgba(255,255,255,.55);line-height:1.8;max-width:820px;margin-top:24px">Even the most bullish forecast &mdash; ABI Research, 143 million Americans holding a mobile ID by 2030 &mdash; describes people holding <em>both</em>. Their own framing: a companion to the classic licence, never the sole star. The wallet has this decade. What it does not have is twelve card slots.</p>
+  </section>
 
   <!-- FIVE WALLET CATEGORIES -->
   <section class="section section-cream">
     <p class="section-eyebrow">Category Architecture</p>
     <h2 class="section-title">Five wallet categories. Each one serves a distinct carry need.</h2>
-    <p class="section-subtitle">This is the foundation of everything — product design, brand strategy, packaging, and display. Every decision maps back to one of these five categories.</p>
-
+    <p class="section-subtitle">If the wallet is thinning rather than disappearing, the assortment question is which thickness each customer wants. These five categories are the foundation of everything downstream &mdash; product design, brand lanes, packaging and display.</p>
     <!-- CARRY LADDER — card-slot capacity by category -->
     <div class="carry-ladder reveal">
       <div class="ladder-head">
@@ -543,10 +554,11 @@
               <p class="ladder-gift-tag">Crosses all four lanes</p>
             </div>
           </div>
-          <p class="ladder-gift-desc"><strong>A presentation layer — not a carry type.</strong> Any wallet above becomes a Gift &amp; Special SKU when paired with a card case, key fob, or coordinating wallet in premium packaging. 55% of wallet purchases are gifts; this is where Q4 lives.</p>
+          <p class="ladder-gift-desc"><strong>A presentation layer — not a carry type.</strong> Any wallet above becomes a Gift &amp; Special SKU when paired with a card case, key fob, or coordinating wallet in premium packaging. Clothing and accessories is the No.&nbsp;1 gift category at both of our peaks; this is where Q4 and Father&rsquo;s Day live.</p>
         </div>
       </div>
     </div>
+
 
     <div class="wallet-types">
 
@@ -663,34 +675,75 @@
     </div>
   </section>
 
-  <!-- IMAGE BREAK -->
+
   <div class="image-break">
     <img src="images/lifestyle-carry.jpg" alt="Carry lifestyle" loading="lazy" decoding="async">
     <div class="image-break-overlay">
-      <p class="image-break-quote">It's not about carrying less. It's about carrying right.</p>
+      <p class="image-break-quote">It&rsquo;s not about carrying less. It&rsquo;s about carrying right.</p>
     </div>
   </div>
 
-  <!-- KEY DATA -->
+  <!-- WHERE WE STAND -->
   <section class="section section-cream">
-    <p class="section-eyebrow">The Market Data</p>
-    <h2 class="section-title">The numbers that justify every category decision.</h2>
-    <p class="section-subtitle">These aren't projections — they're documented structural shifts that set the direction for product, packaging, and placement.</p>
+    <p class="section-eyebrow">Where We Actually Stand</p>
+    <h2 class="section-title">The honest read on the market.</h2>
+    <p class="section-subtitle">Two things worth knowing before we plan. The published market-size numbers for this category are not trustworthy. And the one audited number that does exist is not comfortable.</p>
     <div class="data-grid">
-      <div class="data-card reveal"><div class="data-number"><span class="accent">$1.5B</span></div><div class="data-desc"><strong>Slim wallet market</strong> growing at 6–8% CAGR vs. flat 1% for the overall wallet category.</div><div class="data-source">Grand View Research · 2025</div></div>
-      <div class="data-card reveal delay-1"><div class="data-number"><span class="accent">$300M+</span></div><div class="data-desc"><strong>Ridge Wallet annual revenue</strong> — built entirely on the slim carry trend. They're winning customers we should own at retail.</div><div class="data-source">DTC category analysis · 2025</div></div>
-      <div class="data-card reveal delay-2"><div class="data-number"><span class="accent">55%</span></div><div class="data-desc"><strong>Of wallet purchases are gifts.</strong> Our packaging and display must communicate premium value the moment it's picked up.</div><div class="data-source">RAA internal retail data</div></div>
-      <div class="data-card reveal"><div class="data-number"><span class="accent">72%</span></div><div class="data-desc"><strong>Of consumers expect RFID blocking</strong> as standard — yet zero percent of our current packaging communicates this feature.</div><div class="data-source">Consumer research · 2025</div></div>
-      <div class="data-card reveal delay-1"><div class="data-number"><span class="accent">74%</span></div><div class="data-desc"><strong>Of consumers say packaging design</strong> directly influences their purchase decision at point of sale.</div><div class="data-source">Ipsos Consumer Research · 2024</div></div>
-      <div class="data-card reveal delay-2"><div class="data-number"><span class="accent">540%</span></div><div class="data-desc"><strong>Potential sales lift</strong> from a well-designed retail display vs. an unorganized or cluttered fixture. One in six purchases is display-driven.</div><div class="data-source">Retail display effectiveness research · 2024</div></div>
+      <div class="data-card reveal"><div class="data-number"><span class="accent">&minus;38%</span></div><div class="data-desc"><strong>Fossil Group&rsquo;s leather goods segment, FY2025</strong> &mdash; $69.3M, down 38% year over year. It fell harder than their watches (&minus;7%) or jewellery (&minus;22%). The closest audited public comparable to our business.</div><div class="data-source">Fossil Group SEC filing &middot; March 2026</div></div>
+      <div class="data-card reveal delay-1"><div class="data-number"><span class="accent">$100M+</span></div><div class="data-desc"><strong>Ridge&rsquo;s stated revenue</strong> as of early 2024, with mid-double-digit growth claimed since. Built on slim carry, and now expanding well beyond wallets.</div><div class="data-source">Ridge CEO, public statement &middot; 2024</div></div>
+      <div class="data-card reveal delay-2"><div class="data-number"><span class="accent">3</span></div><div class="data-desc"><strong>Nordstrom, Best Buy and Amazon.</strong> Where Ridge already sells. The slim-wallet insurgent is not outside the wholesale channel waiting to get in &mdash; it has been on the department store shelf since 2019.</div><div class="data-source">Company channel history</div></div>
+      <div class="data-card reveal"><div class="data-number"><span class="accent">3.6&times;</span></div><div class="data-desc"><strong>The spread between published estimates</strong> of the global wallet market &mdash; $6.8B to $24.8B for the same category and roughly the same year. No one credible knows the size of this market.</div><div class="data-source">Five market-research firms compared &middot; 2026</div></div>
+    </div>
+    <p style="font-size:14.5px;color:var(--mid);line-height:1.8;max-width:840px;margin-top:34px;border-left:2px solid var(--gold);padding-left:20px">A note on the numbers. The previous version of this deck cited a $1.5B slim-wallet market growing 7% against a flat 1% category, sourced to Grand View Research. That report covers belts and wallets combined, contains no slim-wallet segment, and puts wallets at 6.1% growth &mdash; it does not say what we said it said. It has been removed, along with five other figures that could not be traced to a real study. Where the evidence is thin, this deck now says so.</p>
+  </section>
+
+  <!-- GIFTING -->
+  <section class="section">
+    <p class="section-eyebrow">The Gifting Business</p>
+    <h2 class="section-title">This category has two peaks. We plan for one.</h2>
+    <p class="section-subtitle">A wallet is bought far more often as a gift than as a replacement. That makes the calendar, the price band and the box strategic decisions rather than operational ones &mdash; and it makes Father&rsquo;s Day the most under-resourced opportunity we have.</p>
+    <div class="stat-row" style="margin-top:8px">
+      <div class="stat-row-card light reveal"><div class="stat-row-num">$628</div><div class="stat-row-label">average holiday gift spend per person. Clothing and accessories is the No.&nbsp;1 physical gift category &mdash; 46% by NRF&rsquo;s count, 56% by Circana&rsquo;s.</div><div class="stat-row-src">NRF &amp; Circana, 2025 holiday</div></div>
+      <div class="stat-row-card light reveal delay-1"><div class="stat-row-num">+13.6%</div><div class="stat-row-label">growth in Father&rsquo;s Day spending, to a record $27.9B and $226.58 per person. The fastest-growing gifting occasion on our calendar.</div><div class="stat-row-src">NRF, 2026</div></div>
+      <div class="stat-row-card light reveal delay-2"><div class="stat-row-num">58%</div><div class="stat-row-label">buy clothing for Father&rsquo;s Day &mdash; the No.&nbsp;1 tangible gift. And department stores (37%) nearly match online (38%). The best channel fit we get all year.</div><div class="stat-row-src">NRF, 2026</div></div>
+      <div class="stat-row-card light reveal delay-3"><div class="stat-row-num">50%</div><div class="stat-row-label">give gift cards &mdash; the No.&nbsp;1 holiday gift overall. At a $40 ticket, that is our real competitor, not another wallet brand.</div><div class="stat-row-src">NRF, 2025 holiday</div></div>
+    </div>
+
+    <div class="cal-wrap reveal">
+      <p class="cal-head">The season is barbelled &mdash; and we ship to the middle of it</p>
+      <div class="cal-grid">
+        <div class="cal-step"><p class="cal-when">Early October</p><p class="cal-what">42% of holiday shoppers have already started, and a quarter of Deloitte&rsquo;s respondents had spent their budget by 31 October. Kohl&rsquo;s launched its gift shop on 9 October last year. A November floor set forfeits this quarter of the season.</p></div>
+        <div class="cal-step"><p class="cal-when">Thanksgiving weekend</p><p class="cal-what">202.9 million shoppers, a record. 51% of them bought clothing or accessories &mdash; the top category of the weekend. This is the peak inventory position.</p></div>
+        <div class="cal-step"><p class="cal-when">1 December</p><p class="cal-what">Only 51% of holiday shopping is done. Clothing and accessories is the single largest unfinished category at 48%. The fixture must still be full and shoppable.</p></div>
+        <div class="cal-step"><p class="cal-when">20 December</p><p class="cal-what">Super Saturday: 158.9 million shoppers, the largest single day of the season. A fixture not replenished by mid-December misses it entirely.</p></div>
+        <div class="cal-step"><p class="cal-when">June</p><p class="cal-what">Father&rsquo;s Day. 77% celebrate; 45% buy for a father, but 48% buy for a husband, son, brother, grandfather or friend. This needs its own assortment and its own floor set &mdash; not Q4 carryover.</p></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule);border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:44px">
+      <div style="background:var(--white);padding:32px 30px">
+        <p style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px">Build to the price band</p>
+        <p style="font-size:14.5px;color:var(--mid);line-height:1.75">Kohl&rsquo;s merchandises its gift shop by price &mdash; under $10, $15, $25 and $50 &mdash; not by product. A wallet priced at $52 is invisible in a $50 gift band. Every gift SKU should be built to land inside a band rather than just above one.</p>
+      </div>
+      <div style="background:var(--white);padding:32px 30px">
+        <p style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px">The boxed set is the format</p>
+        <p style="font-size:14.5px;color:var(--mid);line-height:1.75">In prestige fragrance, gift sets are more than 25% of all Q4 category sales. Different category, same mechanic: when a format is purpose-built for gifting, it concentrates the quarter. A wallet plus a card case or key fob at $45&ndash;55 reads as more considered than a gift card at the same ticket.</p>
+      </div>
     </div>
   </section>
+
+  <div class="image-break">
+    <img src="images/gift-packaging.jpg" alt="Gift packaging" loading="lazy" decoding="async">
+    <div class="image-break-overlay">
+      <p class="image-break-quote">The box is the first thing a gift-giver buys. Make it worth buying.</p>
+    </div>
+  </div>
 
   <!-- PACKAGING + DISPLAY STRATEGY INTRO -->
   <section class="section">
     <p class="section-eyebrow">Packaging &amp; Display Strategy</p>
-    <h2 class="section-title">We've built a better product. Now we need to tell the story.</h2>
-    <p class="section-subtitle">The five wallet categories above represent a genuine strategic investment in product design. But at retail and online, the customer never sees that thinking — because our packaging says nothing and our display does nothing. That has to change.</p>
+    <h2 class="section-title">We&rsquo;ve built a better product. Now we need to tell the story.</h2>
+    <p class="section-subtitle">The five categories above represent real investment in product design. At retail and online the customer never sees that thinking &mdash; because our packaging says nothing and our display does nothing. In a category where most of the decision is made standing at the shelf, that is not a design problem. It is a revenue problem.</p>
   </section>
 
   <!-- CURRENT STATE -->
@@ -767,17 +820,19 @@
     </div>
   </section>
 
+
   <!-- DISPLAY RESEARCH STATS -->
   <section class="section-sm section-black">
     <p class="section-eyebrow">The Research Case</p>
-    <h2 class="section-title white" style="max-width:840px;margin-bottom:16px">The data on packaging and display is unambiguous. This is a revenue decision, not a design preference.</h2>
-    <div class="stat-row" style="margin-top:40px">
-      <div class="stat-row-card reveal"><div class="stat-row-num">74%</div><div class="stat-row-label">of consumers say packaging design directly influences their purchase decision</div><div class="stat-row-src">Ipsos, 2024</div></div>
-      <div class="stat-row-card reveal delay-1"><div class="stat-row-num">81%</div><div class="stat-row-label">of consumers have bought a new product specifically because of its packaging design</div><div class="stat-row-src">Consumer Research, 2024</div></div>
-      <div class="stat-row-card reveal delay-2"><div class="stat-row-num">540%</div><div class="stat-row-label">potential sales lift from a well-designed display vs. a cluttered or disorganized fixture</div><div class="stat-row-src">Retail Display Research, 2024</div></div>
-      <div class="stat-row-card reveal delay-3"><div class="stat-row-num">32%</div><div class="stat-row-label">of businesses saw direct revenue increase after improving their packaging</div><div class="stat-row-src">Forbes / Dotcom Distribution, 2024</div></div>
+    <h2 class="section-title white" style="max-width:860px;margin-bottom:16px">The shelf is where this category is won or lost.</h2>
+    <p class="section-subtitle white" style="max-width:740px;margin-bottom:36px">Every figure below is from a named study with disclosed methodology, and each is cited so it can be checked.</p>
+    <div class="stat-row">
+      <div class="stat-row-card reveal"><div class="stat-row-num">82%</div><div class="stat-row-label">of shopping decisions are made inside the store, and 62% of purchases are unplanned. The package and the fixture are the sales pitch.</div><div class="stat-row-src">POPAI Mass Merchant Shopper Engagement Study, 2014 &middot; n=2,991</div></div>
+      <div class="stat-row-card reveal delay-1"><div class="stat-row-num">~11%</div><div class="stat-row-label">revenue lift from optimising where displays sit in the store rather than concentrating them. Peer-reviewed, on real scanner data.</div><div class="stat-row-src">Journal of Retailing, 2022</div></div>
+      <div class="stat-row-card reveal delay-2"><div class="stat-row-num">72%</div><div class="stat-row-label">of US adults say packaging design often influences their purchase decisions.</div><div class="stat-row-src">Ipsos, 2018 &middot; n=2,002 &middot; commissioned by the Paper &amp; Packaging Board</div></div>
+      <div class="stat-row-card reveal delay-3"><div class="stat-row-num">Touch</div><div class="stat-row-label">Simply handling a product raises perceived ownership and willingness to pay. The argument for one open wallet per tier &mdash; and for leather good enough to reward the touch.</div><div class="stat-row-src">Peck &amp; Shu, Journal of Consumer Research</div></div>
     </div>
-    <p style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.7;max-width:720px;margin-top:32px">One in six purchases at a well-designed retail display happens <em style="color:var(--gold-light)">only because of the display</em> — the customer would not have bought otherwise. That's 17% of revenue that exists or doesn't based on how the fixture looks and communicates. (Source: NielsenIQ point-of-purchase research)</p>
+    <p style="font-size:14.5px;color:rgba(255,255,255,.55);line-height:1.8;max-width:820px;margin-top:32px">Removed from this section: a &ldquo;540% sales lift from good display&rdquo; figure that traces to no real study, a NielsenIQ attribution that NielsenIQ never published, and two packaging statistics that misquoted their own sources. The case for packaging is strong enough without them.</p>
   </section>
 
   <!-- ECOMM ALIGNMENT -->
@@ -810,130 +865,20 @@
     </div>
   </section>
 
-  <!-- IMAGE BREAK -->
-  <div class="image-break">
-    <img src="images/gift-packaging.jpg" alt="Gift packaging" loading="lazy" decoding="async">
-    <div class="image-break-overlay">
-      <p class="image-break-quote">The box is the first thing a gift-giver buys. Make it worth buying.</p>
+
+  <!-- THE 2027 PLAN -->
+  <section class="section section-black">
+    <p class="section-eyebrow">The 2027 Plan</p>
+    <h2 class="section-title white" style="max-width:880px;margin-bottom:16px">Four moves. Everything else is detail.</h2>
+    <p class="section-subtitle white" style="max-width:720px;margin-bottom:44px">The evidence points in one direction: a smaller wallet, sold as a gift, decided at the shelf, with ID at the centre of the product story.</p>
+    <div class="run-grid">
+      <div style="background:#232323;padding:34px 28px"><p style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--gold);line-height:1;margin-bottom:16px">01</p><p style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:11px;line-height:1.35">Build for five card slots, not twelve</p><p style="font-size:14px;color:var(--light);line-height:1.7">Extra capacity keeps a real customer and stays in the line, but the growth is in Front Pocket and New Classic. Shift the SKU mix toward the thinner half of the carry ladder and stop treating slim as a niche.</p></div>
+      <div style="background:#232323;padding:34px 28px"><p style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--gold);line-height:1;margin-bottom:16px">02</p><p style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:11px;line-height:1.35">Put ID at the centre of the product</p><p style="font-size:14px;color:var(--light);line-height:1.7">The licence is the last thing the phone cannot take, and no state lets it go for at least this decade. Clear ID windows, quick-access ID slots and a real ID story on the package are the category&rsquo;s most defensible feature.</p></div>
+      <div style="background:#232323;padding:34px 28px"><p style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--gold);line-height:1;margin-bottom:16px">03</p><p style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:11px;line-height:1.35">Plan two peaks, and ship to the barbell</p><p style="font-size:14px;color:var(--light);line-height:1.7">A dedicated Father&rsquo;s Day programme &mdash; the fastest-growing occasion, and the one where department stores match online. Then a Q4 floor set in early October and a hard replenishment cut by 15 December.</p></div>
+      <div style="background:#232323;padding:34px 28px"><p style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--gold);line-height:1;margin-bottom:16px">04</p><p style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:11px;line-height:1.35">Make the package do the selling</p><p style="font-size:14px;color:var(--light);line-height:1.7">Card capacity, RFID and carry type on the front panel of every box. Carry-type rail labels on the fixture. One open wallet per tier. The same five words in the aisle and on the PDP.</p></div>
     </div>
-  </div>
-
-  <!-- BRAND PORTFOLIO -->
-  <section class="section">
-    <p class="section-eyebrow">Brand Portfolio</p>
-    <h2 class="section-title">Nine brands. The right category for each one.</h2>
-    <p class="section-subtitle">Not every brand needs to cover all five wallet categories. The question for each brand is: where do you have the most credibility, the clearest customer, and the biggest opportunity? <a href="#" onclick="showTab('brands',document.getElementById('tab-btn-brands'));return false;" style="color:var(--gold-deep);text-decoration:none;border-bottom:1px solid var(--gold)">See the full Fall 2027 brand architecture &rarr;</a></p>
-    <div class="brand-grid">
-
-      <div class="brand-card reveal">
-        <div class="brand-card-img-wrap">
-          <img class="brand-card-img" src="images/levis-lifestyle.jpg" alt="Levi's" loading="lazy" decoding="async">
-          <span class="brand-lane">Lane → New Classic · Extra Capacity</span>
-        </div>
-        <div class="brand-card-body">
-          <p class="brand-card-name">Levi's</p>
-          <p class="brand-card-pos">Icon positioning. Bifold authority. Core volume driver. Heritage denim DNA aligns with New Classic and Extra Capacity.</p>
-          <p class="brand-card-q">Are we happy with the current Levi's wallet direction? Does the design reflect the same energy as the belt update?</p>
-        </div>
-      </div>
-
-      <div class="brand-card reveal delay-1">
-        <div class="brand-card-img-wrap">
-          <img class="brand-card-img" src="images/ck-lifestyle.jpg" alt="Calvin Klein" loading="lazy" decoding="async">
-          <span class="brand-lane">Lane → New Classic · Front Pocket</span>
-        </div>
-        <div class="brand-card-body">
-          <p class="brand-card-name">Calvin Klein</p>
-          <p class="brand-card-pos">Minimalist premium. Slim bifold and card case authority. Clean lines, monochromatic. Strong fit for New Classic and Front Pocket.</p>
-          <p class="brand-card-q">Should CK own the slim and front-pocket tiers more aggressively? Does the current line reflect CK's premium minimalist identity?</p>
-        </div>
-      </div>
-
-      <div class="brand-card reveal delay-2">
-        <div class="brand-card-img-wrap">
-          <img class="brand-card-img" src="images/tommy-h-lifestyle.jpg" alt="Tommy Hilfiger" loading="lazy" decoding="async">
-          <span class="brand-lane">Lane → New Classic · Gift</span>
-        </div>
-        <div class="brand-card-body">
-          <p class="brand-card-name">Tommy Hilfiger</p>
-          <p class="brand-card-pos">Americana premium. Classic bifold with updated construction. Navy as key color story. Strong gifting potential.</p>
-          <p class="brand-card-q">Does Tommy Hilfiger have legacy styles that are overdue for a significant redesign? Where does the brand need the biggest update?</p>
-        </div>
-      </div>
-
-      <div class="brand-card reveal delay-3">
-        <div class="brand-card-img-wrap">
-          <img class="brand-card-img" src="images/columbia-lifestyle.jpg" alt="Columbia" loading="lazy" decoding="async">
-          <span class="brand-lane">Lane → Front Pocket · Technical</span>
-        </div>
-        <div class="brand-card-body">
-          <p class="brand-card-name">Columbia</p>
-          <p class="brand-card-pos">Outdoor credibility. Front Pocket and technical carry. Nylon and coated canvas materials for the travel/outdoor segment.</p>
-          <p class="brand-card-q">Should Columbia wallets follow the belt design update to align the full accessories line? What does a cohesive Columbia accessories story look like?</p>
-        </div>
-      </div>
-
-      <div class="brand-card reveal">
-        <div class="brand-card-img-wrap">
-          <img class="brand-card-img" src="images/tommy-b-lifestyle.jpg" alt="Tommy Bahama" loading="lazy" decoding="async">
-          <span class="brand-lane">Lane → Extra Capacity · Gift</span>
-        </div>
-        <div class="brand-card-body">
-          <p class="brand-card-name">Tommy Bahama</p>
-          <p class="brand-card-pos">Resort lifestyle. Warm tones, woven accents, relaxed carry. Seasonal gift driver. Strong Extra Capacity and Gift positioning.</p>
-          <p class="brand-card-q">Is Tommy Bahama differentiated enough from Tommy Hilfiger in the wallet category? Where does it win distinctly?</p>
-        </div>
-      </div>
-
-      <div class="brand-card reveal delay-1">
-        <div class="brand-card-img-wrap">
-          <img class="brand-card-img" src="images/kc-lifestyle.jpg" alt="Kenneth Cole" loading="lazy" decoding="async">
-          <span class="brand-lane">Lane → Phone Companion · New Classic</span>
-        </div>
-        <div class="brand-card-body">
-          <p class="brand-card-name">Kenneth Cole</p>
-          <p class="brand-card-pos">Urban professional. Smooth grain, clean hardware. NYC design sensibility. Strong fit for Phone Companion and New Classic.</p>
-          <p class="brand-card-q">Should Kenneth Cole lead the Phone Companion / MagSafe category for the portfolio? Does the brand's urban positioning make it the right flag to plant there?</p>
-        </div>
-      </div>
-
-      <div class="brand-card reveal delay-2">
-        <div class="brand-card-img-wrap">
-          <img class="brand-card-img" src="images/cole-haan-lifestyle.jpg" alt="Cole Haan" loading="lazy" decoding="async">
-          <span class="brand-lane">Lane → New Classic Premium · Front Pocket</span>
-        </div>
-        <div class="brand-card-body">
-          <p class="brand-card-name">Cole Haan</p>
-          <p class="brand-card-pos">Premium leather authority. Full-grain and pebble grain. Priced at $40–60. Best fit for New Classic premium tier and Front Pocket.</p>
-          <p class="brand-card-q">Cole Haan anchors the premium tier — are we fully leveraging this position in how we merchandise and price vs. the rest of the portfolio?</p>
-        </div>
-      </div>
-
-      <div class="brand-card reveal delay-3">
-        <div class="brand-card-img-wrap">
-          <img class="brand-card-img" src="images/haggar-lifestyle.jpg" alt="Haggar" loading="lazy" decoding="async">
-          <span class="brand-lane">Lane → Two Tracks: Dress + Sport</span>
-        </div>
-        <div class="brand-card-body">
-          <p class="brand-card-name">Haggar — Two Tracks</p>
-          <p class="brand-card-pos"><strong>Haggar Premium Dress</strong> — elevated bifold and trifold with updated construction, mirroring the belt line. <strong>Haggar Sport (Slim)</strong> — front pocket and slim carry for the active, khaki-and-sport apparel customer.</p>
-          <p class="brand-card-q">How do both tracks align with what we're doing in Haggar belts and apparel? Does splitting the line create clarity or confusion at retail?</p>
-        </div>
-      </div>
-
-    </div>
+    <p style="font-size:15px;color:rgba(255,255,255,.72);line-height:1.8;max-width:800px;margin-top:40px;border-left:2px solid var(--gold);padding-left:20px">What would change this plan: a state making a mobile ID legally sufficient without the plastic card, or biometric gates going mainstream at TSA. Both are worth a standing watch. Neither has happened.</p>
   </section>
-
-  <div class="logo-row">
-    <img src="images/levis-logo.png" alt="Levi's" loading="lazy" decoding="async">
-    <img src="images/ck-logo.png" alt="Calvin Klein" loading="lazy" decoding="async">
-    <img src="images/tommy-h-logo.png" alt="Tommy Hilfiger" loading="lazy" decoding="async">
-    <img src="images/columbia-logo.png" alt="Columbia" loading="lazy" decoding="async">
-    <img src="images/tommy-b-logo.png" alt="Tommy Bahama" loading="lazy" decoding="async">
-    <img src="images/kc-logo.png" alt="Kenneth Cole" loading="lazy" decoding="async">
-    <img src="images/cole-haan-logo.png" alt="Cole Haan" loading="lazy" decoding="async">
-    <img src="images/haggar-logo.png" alt="Haggar" loading="lazy" decoding="async">
-  </div>
 
 </div><!-- /strategy tab -->
 
@@ -1324,7 +1269,7 @@
 </div><!-- /brand architecture tab -->
 
 <footer class="site-footer">
-  <div class="footer-logo">RAA Accessories · Wallet Program Strategy · 2026</div>
+  <div class="footer-logo">RAA Accessories · Wallet Program Strategy · 2027</div>
   <div class="footer-note">Confidential — Internal Use Only</div>
 </footer>
 
