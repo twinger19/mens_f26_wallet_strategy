@@ -36,6 +36,136 @@ Two files are marked **TEMP** and should be replaced before this is presented.
 | Levi's | `images/brands/levis-lifestyle.jpg` | Lifestyle shot. Fills a 340px-wide column, any aspect. |  1400x933 · 404KB |
 | Columbia | `images/brands/columbia-lifestyle.jpg` | Lifestyle shot. Fills a 340px-wide column, any aspect. |  1182x842 · 58KB |
 
+
+## Mood board images — Brand Architecture tab
+
+Six per brand, **54 in total**. Each tile is an image with its caption underneath; the caption text is baked into the placeholder so you can see at a glance what the slot is asking for.
+
+All 54 are **placeholders**. Square, 640×640, tinted with the brand's first swatch colour. Replace any of them by dropping a file in with the same name — the caption on the page comes from the HTML, not the image, so it stays put.
+
+Shoot or source square. Anything else gets centre-cropped to 1:1.
+
+### Cole Haan — *NYC Moves*
+
+`images/07-moodboards/cole-haan/`
+
+| # | File | What it should show |
+|---|---|---|
+| 01 | `01-work-play-and-occasion.jpg` | Work, play and occasion in one line |
+| 02 | `02-italian-leather-and-soft-calfskin.jpg` | Italian leather and soft calfskin |
+| 03 | `03-tied-to-the-footwear-styling.jpg` | Tied to the footwear — styling, material, colour |
+| 04 | `04-matte-and-low-sheen.jpg` | Matte and low-sheen, never glossy |
+| 05 | `05-minimal-hardware-precise-detail.jpg` | Minimal hardware, precise detail |
+| 06 | `06-classic-through-slim-never-technical.jpg` | Classic through slim — never technical |
+
+### Calvin Klein — *Reductive*
+
+`images/07-moodboards/calvin-klein/`
+
+| # | File | What it should show |
+|---|---|---|
+| 01 | `01-matte-black-monochrome.jpg` | Matte black monochrome |
+| 02 | `02-negative-space-and-editorial-grid.jpg` | Negative space and editorial grid |
+| 03 | `03-ostrich-exotics-beyond-croco.jpg` | Ostrich — exotics beyond croco |
+| 04 | `04-tonal-monogram-jacquard.jpg` | Tonal monogram jacquard |
+| 05 | `05-laser-etch-no-hardware.jpg` | Laser etch, no hardware |
+| 06 | `06-slim-and-magsafe.jpg` | Slim and MagSafe as the core silhouettes |
+
+### Kenneth Cole — *Tailored Dress Codes*
+
+`images/07-moodboards/kenneth-cole/`
+
+| # | File | What it should show |
+|---|---|---|
+| 01 | `01-office-utility-evening-street.jpg` | Office utility → evening → street |
+| 02 | `02-magnet-array-and-phone-mount.jpg` | Magnet array and phone mount |
+| 03 | `03-matte-gunmetal-engineered-detail.jpg` | Matte gunmetal, engineered detail |
+| 04 | `04-midnight-navy-and-slate.jpg` | Midnight navy and slate |
+| 05 | `05-interior-accent-colour-pop.jpg` | Interior accent colour pop |
+| 06 | `06-tracker-cable-and-transit-organisation.jpg` | Tracker, cable and transit organisation |
+
+### Haggar — *Everyday Standard*
+
+`images/07-moodboards/haggar/`
+
+| # | File | What it should show |
+|---|---|---|
+| 01 | `01-easy-dress-never-fussy.jpg` | Easy dress, never fussy |
+| 02 | `02-elevated-finish-at-a-mid.jpg` | Elevated finish at a mid-tier price |
+| 03 | `03-sits-with-the-apparel.jpg` | Sits with the apparel and the belts |
+| 04 | `04-matte-over-shine.jpg` | Matte over shine |
+| 05 | `05-classic-and-extra-capacity.jpg` | Classic and extra capacity at the core |
+| 06 | `06-slim-added-magsafe-on-core.jpg` | Slim added, MagSafe on core styles |
+
+### Tommy Hilfiger — *Ivy Reset*
+
+`images/07-moodboards/tommy-hilfiger/`
+
+| # | File | What it should show |
+|---|---|---|
+| 01 | `01-prep-heritage-pushed-forward.jpg` | Prep heritage, pushed forward |
+| 02 | `02-refined-casual-casual-sport.jpg` | Refined casual → casual → sport |
+| 03 | `03-rugby-stripe-and-grosgrain.jpg` | Rugby stripe and grosgrain |
+| 04 | `04-brushed-wool-and-felted-surface.jpg` | Brushed wool and felted surface |
+| 05 | `05-widest-construction-range.jpg` | Widest construction range in the line |
+| 06 | `06-magsafe-as-the-growth-construction.jpg` | MagSafe as the growth construction |
+
+### Tommy Bahama — *Montauk*
+
+`images/07-moodboards/tommy-bahama/`
+
+| # | File | What it should show |
+|---|---|---|
+| 01 | `01-coastal-moved-north.jpg` | Coastal, moved north |
+| 02 | `02-burnished-and-tumbled-full-grain.jpg` | Burnished and tumbled full-grain |
+| 03 | `03-distinctive-stitch-detail.jpg` | Distinctive stitch detail |
+| 04 | `04-weathered-shingle-and-driftwood.jpg` | Weathered shingle and driftwood |
+| 05 | `05-dune-grass-and-atlantic-blue.jpg` | Dune grass and Atlantic blue |
+| 06 | `06-new-slim-and-magsafe.jpg` | New: slim and MagSafe |
+
+### Dockers — *Modern Khaki*
+
+`images/07-moodboards/dockers/`
+
+| # | File | What it should show |
+|---|---|---|
+| 01 | `01-cotton-twill-and-chino-weave.jpg` | Cotton twill and chino weave |
+| 02 | `02-olive-drab-and-british-tan.jpg` | Olive drab and British tan |
+| 03 | `03-soft-structured-unlined-feel.jpg` | Soft-structured, unlined feel |
+| 04 | `04-casual-friday-reset.jpg` | Casual Friday, reset |
+| 05 | `05-matte-gunmetal-no-shine.jpg` | Matte gunmetal, no shine |
+| 06 | `06-extra-capacity-and-classic-plus.jpg` | Extra capacity and classic, plus slim |
+
+### Levi's — *Archival Attitude*
+
+`images/07-moodboards/levis/`
+
+| # | File | What it should show |
+|---|---|---|
+| 01 | `01-americana-playbook.jpg` | Americana Playbook |
+| 02 | `02-americana-nostalgia.jpg` | Americana Nostalgia |
+| 03 | `03-worn-washed-grunge-leaning-leather.jpg` | Worn, washed, grunge-leaning leather |
+| 04 | `04-western-where-it-is-authentic.jpg` | Western, where it is authentic to Levi’s |
+| 05 | `05-the-full-logo-range-batwing.jpg` | The full logo range — batwing, tab, housemark |
+| 06 | `06-classics-and-slims-plus-new.jpg` | Classics and slims, plus new MagSafe |
+
+### Columbia — *Trail Utility*
+
+`images/07-moodboards/columbia/`
+
+| # | File | What it should show |
+|---|---|---|
+| 01 | `01-genuinely-outdoor-not-casual-heritage.jpg` | Genuinely outdoor, not casual heritage |
+| 02 | `02-water-resistant-zippers-and-sealed.jpg` | Water-resistant zippers and sealed detail |
+| 03 | `03-webbing-bartack-and-hypalon.jpg` | Webbing, bartack and hypalon |
+| 04 | `04-moss-slate-and-elk-brown.jpg` | Moss, slate and elk brown |
+| 05 | `05-widest-colour-and-material-licence.jpg` | Widest colour and material licence |
+| 06 | `06-big-push-into-slim.jpg` | Big push into slim and MagSafe |
+
+## Weight budget
+
+The site is 54 mood tiles plus 27 page images. Placeholders average 25KB; **keep real replacements under ~120KB each** or the mood boards alone will outweigh the rest of the site. Square, 800–1000px, quality 80–85 is plenty at the size they render.
+
 ## Folder structure
 
 ```
@@ -46,6 +176,7 @@ images/
   04-breaks/      full-width image breaks with quote overlays
   05-display/     fixture photography + in-store reference shots
   06-packaging/   packaging 3-up and the eComm shot
+  07-moodboards/  six mood tiles per brand, one folder each
   brands/         one lifestyle image per brand
     logos/        brand logos (not currently placed on the page)
 ```
