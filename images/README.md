@@ -43,6 +43,8 @@ Six per brand, **54 in total**. Each tile is an image with its caption underneat
 
 All 54 are **placeholders**. Square, 640×640, tinted with the brand's first swatch colour. Replace any of them by dropping a file in with the same name — the caption on the page comes from the HTML, not the image, so it stays put.
 
+Four brands (Cole Haan, Calvin Klein, Kenneth Cole, Tommy Hilfiger) use short filenames slugged from the callout title. The other five still slug from the full caption; they will shorten the same way when their callouts are supplied.
+
 Shoot or source square. Anything else gets centre-cropped to 1:1.
 
 ### Cole Haan — *NYC Moves*
@@ -64,12 +66,12 @@ Shoot or source square. Anything else gets centre-cropped to 1:1.
 
 | # | File | Callout | Detail |
 |---|---|---|---|
-| 01 | `01-matte-black-monochrome.jpg` | **Matte black monochrome** | — |
-| 02 | `02-negative-space-and-editorial-grid.jpg` | **Negative space and editorial grid** | — |
-| 03 | `03-ostrich-exotics-beyond-croco.jpg` | **Ostrich — exotics beyond croco** | — |
-| 04 | `04-tonal-monogram-jacquard.jpg` | **Tonal monogram jacquard** | — |
-| 05 | `05-laser-etch-no-hardware.jpg` | **Laser etch, no hardware** | — |
-| 06 | `06-slim-and-magsafe.jpg` | **Slim and MagSafe as the core silhouettes** | — |
+| 01 | `01-matte-black.jpg` | **Matte Black** | Monochrome — black on black on black |
+| 02 | `02-negative-space.jpg` | **Negative Space** | Editorial grid, nothing decorative |
+| 03 | `03-exotics.jpg` | **Exotics** | Ostrich — beyond croco |
+| 04 | `04-monogram-jacquard.jpg` | **Monogram Jacquard** | Tonal, as the interior story |
+| 05 | `05-laser-etch.jpg` | **Laser Etch** | Logo etched, no metal hardware |
+| 06 | `06-slim-and-magsafe.jpg` | **Slim & MagSafe** | The core silhouettes, matching the apparel aesthetic |
 
 ### Kenneth Cole — *Tailored Dress Codes*
 
