@@ -206,6 +206,24 @@
     .ba-legend-item b{font-size:13px;font-weight:600;color:var(--black);min-width:150px;flex-shrink:0}
     .ba-legend-item span{font-size:13px;color:var(--mid);line-height:1.55}
     /* brand architecture panel */
+    /* ── Jump to brand (Brand Architecture tab) ── */
+    .brandjump{position:sticky;top:var(--navh,64px);z-index:60;display:flex;align-items:center;gap:14px;
+      margin:0 0 30px;padding:12px 16px;background:rgba(255,255,255,.94);
+      backdrop-filter:saturate(180%) blur(10px);-webkit-backdrop-filter:saturate(180%) blur(10px);
+      border:1px solid var(--rule);border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .brandjump-lab{font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+      color:var(--mid);white-space:nowrap}
+    .brandjump-wrap{position:relative;flex:1 1 auto;max-width:330px}
+    .brandjump-wrap::after{content:"";position:absolute;right:14px;top:50%;width:7px;height:7px;
+      border-right:1.5px solid var(--black);border-bottom:1.5px solid var(--black);
+      transform:translateY(-70%) rotate(45deg);pointer-events:none}
+    .brandjump select{-webkit-appearance:none;appearance:none;width:100%;
+      font-family:'Inter',system-ui,sans-serif;font-size:14px;font-weight:500;color:var(--black);
+      background:var(--white);border:1px solid var(--rule);border-radius:3px;
+      padding:10px 36px 10px 14px;cursor:pointer;transition:border-color .2s var(--ease)}
+    .brandjump select:hover{border-color:var(--gold)}
+    .brandjump select:focus-visible{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+    .arch{scroll-margin-top:calc(var(--navh,64px) + var(--jumph,64px) + 12px)}
     .arch{border:1px solid var(--rule);border-radius:4px;background:var(--white);box-shadow:var(--shadow-sm);margin-bottom:36px;overflow:hidden;transition:box-shadow .3s var(--ease)}
     .arch:hover{box-shadow:var(--shadow-md)}
     .arch-top{display:grid;grid-template-columns:340px 1fr;gap:0;border-bottom:1px solid var(--rule)}
@@ -385,6 +403,12 @@
     .hero-content{padding:0 24px 48px}
     .stat-strip,.wallet-types,.stat-row{grid-template-columns:1fr}
     }
+    @media (max-width:640px){
+      .brandjump{gap:10px;padding:10px 12px;flex-wrap:wrap}
+      .brandjump-lab{flex:1 0 100%}
+      .brandjump-wrap{max-width:none}
+    }
+    @media print{.brandjump{display:none}}
     /* ─────────────── PRINT ─────────────── */
     @media print{
       .site-nav,.hero-scroll,.site-footer{display:none}
@@ -1019,6 +1043,8 @@
     <p class="section-eyebrow">Brand Architecture</p>
     <h2 class="section-title">Nine positions, written to be argued with.</h2>
     <p class="section-subtitle">Ordered by personal style &mdash; dress first, outdoor last. Each card carries a DNA line, the lifestyle, how we sell the brand, doors now and next, personal style and construction focus, confirmed MSRP, materials, consumer, a Fall 2027 mood direction, guardrails, and one open question. Nothing here is decided.</p>
+    <div class="brandjump"><label class="brandjump-lab" for="brand-jump">Jump to brand</label><div class="brandjump-wrap"><select id="brand-jump" onchange="jumpToBrand(this)" aria-label="Jump to a brand card"><option value="">Select a brand&hellip;</option><optgroup label="Dress"><option value="brand-colehaan">Cole Haan</option><option value="brand-ck">Calvin Klein</option><option value="brand-kc">Kenneth Cole</option><option value="brand-haggar">Haggar</option></optgroup><optgroup label="Dress into Casual"><option value="brand-tommyh">Tommy Hilfiger</option><option value="brand-tommyb">Tommy Bahama</option></optgroup><optgroup label="Refined Casual and Casual"><option value="brand-dockers">Dockers</option><option value="brand-levis">Levi&rsquo;s</option></optgroup><optgroup label="Outdoor / Active"><option value="brand-columbia">Columbia</option></optgroup></select></div></div>
+
     <article class="arch reveal" id="brand-colehaan">
       <div class="arch-top">
         <div class="arch-visual"><span class="arch-num">01</span>
@@ -1314,6 +1340,7 @@
     document.querySelectorAll('.nav-tab').forEach(t=>t.setAttribute('aria-selected','false'));
     document.getElementById('tab-'+name).classList.add('active');
     btn.setAttribute('aria-selected','true');
+    if(typeof syncJumpOffsets === 'function') syncJumpOffsets();
     window.scrollTo({top:0,behavior:'smooth'});
   }
   // Keyboard nav for tabs
@@ -1327,6 +1354,33 @@
       }
     });
   });
+
+  // ─── Jump to brand card ───
+  // Keep the sticky jump bar aligned to the real nav height at any width
+  function syncJumpOffsets(){
+    const nav = document.querySelector('.site-nav');
+    const bar = document.querySelector('.brandjump');
+    if(nav) document.documentElement.style.setProperty('--navh', Math.round(nav.getBoundingClientRect().height)+'px');
+    // the bar measures 0 while its tab is hidden — keep the last good value
+    if(bar){
+      const h = Math.round(bar.getBoundingClientRect().height);
+      if(h > 0) document.documentElement.style.setProperty('--jumph', h+'px');
+    }
+  }
+  window.addEventListener('load', syncJumpOffsets);
+  window.addEventListener('resize', syncJumpOffsets);
+  document.addEventListener('DOMContentLoaded', syncJumpOffsets);
+
+  function jumpToBrand(sel){
+    const el = document.getElementById(sel.value);
+    if(!el) return;
+    syncJumpOffsets();
+    el.querySelectorAll('.reveal, .arch').forEach(n=>n.classList.add('is-in'));
+    el.classList.add('is-in');
+    el.scrollIntoView({behavior:'smooth', block:'start'});
+    sel.selectedIndex = 0;
+    sel.blur();
+  }
 
   // ─── Image error fallback ───
   document.querySelectorAll('img').forEach(img=>{
