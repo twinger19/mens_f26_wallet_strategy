@@ -43,7 +43,9 @@ Six per brand, **54 in total**. Each tile is an image with its caption underneat
 
 All 54 are **placeholders**. Square, 640×640, tinted with the brand's first swatch colour. Replace any of them by dropping a file in with the same name — the caption on the page comes from the HTML, not the image, so it stays put.
 
-Four brands (Cole Haan, Calvin Klein, Kenneth Cole, Tommy Hilfiger) use short filenames slugged from the callout title. The other five still slug from the full caption; they will shorten the same way when their callouts are supplied.
+Four brands (Cole Haan, Calvin Klein, Kenneth Cole, Tommy Hilfiger) have F27 season callouts and use short filenames slugged from the callout title. The other five still slug from the full caption; they will shorten the same way when their callouts arrive.
+
+⚠️ **Cole Haan and Calvin Klein currently share five of six callouts** — only slot 03 differs (Elevated Trims vs ID Window Updates). Their folders are separate so the files don't collide, but the two mood boards will read as near-identical on the page.
 
 Shoot or source square. Anything else gets centre-cropped to 1:1.
 
@@ -66,12 +68,12 @@ Shoot or source square. Anything else gets centre-cropped to 1:1.
 
 | # | File | Callout | Detail |
 |---|---|---|---|
-| 01 | `01-matte-black.jpg` | **Matte Black** | Monochrome — black on black on black |
-| 02 | `02-negative-space.jpg` | **Negative Space** | Editorial grid, nothing decorative |
-| 03 | `03-exotics.jpg` | **Exotics** | Ostrich — beyond croco |
-| 04 | `04-monogram-jacquard.jpg` | **Monogram Jacquard** | Tonal, as the interior story |
-| 05 | `05-laser-etch.jpg` | **Laser Etch** | Logo etched, no metal hardware |
-| 06 | `06-slim-and-magsafe.jpg` | **Slim & MagSafe** | The core silhouettes, matching the apparel aesthetic |
+| 01 | `01-subdued-logoing.jpg` | **Subdued Logoing** | — |
+| 02 | `02-metal-details.jpg` | **Metal Details** | Flick bar, hinge, cigarette case, money clip |
+| 03 | `03-id-window-updates.jpg` | **ID Window Updates** | Mesh this season |
+| 04 | `04-city-living.jpg` | **City Living** | Slim constructions — on the go, trains and planes |
+| 05 | `05-clean-utility.jpg` | **Clean Utility** | — |
+| 06 | `06-transitional-dressing.jpg` | **Transitional Dressing** | Day to night, dress to dress-casual |
 
 ### Kenneth Cole — *Tailored Dress Codes*
 
