@@ -1,0 +1,10 @@
+_to_delete/
+.DS_Store
+**/.DS_Store
+
+# Private working files, kept off the public site
+*.private.html
+images/07-moodboards/
+images/brands/
+images/README.md
+recovered-images/
